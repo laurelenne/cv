@@ -1,0 +1,196 @@
+html {
+    height: 100%;
+    width: auto;
+
+}
+
+body {}
+
+body::-webkit-scrollbar {}
+
+/*-------*/
+
+header {
+    height: 100vh;
+    color: aliceblue;
+    width: 100vh;
+}
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 16px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+    z-index: 1;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+/*----*/
+/*colors = ["#f5c156", "#e6616b", "#5cd3ad"];*/
+#canvas {
+    background-color: #2c343f;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    z-index: -2;
+}
+
+#container-content {
+    width: auto;
+}
+
+.title-section {
+    background-color: rgb(173, 171, 184, 0.2);
+}
+
+/*--Section a propos--*/
+
+#maphoto {
+    width: 100vw;
+}
+
+#box-a-propos {
+    background-color: #E5E3D7;
+}
+
+.jumbotron {
+
+    border-radius: 0px 0px 0px 0px;
+    background-color: #E6E4D7;
+}
+
+.separateur {
+    height: 10px;
+    background-color: black;
+}
+
+.service_icon {
+    font-size: 6rem;
+}
+
+footer {
+    background-color: black;
+}
+
+h5 {
+    color: aliceblue;
+}
+
+@media(max-width: 768px) {
+
+    .logo {
+        position: fixed;
+        top: 0;
+        margin-top: 16px;
+    }
+
+    nav ul {
+        max-height: 0px;
+        background: #000;
+    }
+
+    nav.black ul {
+        background: #000;
+    }
+
+    .showing {
+        max-height: 32em;
+    }
+
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 14px;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+}
+
+@media(max-width: 1500px) {
+
+    .logo #text2 {
+        display: none;
+    }
+
+}
+
+@media(max-width: 1402px) {
+
+    .logo #text1 {
+        display: none;
+    }
+
+}
+
+@media(max-width: 768px) {
+
+    .logo #text1 {
+        display: inline-block;
+    }
+
+    .logo #text2 {
+        display: inline-block;
+    }
+
+}
+
+@media(max-width: 490px) {
+
+    .logo #text2 {
+        display: none;
+    }
+
+}
+
