@@ -1,2 +1,2 @@
 # Site cv
-## http://github.com/laurelenne.laurelenne.cv.github.io/
+## http://github.com/laurelenne/CV
