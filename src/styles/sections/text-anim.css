@@ -72,6 +72,7 @@
     font-weight: 700;
     letter-spacing: 0.01em;
     color: #67e8f9;
+    white-space: nowrap;
 }
 
 .content__footer {
@@ -203,6 +204,12 @@
         font-size: 1rem;
     }
 
+    .content__container__list__item {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .content__actions {
         width: 100%;
     }
@@ -210,5 +217,22 @@
     .content__cta {
         width: 100%;
         text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    #hero-rotating-text.content {
+        top: 60%;
+        --hero-item-height: 42px;
+    }
+
+    .content__container__text,
+    .content__container__list__item {
+        font-size: 0.9rem;
+    }
+
+    .content__kicker {
+        letter-spacing: 0.12em;
+        font-size: 0.64rem;
     }
 }

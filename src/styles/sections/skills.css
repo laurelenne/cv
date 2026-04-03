@@ -1197,6 +1197,27 @@
 }
 
 @media (max-width: 767px) {
+    .skills-col-right-header {
+        padding: 1rem 0.9rem 0.7rem;
+    }
+
+    .skills-pagination {
+        padding: 0.65rem 0.9rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .skills-filter {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .skills-filter-btn {
+        flex-shrink: 0;
+    }
+
     .skill-badge {
         padding: 1rem;
         margin: 0.5rem;
@@ -1226,6 +1247,16 @@
 }
 
 @media (max-width: 480px) {
+    .skills-hero {
+        padding: 1.3rem 0.9rem 1rem;
+    }
+
+    .skills-positioning-block,
+    .skills-col-right-scroll {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 0.5rem;

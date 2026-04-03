@@ -256,6 +256,12 @@
 }
 
 @media (max-width: 991px) {
+    .about-section,
+    .about-container,
+    .about-card {
+        min-height: auto;
+    }
+
     .about-impact-grid {
         grid-template-columns: 1fr;
     }
@@ -331,5 +337,25 @@
 
     .about-section-title {
         font-size: 1.38rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-content {
+        gap: 0.75rem;
+    }
+
+    #about-description {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .about-impact-item {
+        padding: 0.62rem 0.62rem 0.68rem;
+    }
+
+    .about-impact-item h5,
+    .about-impact-item p {
+        font-size: 0.76rem;
     }
 }
