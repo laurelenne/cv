@@ -11,7 +11,7 @@
     <meta property="og:image" content="//laurelenne.github.io/cv/assets/images/bg-site.png"/>
     <meta property="og:description" content="Développeuse Web"/>
     <meta property="og:url" content="//raw.githubusercontent.com/laurelenne/cv/master/assets/images/bg-site.png" />
-    <title>CvWeb</title>
+    <title>Laurélenne Poussin — Développeuse Web Java / Spring</title>
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/132df433f5.js" crossorigin="anonymous"></script>
@@ -22,413 +22,590 @@
     <link href="src/styles/utilities/form.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link href="src/styles/sections/text-anim.css" type="text/css" rel="stylesheet">
+    <link href="src/styles/sections/skills.css" rel="stylesheet" type="text/css">
+    <link href="src/styles/sections/about.css" rel="stylesheet" type="text/css">
+    <link href="src/styles/sections/projects.css" rel="stylesheet" type="text/css">
+    <link href="src/styles/sections/contact.css" rel="stylesheet" type="text/css">
+    <link href="src/styles/sections/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body id="top" class="m-0 p-0 cv-page">
     <!-- En-tete: navigation et hero -->
     <header class="site-header">
         <nav class="primary-nav">
-            <div class="menu-icon">
-                <i class="fa fa-bars fa-2x"></i>
-            </div>
-            <div class="logo">
-                <span id="text1">Laurélenne Poussin</span><span id="text2"> - Développeuse Web</span>
-            </div>
+            <a class="logo" href="#top" aria-label="Retour accueil">
+                <span id="text1">Laurelenne Poussin</span><span id="text2"> - Developpeuse Web</span>
+            </a>
+
+            <button class="menu-icon" type="button" aria-label="Ouvrir le menu" aria-controls="primary-menu" aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
             <div class="menu">
-                <ul>
+                <ul id="primary-menu">
                     <li><a href="#top">Accueil</a></li>
-                    <li><a href="#about">A propos de moi</a></li>
-                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#about">Présentation</a></li>
+                    <li><a href="#competences">Competences</a></li>
                     <li><a href="#parcours">Parcours</a></li>
-                    <li><a href="#realisations">Réalisations</a></li>
-                    <li><a href="#contact" class="pe-2">Contact</a>
-                        <a href="https://github.com/" class="fab fa-github ms-2 me-2" aria-label="GitHub"></a>
-                        <a href="https://www.linkedin.com/" class="fab fa-linkedin me-2 ms-2" aria-label="LinkedIn"></a>
-                    </li>
+                    <li><a href="#realisations">Realisations</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+            </div>
+
+            <div class="nav-social" aria-label="Liens sociaux">
+                <a href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
             </div>
         </nav>
         <canvas id="canvas"></canvas>
 
         <!-- Hero: texte anime des services -->
         <div id="hero-rotating-text" class="content">
+            <p class="content__kicker">Disponible pour un poste Java / Spring</p>
             <div class="content__container">
                 <p class="content__container__text">
                     Développement
                 </p>
                 <ul class="content__container__list">
-                    <li class="content__container__list__item">d'applications</li>
-                    <li class="content__container__list__item">de sites web</li>
-                    <li class="content__container__list__item">de logiciels</li>
-                    <li class="content__container__list__item">web et mobile</li>
+                    <li class="content__container__list__item">d'idées en expériences web</li>
+                    <li class="content__container__list__item">d'interfaces qui donnent envie</li>
+                    <li class="content__container__list__item">d'API solides pour aller loin</li>
+                    <li class="content__container__list__item">de produits utiles et vivants</li>
                 </ul>
+            </div>
+            <div class="content__footer">
+                <div class="content__dots" role="tablist" aria-label="Messages du hero"></div>
+                <div class="content__actions">
+                    <a href="#realisations" class="content__cta content__cta--primary">Voir mes realisations</a>
+                    <a href="#contact" class="content__cta content__cta--ghost">Me contacter</a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Contenu principal du CV -->
-    <div id="main-content" class="container p-lg-4 mb-4 cv-main" style="background-color: rgb(0,0,0,0.5)">
+    <div id="main-content" class="container-fluid p-lg-4 mb-4 cv-main">
         <!-- Section: A propos -->
         <section id="about" class="container-fluid p-0 row m-0 about-section">
-            <div class="title-section container-fluid p-3 text-light section-header">
-                <h3 class="text-center m-0" style="font-size: inherit">A propos de moi</h3>
-            </div>
-            <div class="container-fluid row bg-light p-lg-4 m-5 p-md-0 mt-md-5 mb-md-5 about-card">
-                <img id="profile-photo" src="assets/images/moi.jpg" class="col-lg-4 col-md-4 p-md-0 col-sm-12 img-fluid">
-                <div class="col-lg-8 m-0 p-3 col-md-8 col-sm-12">
-                    <h4 id="about-title" class="text-start">Bienvenue sur mon site !</h4>
-                    <p id="about-description" class="text-justify">Depuis toujours passionnée par l'informatique et les nouvelles technologies, j'ai décidé de me réaliser dans ce domaine afin de m'épanouir dans mon futur métier. Suite à un cursus dans le secteur social, j'ai entamé une reconversion dans le développement. Cette reconversion est l'occasion pour moi de mêler passion et projet professionnel.<br>Tout d'abord, j'ai suivi une formation "Projet Pro Numérique", qui m'a permis de structurer mon projet professionnel et de commencer mon apprentissage du code avec un formateur.<br><br>J'ai ensuite intégré la formation "Développeur web et mobile" du centre de formation ADRAR à Montpellier dans le but de me professionnaliser dans le développement web.<br>Aujourd'hui, je suis à la recherche de nouvelles opportunités professionnelles dans le développement web.</p>
+            <div class="container-fluid p-0 about-container">
+                <div class="row m-0 about-card">
+                    <div class="col-lg-4 col-md-5 col-sm-12 p-0 about-photo-wrap">
+                        <img id="profile-photo" src="public/assets/images/lp-logo.png" class="img-fluid about-photo" alt="Logo de Laurelenne Poussin">
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-sm-12 m-0 p-3 p-md-4 about-content">
+                        <div class="about-heading">
+                            <p class="about-kicker m-0">Presentation</p>
+                            <h3 class="about-section-title m-0">Qui je suis</h3>
+                        </div>
+                        <p class="about-role m-0">Developpeuse Web Java / Spring</p>
+                        <h4 id="about-title" class="text-start m-0">Ma facon de travailler</h4>
+                        <p id="about-description" class="m-0">Je suis une developpeuse web curieuse, rigoureuse et orientee solution. J'aime comprendre le besoin reel derriere une demande, transformer une idee en reponse concrete et livrer un resultat propre, lisible et maintenable.<br><br>Au quotidien, je travaille avec un vrai sens du collectif, une communication claire et une attention particuliere a l'experience utilisateur. Je souhaite continuer a m'ameliorer, apprendre de nouvelles technologies et m'adapter efficacement a chaque environnement de travail pour apporter de la valeur des les premiers jours.</p>
+                        <div class="about-impact-grid" aria-label="Points forts">
+                            <article class="about-impact-item">
+                                <i class="fa fa-bolt" aria-hidden="true"></i>
+                                <h5 class="m-0">Adaptation rapide</h5>
+                                <p class="m-0">Integration efficace dans un nouvel environnement technique ou equipe.</p>
+                            </article>
+                            <article class="about-impact-item">
+                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                <h5 class="m-0">Apprentissage continu</h5>
+                                <p class="m-0">Veille active et montee en competence sur de nouvelles technologies.</p>
+                            </article>
+                            <article class="about-impact-item">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                <h5 class="m-0">Resultat concret</h5>
+                                <p class="m-0">Focus qualite, lisibilite du code et valeur fonctionnelle livree.</p>
+                            </article>
+                        </div>
+                        <div class="about-traits" aria-label="Traits professionnels">
+                            <span>Curieuse</span>
+                            <span>Rigoureuse</span>
+                            <span>Esprit d'equipe</span>
+                            <span>Orientee solution</span>
+                        </div>
+                        <p class="about-signature m-0">Je conçois des experiences web utiles, claires et durables, avec une logique d'apprentissage continu.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- Section: Competences -->
         <section id="competences" class="container-fluid p-0 m-0 skills-section">
-            <div class="title-section container-fluid p-3 text-light section-header">
-                <h3 class="text-center">Compétences</h3>
-            </div>
-            <div class="container p-5 skills-container">
-                <h4 class="text-start container-fluid p-0" style="color: aliceblue">Languages &amp; Frameworks</h4>
-                <hr>
-                <div class="row skills-grid">
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="assets/svg/html.svg" src="assets/svg/html.svg" alt="" class="img-fluid" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>HTML</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="assets/svg/css.svg" src="assets/svg/css.svg" alt="" class="img-fluid" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>CSS</h5>
-                        </div>
-                    </div>`r`n`r`n                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--SVG BOOTSTRAP-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="assets/svg/bootstrap.svg" src="assets/svg/bootstrap.svg" alt="" class="img-fluid" />
-                            </svg>
-                            <!--end SVG BOOTSTRAP-->
-                        </div>
-                        <div>
-                            <h5>Bootstrap</h5>
-                        </div>
-                    </div>`r`n`r`n                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--SVG JS-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="assets/svg/js.svg" src="assets/svg/js.svg" alt="" class="img-fluid" />
-                            </svg>
-                            <!--end SVG JS-->
-                        </div>
-                        <div>
-                            <h5>JavaScript</h5>
-                        </div>
-                    </div>`r`n`r`n                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--SVG REACTJS-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="assets/svg/reactjs.svg" src="assets/svg/reactjs.svg" alt="" class="img-fluid" />
-                            </svg>
-                            <!--end SVG REACTJS-->
-                        </div>
-                        <div>
-                            <h5 class="animated fadeInUp wow text-center">ReactJS</h5>
-                        </div>
-                    </div>`r`n`r`n`r`n`r`n                </div>
-                <div class="row tools-grid">
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--SVG JAVA-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/java.svg" src="public/assets/svg/java.svg" alt="" />
-                            </svg>
-                            <!--end SVG JAVA-->
-                        </div>
-                        <div>
-                            <h5>Java</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG SPRING-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/spring.svg" src="public/assets/svg/spring.svg" alt="" />
-                            </svg>
-                            <!--end SVG SPRING-->
-                        </div>
-                        <div>
-                            <h5>Spring-Boot</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG PostgresSQL-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/postgres.svg" src="public/assets/svg/postgres.svg" alt="" />
-                            </svg>
-                            <!--end SVG PostgresSQL-->
-                        </div>
-                        <div>
-                            <h5>PostgresSQL</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG MySQL-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/mysql.svg" src="public/assets/svg/mysql.svg" alt="" />
-                            </svg>
-                            <!--end SVG MySQL-->
-                        </div>
-                        <div>
-                            <h5>MySQL</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG SQL-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 100 100" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/sql.svg" src="public/assets/svg/sql.svg" alt="" />
-                            </svg>
-                            <!--end SVG SQL-->
-                        </div>
-                        <div>
-                            <h5>SQL</h5>
-                        </div>
-                    </div>
-                </div>
-                <!--end row2-->
-                <hr>
-                <h5 class="text-start text-light" style="color: aliceblue">Outils &amp; Environnement de développement</h5>
-                <hr>
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG ECLIPSE-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 38 38" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/eclipse.svg" src="public/assets/svg/eclipse.svg" alt="" />
-                            </svg>
-                            <!--end SVG ECLIPSE-->
-                        </div>
-                        <div>
-                            <h5>Eclipse</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG VSC-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/vsc.svg" src="public/assets/svg/vsc.svg" alt="" />
-                            </svg>
-                            <!--end SVG VSC-->
-                        </div>
-                        <div>
-                            <h5>Visual Studio Code</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <!--end SVG BRACKETS-->
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/brackets.svg" src="public/assets/svg/brackets.svg" alt="" />
-                            </svg>
-                            <!--end SVG BRACKETS-->
-                        </div>
-                        <div>
-                            <h5>Brackets</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 48 48" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/git.svg" src="public/assets/svg/git.svg" alt="" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Git</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 128 128" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/trello.svg" src="public/assets/svg/trello.svg" alt="" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Trello</h5>
-                        </div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="p-2 d-flex justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="86" height="86" viewBox="0 0 528 528" style=" fill:#000000;">
-                                <image xlink:href="public/assets/svg/agile.svg" src="public/assets/svg/agile.svg" alt="" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Agile : Scrum</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div class="skills-layout">
 
-        <!-- Section: Parcours -->
-        <section id="parcours" class="container-fluid p-0 bg-dark timeline-section">
-            <div class="title-section container-fluid p-3 text-light section-header">
-                <h3 class="text-center">Parcours</h3>
-            </div>
-
-            <div class="container-fluid bg-dark">
-                <div class="container bg-dark">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="main-timeline">
-                                <article class="timeline col-md-12">
-                                    <div class="timeline-icon"><i class="fa fa-laptop"></i></div>
-                                    <div class="timeline-content">
-                                        <h3 class="title text-justify">Développeuse Web Java</h3>
-                                        <p class="description text-light text-justify">
-                                            (En cours)
-                                            Titre professionnel de niveau III (Bac +2) : DÉVELOPPEUR·SE WEB ET WEB MOBILE.
-                                        </p>
-                                    </div>
-                                </article>
-                                <div class="timeline">
-                                    <div class="timeline-icon"><i class="fa fa-code"></i></div>
-                                    <div class="timeline-content">
-                                        <h5 class="title p-1 m-0">juillet 2019</h5>
-                                        <h3 class="title">Formation Développeur Web Java</h3>
-                                        <p class="description text-light">
-                                            A l’issue de la formation, le stagiaire sera autonome et en maîtrise de l’ensemble des méthodes et compétences techniques et technologie exigées par le référentiel de l’examen final du TP Développeur Web et Web Mobile :</p>
-                                        <ul class="p-0 text-light">
-                                            <li class="mt-2 list-group">Développer la partie front-end d'une application web :</li>
-                                            <ul>
-                                                <li class="list-group">Maquettage d’une application</li>
-                                                <li class="list-group">Réaliser une interface utilisateur web statique et adaptable</li>
-                                                <li class="list-group">Développer une interface utilisateur web dynamique</li>
-                                                <li class="list-group">Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce</li>
-                                            </ul>
-
-                                            <li class="mt-2 list-group">Développer la partie back-end d'un application web :</li>
-                                            <ul>
-                                                <li class="list-group">Créer une base de données</li>
-                                                <li class="list-group">Développer les composants d’accès aux données</li>
-                                                <li class="list-group">Développer la partie back-end d’une application web ou web mobile</li>
-                                                <li class="list-group">Élaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce</li>
-                                                <li class="list-group">Projet : Analyse, conception et développement d’une application n-tiers</li>
-                                            </ul>
-                                        </ul>
-
-
-                                    </div>
+                <!-- COLONNE GAUCHE : intro + positionnement -->
+                <div class="skills-col-left">
+                    <div class="skills-hero">
+                        <p class="skills-eyebrow text-uppercase text-center m-0">Parcours technique</p>
+                        <h3 class="text-center m-0">Compétences</h3>
+                        <p class="skills-intro text-center m-0">Cette liste illustre mon parcours de développeuse : des langages, outils et technologies que j'ai utilisés à différents moments, certains régulièrement, d'autres plus ponctuellement selon les projets.</p>
+                        <div class="skills-meta d-flex flex-wrap justify-content-center gap-2 mt-3">
+                            <span class="skills-meta-pill">
+                                <i class="fa fa-code" aria-hidden="true"></i>
+                                <span class="skills-meta-number" data-target="50">0</span>
+                                <span>technologies</span>
+                            </span>
+                            <span class="skills-meta-pill">
+                                <i class="fa fa-laptop" aria-hidden="true"></i>
+                                <span class="skills-meta-number" data-target="4">0</span>
+                                <span>domaines</span>
+                            </span>
+                            <span class="skills-meta-pill">
+                                <i class="fa fa-database" aria-hidden="true"></i>
+                                <span>parcours polyvalent</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skills-positioning-block" aria-label="Positionnement technique">
+                        <div class="skills-positioning">
+                            <div class="skills-positioning-card">
+                                <h5>Positionnement cible</h5>
+                                <p>Profil orienté developpement Java/Spring avec une base frontend solide pour livrer des applications web completes.</p>
+                                <div class="skills-focus-chips">
+                                    <span>Java</span>
+                                    <span>Spring Boot</span>
+                                    <span>REST API</span>
+                                    <span>SQL</span>
+                                    <span>Git</span>
+                                    <span>Scrum</span>
+                                    <span>React</span>
                                 </div>
-                                <article class="timeline">
-                                    <div class="timeline-icon"><i class="fa fa-briefcase"></i></div>
-                                    <div class="timeline-content">
-                                        <h5 class="title p-1 m-0">mai 2019</h5>
-                                        <h3 class="title">Projet Pro Numérique</h3>
-                                        <p class="description text-light text-justify">
-                                            L'objectif de cette formation est de permettre à des demandeurs d'emploi de s'inscrire dans une dynamique de qualification et d'insertion professionnelle vers les métiers du Numérique.
-                                        </p>
-                                    </div>
-                                </article>
-                                <article class="timeline">
-                                    <div class="timeline-icon"><i class="fa fa-graduation-cap"></i></div>
-                                    <div class="timeline-content">
-                                        <h5 class="title p-1 m-0">2014</h5>
-                                        <h3 class="title">Bac Professionnel Service de Proximitée et de vie locale</h3>
-                                        <p class="description text-light text-justify">
-                                            Le diplôme BAC PRO SPVL débouche sur les métiers de l’aide sociale. Le titulaire du diplôme contribue au maintien du lien social, il peut travailler avec tout public en centre d’action sociale, dans des associations de quartier, des centres d’accueil de jour, des foyers logement ou dans des espaces ouverts au public.
-                                        </p>
-                                    </div>
-                                </article>
-                                <article class="timeline">
-                                    <div class="timeline-icon"><i class="fa fa-users"></i></div>
-                                    <div class="timeline-content">
-                                        <h5 class="title p-1 m-0">2013</h5>
-                                        <h3 class="title">CAP d'Agent de prévention et de médiation</h3>
-                                        <p class="description text-light text-justify">
-                                            Le titulaire de ce CAP est un agent de prévention et de médiation qui travaille dans des espaces publics ou privés. Il est en lien avec les partenaires locaux. Il veille au maintien du lien social et s’assure de la sécurité des personnes et du patrimoine.
-                                    </div>
-                                </article>
-
+                            </div>
+                            <div class="skills-positioning-card">
+                                <h5>Usage reel</h5>
+                                <div class="skills-usage-group">
+                                    <span class="skills-usage-label">Utilise regulierement</span>
+                                    <p>Java, Spring Boot, SQL, Git, HTML/CSS, JavaScript</p>
+                                </div>
+                                <div class="skills-usage-group">
+                                    <span class="skills-usage-label">Deja pratique en projet</span>
+                                    <p>Spring Security, React, Jira, Postman, UML, Draw.io</p>
+                                </div>
+                                <div class="skills-usage-group">
+                                    <span class="skills-usage-label">En progression</span>
+                                    <p>TypeScript, Hibernate/JPA, Accessibilite web</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- COLONNE DROITE : filtres + badges paginés -->
+                <div class="skills-col-right">
+                    <div class="skills-col-right-header">
+                        <div class="skills-filter" role="toolbar" aria-label="Filtrer les competences">
+                            <button type="button" class="skills-filter-btn is-active" data-filter="frontend" aria-pressed="true">Frontend</button>
+                            <button type="button" class="skills-filter-btn" data-filter="backend" aria-pressed="false">Backend</button>
+                            <button type="button" class="skills-filter-btn" data-filter="bdd" aria-pressed="false">BDD</button>
+                            <button type="button" class="skills-filter-btn" data-filter="outils" aria-pressed="false">Outils</button>
+                            <button type="button" class="skills-filter-btn" data-filter="methodo" aria-pressed="false">Methodo</button>
+                        </div>
+                        <div class="skills-level-legend">
+                            <span class="skills-level-chip level-1">Bonne maitrise</span>
+                            <span class="skills-level-chip level-2">Intermediaire</span>
+                            <span class="skills-level-chip level-3">Notions</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-col-right-scroll" id="skills-categories-scroll">
+                        <div class="skills-category" data-domain="frontend">
+                            <h5 class="skills-category-title"><i class="fa fa-desktop" aria-hidden="true"></i> Frontend</h5>
+                            <p class="skills-category-description">Création d'interfaces accessibles, responsives et performantes.</p>
+                            <ul class="skills-proof-list">
+                                <li>Interfaces responsive desktop/mobile livrees sur projets.</li>
+                                <li>Formulaires valides et ergonomiques avec retours utilisateur.</li>
+                                <li>Composants dynamiques en JavaScript et React.</li>
+                            </ul>
+                            <div class="skills-grid">
+                                <div class="skill-badge skill-html" tabindex="0"><div class="skill-icon"><i class="fab fa-html5" aria-hidden="true"></i></div><div class="skill-name">HTML</div></div>
+                                <div class="skill-badge skill-css" tabindex="0"><div class="skill-icon"><i class="fab fa-css3-alt" aria-hidden="true"></i></div><div class="skill-name">CSS</div></div>
+                                <div class="skill-badge skill-bootstrap" tabindex="0"><div class="skill-icon"><i class="fab fa-bootstrap" aria-hidden="true"></i></div><div class="skill-name">Bootstrap</div></div>
+                                <div class="skill-badge skill-javascript" tabindex="0"><div class="skill-icon"><i class="fab fa-js-square" aria-hidden="true"></i></div><div class="skill-name">JavaScript</div></div>
+                                <div class="skill-badge skill-react" tabindex="0"><div class="skill-icon"><i class="fab fa-react" aria-hidden="true"></i></div><div class="skill-name">React</div></div>
+                                <div class="skill-badge skill-vue" tabindex="0"><div class="skill-icon"><i class="fab fa-vuejs" aria-hidden="true"></i></div><div class="skill-name">Vue.js</div></div>
+                                <div class="skill-badge skill-sass" tabindex="0"><div class="skill-icon"><i class="fab fa-sass" aria-hidden="true"></i></div><div class="skill-name">SCSS / Sass</div></div>
+                                <div class="skill-badge skill-typescript" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">TypeScript</div></div>
+                                <div class="skill-badge skill-jquery" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">jQuery</div></div>
+                                <div class="skill-badge skill-accessibilite" tabindex="0"><div class="skill-icon"><i class="fas fa-universal-access" aria-hidden="true"></i></div><div class="skill-name">Accessibilite web</div></div>
+                                <div class="skill-badge skill-responsive" tabindex="0"><div class="skill-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div><div class="skill-name">Responsive design</div></div>
+                                <div class="skill-badge skill-form-validation" tabindex="0"><div class="skill-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div><div class="skill-name">Validation de formulaires</div></div>
+                                <div class="skill-badge skill-json" tabindex="0"><div class="skill-icon"><i class="fas fa-file-code" aria-hidden="true"></i></div><div class="skill-name">JSON</div></div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-domain="backend">
+                            <h5 class="skills-category-title"><i class="fa fa-server" aria-hidden="true"></i> Backend</h5>
+                            <p class="skills-category-description">Développement de logique métier et services côté serveur.</p>
+                            <ul class="skills-proof-list">
+                                <li>API REST CRUD developpees avec Spring Boot.</li>
+                                <li>Auth securisee et gestion des roles avec Spring Security.</li>
+                                <li>Gestion d'erreurs et structuration MVC cote serveur.</li>
+                            </ul>
+                            <div class="skills-grid">
+                                <div class="skill-badge skill-java" tabindex="0"><div class="skill-icon"><i class="fab fa-java" aria-hidden="true"></i></div><div class="skill-name">Java</div></div>
+                                <div class="skill-badge skill-spring" tabindex="0"><div class="skill-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div><div class="skill-name">Spring Boot</div></div>
+                                <div class="skill-badge skill-rest" tabindex="0"><div class="skill-icon"><i class="fas fa-plug" aria-hidden="true"></i></div><div class="skill-name">REST API</div></div>
+                                <div class="skill-badge skill-hibernate" tabindex="0"><div class="skill-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div><div class="skill-name">Hibernate / JPA</div></div>
+                                <div class="skill-badge skill-junit" tabindex="0"><div class="skill-icon"><i class="fas fa-vial" aria-hidden="true"></i></div><div class="skill-name">JUnit</div></div>
+                                <div class="skill-badge skill-spring-security" tabindex="0"><div class="skill-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div class="skill-name">Spring Security</div></div>
+                                <div class="skill-badge skill-spring-mvc" tabindex="0"><div class="skill-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div><div class="skill-name">Spring MVC</div></div>
+                                <div class="skill-badge skill-mvc" tabindex="0"><div class="skill-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div><div class="skill-name">MVC</div></div>
+                                <div class="skill-badge skill-http" tabindex="0"><div class="skill-icon"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div><div class="skill-name">Methodes HTTP</div></div>
+                                <div class="skill-badge skill-error-handling" tabindex="0"><div class="skill-icon"><i class="fas fa-bug" aria-hidden="true"></i></div><div class="skill-name">Gestion des erreurs</div></div>
+                                <div class="skill-badge skill-poo" tabindex="0"><div class="skill-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div><div class="skill-name">POO</div></div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-domain="bdd">
+                            <h5 class="skills-category-title"><i class="fa fa-database" aria-hidden="true"></i> Bases de données</h5>
+                            <p class="skills-category-description">Conception de schémas, requêtes et optimisation des données.</p>
+                            <ul class="skills-proof-list">
+                                <li>Schemas relationnels modelises avec Merise/UML.</li>
+                                <li>Requetes SQL pour extraction, jointures et filtres avances.</li>
+                                <li>Administration et verification de jeux de donnees en environnement projet.</li>
+                            </ul>
+                            <div class="skills-grid">
+                                <div class="skill-badge skill-postgresql" tabindex="0"><div class="skill-icon"><i class="fas fa-database" aria-hidden="true"></i></div><div class="skill-name">PostgreSQL</div></div>
+                                <div class="skill-badge skill-mysql" tabindex="0"><div class="skill-icon"><i class="fas fa-server" aria-hidden="true"></i></div><div class="skill-name">MySQL</div></div>
+                                <div class="skill-badge skill-sql" tabindex="0"><div class="skill-icon"><i class="fas fa-table" aria-hidden="true"></i></div><div class="skill-name">SQL</div></div>
+                                <div class="skill-badge skill-merise" tabindex="0"><div class="skill-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div><div class="skill-name">Merise / MCD</div></div>
+                                <div class="skill-badge skill-phpmyadmin" tabindex="0"><div class="skill-icon"><i class="fab fa-php" aria-hidden="true"></i></div><div class="skill-name">phpMyAdmin</div></div>
+                                <div class="skill-badge skill-uml" tabindex="0"><div class="skill-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div><div class="skill-name">UML</div></div>
+                                <div class="skill-badge skill-drawio" tabindex="0"><div class="skill-icon"><i class="fas fa-draw-polygon" aria-hidden="true"></i></div><div class="skill-name">Draw.io / Diagrams</div></div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category" data-domain="outils">
+                            <h5 class="skills-category-title"><i class="fa fa-wrench" aria-hidden="true"></i> Outils et environnement</h5>
+                            <p class="skills-category-description">Workflow, collaboration et environnement de développement quotidien.</p>
+                            <ul class="skills-proof-list">
+                                <li>Suivi de sprint et priorisation des taches en mode Scrum.</li>
+                                <li>Versionning Git/GitHub avec collaboration equipe.</li>
+                                <li>Tests et debogage avec Postman et Chrome DevTools.</li>
+                            </ul>
+                            <div class="skills-grid">
+                                <div class="skill-badge skill-eclipse" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">Eclipse</div></div>
+                                <div class="skill-badge skill-vscode" tabindex="0"><div class="skill-icon"><i class="fas fa-terminal" aria-hidden="true"></i></div><div class="skill-name">VS Code</div></div>
+                                <div class="skill-badge skill-brackets" tabindex="0"><div class="skill-icon"><i class="fa fa-code" aria-hidden="true"></i></div><div class="skill-name">Brackets</div></div>
+                                <div class="skill-badge skill-git" tabindex="0"><div class="skill-icon"><i class="fab fa-git-alt" aria-hidden="true"></i></div><div class="skill-name">Git</div></div>
+                                <div class="skill-badge skill-trello" tabindex="0"><div class="skill-icon"><i class="fab fa-trello" aria-hidden="true"></i></div><div class="skill-name">Trello</div></div>
+                                <div class="skill-badge skill-agile" tabindex="0"><div class="skill-icon"><i class="fa fa-users" aria-hidden="true"></i></div><div class="skill-name">Agile</div></div>
+                                <div class="skill-badge skill-github" tabindex="0"><div class="skill-icon"><i class="fab fa-github" aria-hidden="true"></i></div><div class="skill-name">GitHub</div></div>
+                                <div class="skill-badge skill-figma" tabindex="0"><div class="skill-icon"><i class="fab fa-figma" aria-hidden="true"></i></div><div class="skill-name">Figma</div></div>
+                                <div class="skill-badge skill-postman" tabindex="0"><div class="skill-icon"><i class="fas fa-paper-plane" aria-hidden="true"></i></div><div class="skill-name">Postman</div></div>
+                                <div class="skill-badge skill-npm" tabindex="0"><div class="skill-icon"><i class="fab fa-node-js" aria-hidden="true"></i></div><div class="skill-name">npm / Node.js</div></div>
+                                <div class="skill-badge skill-jira" tabindex="0"><div class="skill-icon"><i class="fab fa-jira" aria-hidden="true"></i></div><div class="skill-name">Jira</div></div>
+                                <div class="skill-badge skill-markdown" tabindex="0"><div class="skill-icon"><i class="fab fa-markdown" aria-hidden="true"></i></div><div class="skill-name">Markdown</div></div>
+                                <div class="skill-badge skill-notion" tabindex="0"><div class="skill-icon"><i class="fas fa-book" aria-hidden="true"></i></div><div class="skill-name">Notion</div></div>
+                                <div class="skill-badge skill-slack" tabindex="0"><div class="skill-icon"><i class="fab fa-slack" aria-hidden="true"></i></div><div class="skill-name">Slack</div></div>
+                                <div class="skill-badge skill-adobe-xd" tabindex="0"><div class="skill-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div><div class="skill-name">Adobe XD</div></div>
+                                <div class="skill-badge skill-canva" tabindex="0"><div class="skill-icon"><i class="fas fa-palette" aria-hidden="true"></i></div><div class="skill-name">Canva</div></div>
+                                <div class="skill-badge skill-ia" tabindex="0"><div class="skill-icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div><div class="skill-name">IA</div></div>
+                                <div class="skill-badge skill-scrum" tabindex="0"><div class="skill-icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></div><div class="skill-name">Scrum</div></div>
+                                <div class="skill-badge skill-devtools" tabindex="0"><div class="skill-icon"><i class="fab fa-chrome" aria-hidden="true"></i></div><div class="skill-name">Chrome DevTools</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="skills-pagination" aria-label="Navigation entre catégories">
+                        <div class="skills-pagination-controls">
+                            <button class="skills-page-btn" id="skills-prev" aria-label="Catégorie précédente">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <span class="skills-page-indicator" id="skills-page-indicator">1 / 4</span>
+                            <button class="skills-page-btn" id="skills-next" aria-label="Catégorie suivante">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="skills-pagination-dots" id="skills-pagination-dots" aria-hidden="true"></div>
+                    </nav>
+                </div>
+
+            </div>
+        </section>
+        <!-- Section: Parcours -->
+        <section id="parcours" class="timeline-section">
+            <div class="timeline-section-header">
+                <p class="timeline-eyebrow text-uppercase">Parcours</p>
+                <h3 class="timeline-heading">Formation &amp; Dipl&#244;mes</h3>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-track" aria-hidden="true"></div>
+
+                <article class="tl-item" data-tl-animate>
+                    <div class="tl-dot"><i class="fa fa-laptop" aria-hidden="true"></i></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <span class="tl-tag tl-tag--formation">Formation</span>
+                            <span class="tl-date">En cours</span>
+                        </div>
+                        <h4 class="tl-title">D&#233;veloppeuse Web Java</h4>
+                        <p class="tl-desc">Titre professionnel de niveau III (Bac +2) : D&#233;veloppeur&#183;se Web et Web Mobile.</p>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-tl-animate>
+                    <div class="tl-dot"><i class="fa fa-code" aria-hidden="true"></i></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <span class="tl-tag tl-tag--formation">Formation</span>
+                            <span class="tl-date">Juillet 2019</span>
+                        </div>
+                        <h4 class="tl-title">Formation D&#233;veloppeur Web Java</h4>
+                        <p class="tl-desc">Formation compl&#232;te pr&#233;parant au TP D&#233;veloppeur Web et Web Mobile : maquettage, interfaces statiques et dynamiques, bases de donn&#233;es, composants back-end et projet n-tiers.</p>
+                        <div class="tl-chips">
+                            <span>Frontend</span>
+                            <span>Backend</span>
+                            <span>Base de donn&#233;es</span>
+                            <span>Projet n-tiers</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-tl-animate>
+                    <div class="tl-dot"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <span class="tl-tag tl-tag--projet">Projet</span>
+                            <span class="tl-date">Mai 2019</span>
+                        </div>
+                        <h4 class="tl-title">Projet Pro Num&#233;rique</h4>
+                        <p class="tl-desc">Formation d'insertion professionnelle vers les m&#233;tiers du Num&#233;rique pour les demandeurs d'emploi souhaitant se qualifier dans le secteur.</p>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-tl-animate>
+                    <div class="tl-dot"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <span class="tl-tag tl-tag--diplome">Dipl&#244;me</span>
+                            <span class="tl-date">2014</span>
+                        </div>
+                        <h4 class="tl-title">Bac Pro &mdash; Services de Proximit&#233; et de Vie Locale</h4>
+                        <p class="tl-desc">Dipl&#244;me orient&#233; aide sociale et maintien du lien social, travail avec tout public en centres d'action sociale, associations et foyers.</p>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-tl-animate>
+                    <div class="tl-dot"><i class="fa fa-users" aria-hidden="true"></i></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <span class="tl-tag tl-tag--diplome">Dipl&#244;me</span>
+                            <span class="tl-date">2013</span>
+                        </div>
+                        <h4 class="tl-title">CAP Agent de Pr&#233;vention et de M&#233;diation</h4>
+                        <p class="tl-desc">Dipl&#244;me de m&#233;diation en espaces publics et priv&#233;s, en lien avec les partenaires locaux pour le maintien du lien social et la s&#233;curit&#233; des personnes.</p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
         <!-- Section: Realisations -->
-        <section id="realisations" class="container-fluid p-0 mt-5 projects-section">
-            <div class="title-section container-fluid p-3 text-light section-header">
-                <h3 class="text-center">Réalisations</h3>
+        <section id="realisations" class="projects-section">
+            <div class="projects-header">
+                <p class="projects-eyebrow text-uppercase">Portfolio</p>
+                <h3 class="projects-heading">Réalisations</h3>
             </div>
-            <div class="row p-4 text-light projects-grid">
 
-                <div class="frame col text-center project-card">
-                    <img src="https://pbs.twimg.com/profile_images/378800000601617732/9e87878ffdd67333ac8b81f9da22696a_400x400.jpeg" class="img-fluid" width="200" height="200">
-                    <div class="details text-center p-2">
-                        <h3>Evolution</h3>
-                        <p>Projet de création de jeux clicker (en groupe)</p>
+            <div class="projects-grid">
+
+                <!-- Projet 1 : Evolution -->
+                <article class="project-card" data-proj-animate>
+                    <div class="project-card-img-wrapper">
+                        <img src="assets/images/evolution-bg.png" alt="Capture du projet Evolution" class="project-card-img">
                     </div>
-                </div>
-                <div class="frame col text-center project-card">
-                    <img src="https://pbs.twimg.com/profile_images/378800000601617732/9e87878ffdd67333ac8b81f9da22696a_400x400.jpeg" class="img-fluid" width="200" height="200">
-                    <div class="details text-center p-2">
-                        <h3>Risk Jules Verne</h3>
-                        <p>Projet de création en groupe d'un jeux basé sur les règles du jeux Risk</p>
+                    <div class="project-card-body">
+                        <h4 class="project-card-title">Evolution</h4>
+                        <p class="project-card-desc">Jeu clicker développé en groupe : gestion de ressources, progression et mécaniques d'évolution incrémentale.</p>
+                        <div class="project-stack">
+                            <span>Java</span>
+                            <span>POO</span>
+                            <span>Travail en équipe</span>
+                        </div>
+                        <div class="project-card-links">
+                            <span class="project-link project-link--ghost">
+                                <i class="fa fa-lock" aria-hidden="true"></i> Privé
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="frame col text-center project-card">
-                    <a href="https://laurelenne.github.io/integrations/"><img src="/public/assets/images/integrations-bg.png" width="200" height="200"></a>
-                    <div class="details text-center p-2">
-                        <h3>Portail Intégrations</h3>
-                        <p>Projets d'intégrations : HTML/CSS/BOOTSTRAP</p>
+                </article>
+
+                <!-- Projet 2 : Risk Jules Verne -->
+                <article class="project-card" data-proj-animate>
+                    <div class="project-card-img-wrapper">
+                        <img src="assets/images/risk-bg.png" alt="Capture du projet Risk Jules Verne" class="project-card-img">
                     </div>
-                </div>
+                    <div class="project-card-body">
+                        <h4 class="project-card-title">Risk Jules Verne</h4>
+                        <p class="project-card-desc">Adaptation du jeu de plateau Risk avec un univers Jules Verne, développée en groupe.</p>
+                        <div class="project-stack">
+                            <span>Java</span>
+                            <span>Swing</span>
+                            <span>Algorithmique</span>
+                            <span>Travail en équipe</span>
+                        </div>
+                        <div class="project-card-links">
+                            <span class="project-link project-link--ghost">
+                                <i class="fa fa-lock" aria-hidden="true"></i> Privé
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 3 : Portail Intégrations -->
+                <article class="project-card" data-proj-animate>
+                    <div class="project-card-img-wrapper">
+                        <a href="https://laurelenne.github.io/integrations/" target="_blank" rel="noopener noreferrer" aria-label="Voir le Portail Intégrations">
+                            <img src="assets/images/integrations-bg.png" alt="Capture du Portail Intégrations" class="project-card-img">
+                        </a>
+                    </div>
+                    <div class="project-card-body">
+                        <h4 class="project-card-title">Portail Intégrations</h4>
+                        <p class="project-card-desc">Recueil de projets d'intégration web : mises en page responsives et composants UI réalisés en formation.</p>
+                        <div class="project-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                            <span>Responsive</span>
+                        </div>
+                        <div class="project-card-links">
+                            <a href="https://laurelenne.github.io/integrations/" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">
+                                <i class="fa fa-external-link" aria-hidden="true"></i> Voir le projet
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
 
         <!-- Section: Contact -->
         <section id="contact" class="contact-section">
-            <div class="title-section container-fluid p-3 text-end text-light section-header">
-                <h3 class="text-center">Contact</h3>
+            <div class="contact-wrap">
+                <div class="contact-header">
+                    <p class="contact-eyebrow text-uppercase">Disponibilite</p>
+                    <h3 class="contact-heading">Contact</h3>
+                    <p class="contact-subtitle">Vous pouvez m'envoyer un message directement depuis ce formulaire pour parler opportunites, mission ou collaboration.</p>
+                </div>
+
+                <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/poussin.laurelenne@gmail.com" method="POST" novalidate>
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le CV">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <label class="visually-hidden" for="contact-company">Entreprise (ne pas remplir)</label>
+                    <input class="visually-hidden" type="text" id="contact-company" name="_honey" tabindex="-1" autocomplete="off">
+
+                    <div class="contact-grid">
+                        <div class="contact-field">
+                            <label class="contact-label" for="contact-name">Nom</label>
+                            <input class="contact-input" type="text" id="contact-name" name="name" required maxlength="80" placeholder="Votre nom">
+                        </div>
+
+                        <div class="contact-field">
+                            <label class="contact-label" for="contact-email">Email</label>
+                            <input class="contact-input" type="email" id="contact-email" name="email" required maxlength="120" placeholder="vous@exemple.com">
+                        </div>
+
+                        <div class="contact-field contact-field--full">
+                            <label class="contact-label" for="contact-subject">Sujet</label>
+                            <input class="contact-input" type="text" id="contact-subject" name="subject" required maxlength="120" placeholder="Objet de votre message">
+                        </div>
+
+                        <div class="contact-field contact-field--full">
+                            <label class="contact-label" for="contact-message">Message</label>
+                            <textarea class="contact-textarea" id="contact-message" name="message" required minlength="15" maxlength="3000" placeholder="Votre message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions">
+                        <button class="contact-submit" type="submit">Envoyer</button>
+                        <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+                    </div>
+                </form>
             </div>
         </section>
     </div>
 
     <!-- Pied de page -->
-    <footer class="container-fluid p-5 site-footer">
-        <p class="col-12 text-light text-center">2026 ©LaurelennePoussin</p>
-        <p class="col-12 text-light text-center">Disponible pour de nouvelles opportunités</p>
-        <div id="social-links" class="col-12 row d-flex justify-content-center align-items-center m-0 p-0">
-            <a href="https://github.com/" aria-label="GitHub"><i class="col-4 fab fa-github p-2 m-0"></i></a>
-            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="col-4 fab fa-linkedin p-2 m-0"></i></a>
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <p class="footer-name">Laurelenne Poussin</p>
+                    <p class="footer-availability">Disponible pour de nouvelles opportunites</p>
+                    <a class="footer-email" href="mailto:poussin.laurelenne@gmail.com" aria-label="Envoyer un email">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        poussin.laurelenne@gmail.com
+                    </a>
+                </div>
+
+                <div class="footer-right">
+                    <a class="footer-social" href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-top-link" href="#top">Retour en haut</a>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copy">2026 © Laurelenne Poussin</p>
+                <p class="footer-note">Portfolio developpeuse web Java</p>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts tiers -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Scripts du site -->
     <script src="src/scripts/modules/navbar.js"></script>
     <script src="src/scripts/modules/canvas.js"></script>
-    <script src="src/scripts/utils/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+    <script src="src/scripts/modules/skills-meta-counter.js"></script>
+    <script src="src/scripts/modules/skills-enhancer.js"></script>
+    <script src="src/scripts/modules/hero-rotator.js"></script>
     <script src="src/scripts/modules/timeline.js"></script>
+    <script src="src/scripts/modules/contact-form.js"></script>
+    <script>
+    (function () {
+        function initProjects() {
+            var cards = document.querySelectorAll(".project-card[data-proj-animate]");
+            if (!cards.length) return;
+            if (!("IntersectionObserver" in window)) {
+                cards.forEach(function (el) { el.classList.add("is-visible"); });
+                return;
+            }
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            cards.forEach(function (el) { observer.observe(el); });
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initProjects);
+        } else {
+            initProjects();
+        }
+    })();
+    </script>
 </body></html>
+
+
+
 
 

@@ -1,0 +1,99 @@
+﻿        <!-- Section: Competences -->
+        <section id="competences" class="container-fluid p-0 m-0 skills-section">
+            <div class="title-section container-fluid p-3 text-light section-header">
+                <h3 class="text-center">Compétences</h3>
+            </div>
+            <div class="container-fluid p-5 skills-container">
+                <!-- Frontend Skills -->
+                <div class="skills-category">
+                    <h5 class="skills-category-title">Frontend</h5>
+                    <div class="skills-grid">
+                        <div class="skill-badge skill-html">
+                            <div class="skill-icon"><i class="fa fa-html5"></i></div>
+                            <div class="skill-name">HTML</div>
+                        </div>
+                        <div class="skill-badge skill-css">
+                            <div class="skill-icon"><i class="fa fa-css3"></i></div>
+                            <div class="skill-name">CSS</div>
+                        </div>
+                        <div class="skill-badge skill-bootstrap">
+                            <div class="skill-icon"><fab class="fab fa-bootstrap"></i></div>
+                            <div class="skill-name">Bootstrap</div>
+                        </div>
+                        <div class="skill-badge skill-javascript">
+                            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                            <div class="skill-name">JavaScript</div>
+                        </div>
+                        <div class="skill-badge skill-react">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <div class="skill-name">React</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skills-category">
+                    <h5 class="skills-category-title">Backend</h5>
+                    <div class="skills-grid">
+                        <div class="skill-badge skill-java">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div class="skill-name">Java</div>
+                        </div>
+                        <div class="skill-badge skill-spring">
+                            <div class="skill-icon"><i class="fas fa-leaf"></i></div>
+                            <div class="skill-name">Spring-Boot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skills-category">
+                    <h5 class="skills-category-title">Bases de Données</h5>
+                    <div class="skills-grid">
+                        <div class="skill-badge skill-postgresql">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-name">PostgreSQL</div>
+                        </div>
+                        <div class="skill-badge skill-mysql">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-name">MySQL</div>
+                        </div>
+                        <div class="skill-badge skill-sql">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-name">SQL</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Environment -->
+                <div class="skills-category">
+                    <h5 class="skills-category-title">Outils &amp; Environnement</h5>
+                    <div class="skills-grid">
+                        <div class="skill-badge skill-eclipse">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <div class="skill-name">Eclipse</div>
+                        </div>
+                        <div class="skill-badge skill-vscode">
+                            <div class="skill-icon"><i class="fab fa-windows"></i></div>
+                            <div class="skill-name">VS Code</div>
+                        </div>
+                        <div class="skill-badge skill-brackets">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <div class="skill-name">Brackets</div>
+                        </div>
+                        <div class="skill-badge skill-git">
+                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div class="skill-name">Git</div>
+                        </div>
+                        <div class="skill-badge skill-trello">
+                            <div class="skill-icon"><i class="fab fa-trello"></i></div>
+                            <div class="skill-name">Trello</div>
+                        </div>
+                        <div class="skill-badge skill-agile">
+                            <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+                            <div class="skill-name">Agile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

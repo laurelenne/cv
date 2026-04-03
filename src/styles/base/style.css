@@ -10,60 +10,120 @@ header {
 }
 
 .logo {
-    line-height: 60px;
-    position: fixed;
-    float: left;
-    margin: 16px 46px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-
-nav {
-    position: fixed;
-    width: 100%;
-    line-height: 60px;
-    z-index: 1;
-}
-
-nav ul {
-    line-height: 60px;
-    list-style: none;
-    background: rgba(0, 0, 0, 0);
-    overflow: hidden;
-    color: #fff;
-    padding: 0;
-    text-align: right;
-    margin: 0;
-    transition: 1s;
-}
-
-nav.black ul {
-    background: #000;
-}
-
-nav ul li {
-    display: inline-block;
-    padding: 16px 40px;
-}
-
-nav ul li a {
+    line-height: 1;
+    color: #e6f7ff;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.06em;
     text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    white-space: nowrap;
+}
+
+.primary-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 70px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.6rem;
+    transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 0.35rem 0.45rem;
+    margin: 0;
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    border-radius: 999px;
+    background: rgba(6, 18, 31, 0.55);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.primary-nav.black {
+    background: rgba(5, 15, 27, 0.78);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.primary-nav ul li {
+    display: inline-flex;
+}
+
+.primary-nav ul li a {
+    text-decoration: none;
+    color: rgba(186, 230, 253, 0.9);
+    font-size: 0.82rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.38rem 0.68rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.primary-nav ul li a:hover,
+.primary-nav ul li a:focus-visible {
+    color: #d9f7ff;
+    background: rgba(56, 189, 248, 0.2);
+}
+
+.primary-nav ul li a.is-active,
+.primary-nav ul li a[aria-current="page"] {
+    color: #e7fbff;
+    background: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 0 1px rgba(125, 211, 252, 0.35) inset;
+}
+
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    background: rgba(56, 189, 248, 0.1);
+    color: #67e8f9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-social a:hover,
+.nav-social a:focus-visible {
+    background: rgba(56, 189, 248, 0.24);
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.28);
+    color: #bae6fd;
 }
 
 .menu-icon {
-    line-height: 60px;
-    width: 100%;
-    background: #000;
-    text-align: right;
-    box-sizing: border-box;
-    padding: 15px 24px;
+    line-height: 1;
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    background: rgba(6, 18, 31, 0.7);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     cursor: pointer;
-    color: #fff;
+    color: #d9f7ff;
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 /*----*/
@@ -76,7 +136,7 @@ nav ul li a {
 }
 
 .title-section {
-    background-color: rgb(173, 171, 184, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 footer {
@@ -92,33 +152,60 @@ h5 {
 @media(max-width: 768px) {
 
     .logo {
-        position: fixed;
-        top: 0;
-        margin-top: 16px;
+        max-width: calc(100% - 130px);
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    nav ul {
+    .primary-nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .primary-nav ul {
         max-height: 0px;
-        background: #000;
-    }
-
-    nav.black ul {
-        background: #000;
+        overflow: hidden;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid rgba(125, 211, 252, 0.2);
+        background: rgba(3, 11, 20, 0.95);
+        backdrop-filter: blur(10px);
+        display: block;
+        padding: 0;
+        transition: max-height 0.35s ease;
     }
 
     .showing {
-        max-height: 32em;
+        max-height: 34em;
     }
 
-    nav ul li {
+    .primary-nav ul li {
         box-sizing: border-box;
         width: 100%;
-        padding: 14px;
-        text-align: center;
+        padding: 0;
+        text-align: left;
+    }
+
+    .primary-nav ul li a {
+        width: 100%;
+        border-radius: 0;
+        display: block;
+        padding: 0.9rem 1rem;
     }
 
     .menu-icon {
-        display: block;
+        display: inline-flex;
+    }
+
+    .nav-social {
+        margin-left: auto;
+        margin-right: 0.35rem;
     }
 
 }
