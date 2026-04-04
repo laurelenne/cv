@@ -47,6 +47,7 @@
                     <li><a href="#top">Accueil</a></li>
                     <li><a href="#about">Présentation</a></li>
                     <li><a href="#competences">Competences</a></li>
+                    <li><a href="#positionnement">Positionnement</a></li>
                     <li><a href="#parcours">Parcours</a></li>
                     <li><a href="#realisations">Realisations</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -91,19 +92,18 @@
     <!-- Contenu principal du CV -->
     <div id="main-content" class="container-fluid p-lg-4 mb-4 cv-main">
         <!-- Section: A propos -->
-        <section id="about" class="container-fluid p-0 row m-0 about-section">
-            <div class="container-fluid p-0 about-container">
+        <section id="about" class="about-section about-section--cohesive">
+            <div class="about-container">
                 <div class="row m-0 about-card">
                     <div class="col-lg-4 col-md-5 col-sm-12 p-0 about-photo-wrap">
                         <img id="profile-photo" src="public/assets/images/lp-logo.png" class="img-fluid about-photo" alt="Logo de Laurelenne Poussin">
                     </div>
-                    <div class="col-lg-8 col-md-7 col-sm-12 m-0 p-3 p-md-4 about-content">
+                    <div class="col-lg-8 col-md-7 col-sm-12 m-0 about-content">
                         <div class="about-heading">
                             <p class="about-kicker m-0">Presentation</p>
                             <h3 class="about-section-title m-0">Qui je suis</h3>
+                            <p class="about-subtitle m-0">Developpeuse web Java orientee backend, avec une base frontend solide pour livrer des experiences completes.</p>
                         </div>
-                        <p class="about-role m-0">Developpeuse Web Java / Spring</p>
-                        <h4 id="about-title" class="text-start m-0">Ma facon de travailler</h4>
                         <p id="about-description" class="m-0">Je suis une developpeuse web curieuse, rigoureuse et orientee solution. J'aime comprendre le besoin reel derriere une demande, transformer une idee en reponse concrete et livrer un resultat propre, lisible et maintenable.<br><br>Au quotidien, je travaille avec un vrai sens du collectif, une communication claire et une attention particuliere a l'experience utilisateur. Je souhaite continuer a m'ameliorer, apprendre de nouvelles technologies et m'adapter efficacement a chaque environnement de travail pour apporter de la valeur des les premiers jours.</p>
                         <div class="about-impact-grid" aria-label="Points forts">
                             <article class="about-impact-item">
@@ -134,7 +134,7 @@
             </div>
         </section>
         <!-- Section: Competences -->
-        <section id="competences" class="container-fluid p-0 m-0 skills-section">
+        <section id="competences" class="skills-section skills-section--cohesive">
             <div class="skills-layout">
 
                 <!-- COLONNE GAUCHE : intro + positionnement -->
@@ -160,45 +160,14 @@
                             </span>
                         </div>
                     </div>
-                    <div class="skills-positioning-block" aria-label="Positionnement technique">
-                        <div class="skills-positioning">
-                            <div class="skills-positioning-card">
-                                <h5>Positionnement cible</h5>
-                                <p>Profil orienté developpement Java/Spring avec une base frontend solide pour livrer des applications web completes.</p>
-                                <div class="skills-focus-chips">
-                                    <span>Java</span>
-                                    <span>Spring Boot</span>
-                                    <span>REST API</span>
-                                    <span>SQL</span>
-                                    <span>Git</span>
-                                    <span>Scrum</span>
-                                    <span>React</span>
-                                </div>
-                            </div>
-                            <div class="skills-positioning-card">
-                                <h5>Usage reel</h5>
-                                <div class="skills-usage-group">
-                                    <span class="skills-usage-label">Utilise regulierement</span>
-                                    <p>Java, Spring Boot, SQL, Git, HTML/CSS, JavaScript</p>
-                                </div>
-                                <div class="skills-usage-group">
-                                    <span class="skills-usage-label">Deja pratique en projet</span>
-                                    <p>Spring Security, React, Jira, Postman, UML, Draw.io</p>
-                                </div>
-                                <div class="skills-usage-group">
-                                    <span class="skills-usage-label">En progression</span>
-                                    <p>TypeScript, Hibernate/JPA, Accessibilite web</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- COLONNE DROITE : filtres + badges -->
                 <div class="skills-col-right">
                     <div class="skills-col-right-header">
                         <div class="skills-filter" role="toolbar" aria-label="Filtrer les competences">
-                            <button type="button" class="skills-filter-btn is-active" data-filter="frontend" aria-pressed="true">Frontend</button>
+                            <button type="button" class="skills-filter-btn is-active" data-filter="all" aria-pressed="true">Toutes</button>
+                            <button type="button" class="skills-filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
                             <button type="button" class="skills-filter-btn" data-filter="backend" aria-pressed="false">Backend</button>
                             <button type="button" class="skills-filter-btn" data-filter="bdd" aria-pressed="false">BDD</button>
                             <button type="button" class="skills-filter-btn" data-filter="outils" aria-pressed="false">Outils</button>
@@ -214,6 +183,48 @@
 
             </div>
         </section>
+
+        <section id="positionnement" class="positioning-section">
+            <div class="positioning-header">
+                <p class="positioning-eyebrow text-uppercase">Positionnement</p>
+                <h3 class="positioning-heading">Cible & usage</h3>
+                <p class="positioning-subtitle">Repere rapide sur mon axe technique et l'usage reel des outils en contexte projet.</p>
+            </div>
+
+            <div class="positioning-wrap" aria-label="Positionnement technique">
+                <div class="skills-positioning">
+                    <div class="skills-positioning-card">
+                        <h5>Positionnement cible</h5>
+                        <p>Profil orienté developpement Java/Spring avec une base frontend solide pour livrer des applications web completes.</p>
+                        <div class="skills-focus-chips">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>REST API</span>
+                            <span>SQL</span>
+                            <span>Git</span>
+                            <span>Scrum</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                    <div class="skills-positioning-card">
+                        <h5>Usage reel</h5>
+                        <div class="skills-usage-group">
+                            <span class="skills-usage-label">Utilise regulierement</span>
+                            <p>Java, Spring Boot, SQL, Git, HTML/CSS, JavaScript</p>
+                        </div>
+                        <div class="skills-usage-group">
+                            <span class="skills-usage-label">Deja pratique en projet</span>
+                            <p>Spring Security, React, Jira, Postman, UML, Draw.io</p>
+                        </div>
+                        <div class="skills-usage-group">
+                            <span class="skills-usage-label">En progression</span>
+                            <p>TypeScript, Hibernate/JPA, Accessibilite web</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section: Parcours -->
         <section id="parcours" class="timeline-section">
             <div class="timeline-section-header">
@@ -235,27 +246,29 @@
                 <p class="projects-intro">Selection de projets classes du plus recent au plus ancien, avec filtres par techno et type de projet.</p>
             </div>
 
-            <div class="projects-filters" aria-label="Filtrer les projets">
-                <div class="projects-filter-field">
-                    <label for="projects-tech-filter">Techno</label>
-                    <select id="projects-tech-filter" name="projects-tech-filter">
-                        <option value="">Toutes les technos</option>
-                    </select>
+            <div class="projects-shell">
+                <div class="projects-filters" aria-label="Filtrer les projets">
+                    <div class="projects-filter-field">
+                        <label for="projects-tech-filter">Techno</label>
+                        <select id="projects-tech-filter" name="projects-tech-filter">
+                            <option value="">Toutes les technos</option>
+                        </select>
+                    </div>
+                    <div class="projects-filter-field">
+                        <label for="projects-type-filter">Type de projet</label>
+                        <select id="projects-type-filter" name="projects-type-filter">
+                            <option value="">Tous les types</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="projects-filter-field">
-                    <label for="projects-type-filter">Type de projet</label>
-                    <select id="projects-type-filter" name="projects-type-filter">
-                        <option value="">Tous les types</option>
-                    </select>
+
+                <div class="projects-grid">
+                    <!-- Cartes generees dynamiquement depuis src/data/projects.json -->
                 </div>
-            </div>
 
-            <div class="projects-grid">
-                <!-- Cartes generees dynamiquement depuis src/data/projects.json -->
-            </div>
-
-            <div class="projects-actions">
-                <button type="button" id="projects-see-more" class="projects-see-more">Voir plus</button>
+                <div class="projects-actions">
+                    <button type="button" id="projects-see-more" class="projects-see-more">Voir plus</button>
+                </div>
             </div>
         </section>
 

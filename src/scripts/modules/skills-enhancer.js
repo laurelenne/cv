@@ -100,6 +100,14 @@
     function applyFilter(filter) {
         var badges = document.querySelectorAll(".skill-badge");
         var categories = document.querySelectorAll(".skills-category");
+        var panel = document.getElementById("skills-categories-scroll");
+        var visibleSkillsCount = 0;
+        var visibleCategoriesCount = 0;
+
+        if (panel) {
+            panel.classList.add("is-filtering");
+            panel.classList.toggle("is-filter-all", filter === "all");
+        }
 
         badges.forEach(function (badge) {
             var domain = badge.getAttribute("data-domain");
@@ -115,12 +123,97 @@
             }
 
             badge.classList.toggle("is-hidden", !shouldShow);
+            if (shouldShow) {
+                visibleSkillsCount++;
+            }
         });
 
         categories.forEach(function (category) {
             var visibleBadges = category.querySelectorAll(".skill-badge:not(.is-hidden)");
             category.classList.toggle("is-hidden", visibleBadges.length === 0);
             category.style.display = "";
+            if (visibleBadges.length > 0) {
+                visibleCategoriesCount++;
+            }
+        });
+
+        updateFilterFeedback(filter, visibleSkillsCount, visibleCategoriesCount);
+
+        if (panel) {
+            requestAnimationFrame(function () {
+                if (window.innerWidth > 991) {
+                    var currentHeight = Math.ceil(panel.getBoundingClientRect().height);
+                    var fixedHeight = Number(panel.getAttribute("data-fixed-height") || "0");
+
+                    if (filter === "all" || fixedHeight === 0) {
+                        fixedHeight = currentHeight;
+                        panel.setAttribute("data-fixed-height", String(fixedHeight));
+                    }
+
+                    if (fixedHeight > 0) {
+                        panel.style.height = fixedHeight + "px";
+                    }
+                } else {
+                    panel.style.height = "";
+                    panel.removeAttribute("data-fixed-height");
+                }
+                panel.classList.remove("is-filtering");
+            });
+        }
+    }
+
+    function getFilterLabel(filter) {
+        if (filter === "frontend") return "Frontend";
+        if (filter === "backend") return "Backend";
+        if (filter === "bdd") return "BDD";
+        if (filter === "outils") return "Outils";
+        if (filter === "methodo") return "Methodo";
+        return "Toutes";
+    }
+
+    function updateFilterFeedback(filter, skillsCount, categoriesCount) {
+        var feedback = document.getElementById("skills-filter-feedback");
+        if (!feedback) return;
+
+        var label = getFilterLabel(filter);
+        feedback.textContent = label + " : " + skillsCount + " competences dans " + categoriesCount + " categorie" + (categoriesCount > 1 ? "s" : "");
+    }
+
+    function ensureFilterFeedback() {
+        var header = document.querySelector(".skills-col-right-header");
+        if (!header) return;
+        if (document.getElementById("skills-filter-feedback")) return;
+
+        var feedback = document.createElement("p");
+        feedback.id = "skills-filter-feedback";
+        feedback.className = "skills-filter-feedback";
+        feedback.setAttribute("aria-live", "polite");
+        header.appendChild(feedback);
+    }
+
+    function setActiveFilterButton(filter) {
+        var buttons = document.querySelectorAll(".skills-filter-btn");
+        buttons.forEach(function (btn) {
+            var isActive = (btn.getAttribute("data-filter") || "") === filter;
+            btn.classList.toggle("is-active", isActive);
+            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+    }
+
+    function initPanelResizeBehavior() {
+        var panel = document.getElementById("skills-categories-scroll");
+        if (!panel) return;
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 991) {
+                panel.style.height = "";
+                panel.removeAttribute("data-fixed-height");
+            } else {
+                var fixedHeight = Number(panel.getAttribute("data-fixed-height") || "0");
+                if (fixedHeight > 0) {
+                    panel.style.height = fixedHeight + "px";
+                }
+            }
         });
     }
 
@@ -151,8 +244,11 @@
             })
             .then(function (categories) {
                 renderSkills(categories);
+                ensureFilterFeedback();
                 initFilters();
-                applyFilter("frontend");
+                initPanelResizeBehavior();
+                setActiveFilterButton("all");
+                applyFilter("all");
             })
             .catch(function (err) {
                 console.warn("Skills:", err.message);

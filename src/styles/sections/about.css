@@ -359,3 +359,152 @@
         font-size: 0.76rem;
     }
 }
+
+/* ===== About Cohesion V2 (rollback: retirer la classe .about-section--cohesive) ===== */
+.about-section--cohesive {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: block;
+    padding: var(--section-pad-top) 0 var(--section-pad-bottom);
+    background: linear-gradient(160deg, rgba(5, 14, 26, 0.98), rgba(10, 24, 42, 0.96));
+    border-bottom: 1px solid rgba(125, 211, 252, 0.18);
+}
+
+.about-section--cohesive .about-container {
+    max-width: var(--content-max-xl);
+    width: 100%;
+    min-height: calc(100vh - var(--section-pad-top) - var(--section-pad-bottom));
+    margin: 0 auto;
+    padding: 0 var(--section-inline-pad);
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section--cohesive .about-container::before {
+    display: none;
+}
+
+.about-section--cohesive .about-card {
+    min-height: auto;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+    overflow: visible;
+    gap: 1.3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.about-section--cohesive .about-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.about-section--cohesive .about-card::before,
+.about-section--cohesive .about-card::after {
+    display: none;
+}
+
+.about-section--cohesive .about-content {
+    padding: 0.75rem 0.2rem 0.75rem !important;
+    gap: 1.05rem;
+    flex: 1;
+}
+
+.about-section--cohesive .about-heading {
+    padding-top: var(--section-title-top-offset);
+    margin-bottom: 0.75rem;
+}
+
+.about-section--cohesive .about-photo-wrap {
+    min-height: auto;
+    padding: 0.4rem 0.6rem;
+    border-right: none;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    flex: 0 0 34%;
+    max-width: 360px;
+}
+
+.about-section--cohesive .about-photo-wrap::before,
+.about-section--cohesive .about-photo-wrap::after {
+    display: none;
+}
+
+.about-section--cohesive .about-subtitle {
+    margin-top: 0.35rem !important;
+    max-width: 62ch;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(186, 230, 253, 0.82);
+}
+
+.about-section--cohesive .about-section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.62rem;
+}
+
+.about-section--cohesive .about-section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #38bdf8, #22d3ee);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+.about-section--cohesive #about-title {
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+}
+
+.about-section--cohesive #about-description {
+    max-width: 70ch;
+}
+
+@media (max-width: 991px) {
+    .about-section--cohesive {
+        min-height: auto;
+        padding: var(--section-pad-top) 0 var(--section-pad-bottom);
+    }
+
+    .about-section--cohesive .about-container {
+        min-height: 0;
+        align-items: stretch;
+        padding: 0 var(--section-inline-pad-md);
+    }
+
+    .about-section--cohesive .about-content {
+        padding: 0.2rem 0 !important;
+    }
+
+    .about-section--cohesive .about-photo-wrap {
+        margin-bottom: 0.5rem;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-section--cohesive .about-card {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-section--cohesive .about-container {
+        padding: 0 var(--section-inline-pad-sm);
+    }
+
+    .about-section--cohesive .about-card {
+        gap: 0.9rem;
+    }
+}

@@ -2,11 +2,11 @@
 
 .projects-section {
     width: 100%;
-    padding: 6rem 0 7rem;
+    padding: var(--section-pad-top) 0 var(--section-pad-bottom);
     background: linear-gradient(160deg, rgba(7, 19, 33, 0.97), rgba(12, 28, 48, 0.95));
     border-bottom: 1px solid rgba(125, 211, 252, 0.18);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .projects-section::before {
@@ -23,7 +23,8 @@
 /* En-tete */
 .projects-header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    padding-top: var(--section-title-top-offset);
+    margin-bottom: var(--section-heading-gap);
 }
 
 .projects-eyebrow {
@@ -68,13 +69,29 @@
     color: rgba(186, 230, 253, 0.78);
 }
 
+.projects-shell {
+    max-width: var(--content-max-xl);
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid rgba(125, 211, 252, 0.14);
+    background: rgba(6, 18, 31, 0.46);
+    overflow: visible;
+}
+
 .projects-filters {
-    max-width: 1100px;
-    margin: 0 auto 1.4rem;
-    padding: 0 2rem;
+    margin: 0 0 1.1rem;
+    padding: 0.85rem 1.5rem 0.9rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     gap: 0.9rem;
+    position: sticky;
+    top: var(--nav-sticky-offset);
+    z-index: 6;
+    background: rgba(7, 19, 33, 0.78);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.14);
+    backdrop-filter: blur(8px);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .projects-filter-field {
@@ -111,9 +128,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.8rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 /* Carte */
@@ -306,9 +321,8 @@
 }
 
 .projects-actions {
-    max-width: 1100px;
     margin: 1.8rem auto 0;
-    padding: 0 2rem;
+    padding: 0 1.5rem 1.3rem;
     text-align: center;
 }
 
@@ -336,10 +350,11 @@
 
 /* Responsive */
 @media (max-width: 640px) {
-    .projects-section { padding: 4rem 0 5rem; }
-    .projects-filters { grid-template-columns: 1fr; padding: 0 1rem; }
+    .projects-section { padding: var(--section-pad-top-mobile) 0 var(--section-pad-bottom-mobile); }
+    .projects-shell { margin: 0 1rem; }
+    .projects-filters { grid-template-columns: 1fr; padding: 0.65rem 1rem 0.75rem; position: static; }
     .projects-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: 1.2rem; }
-    .projects-actions { padding: 0 1rem; }
+    .projects-actions { padding: 0 1rem 1rem; }
     .project-card-img,
     .project-card-img-wrapper a { height: 145px; }
 }

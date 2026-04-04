@@ -2,6 +2,22 @@ html {
     height: 100%;
 }
 
+:root {
+    --section-pad-top: 6rem;
+    --section-pad-bottom: 7rem;
+    --section-pad-top-mobile: 4rem;
+    --section-pad-bottom-mobile: 5rem;
+    --section-heading-gap: 2.6rem;
+    --section-inline-pad: 2rem;
+    --section-inline-pad-md: 1.2rem;
+    --section-inline-pad-sm: 1rem;
+    --content-max-xl: 1100px;
+    --content-max-lg: 980px;
+    --nav-sticky-offset: 72px;
+    --section-block-gap: 2.6rem;
+    --section-title-top-offset: 0.4rem;
+}
+
 body {
     min-height: 100%;
     overflow-x: hidden;
@@ -162,6 +178,10 @@ h5 {
 
 /* Responsive design */
 @media(max-width: 768px) {
+
+    :root {
+        --nav-sticky-offset: 68px;
+    }
 
     .logo {
         max-width: calc(100% - 130px);

@@ -2,7 +2,7 @@
 
 .contact-section {
     width: 100%;
-    padding: 6rem 0 7rem;
+    padding: var(--section-pad-top) 0 var(--section-pad-bottom);
     background: linear-gradient(150deg, rgba(6, 17, 30, 0.98), rgba(9, 24, 41, 0.96));
     border-bottom: 1px solid rgba(125, 211, 252, 0.18);
     position: relative;
@@ -21,7 +21,7 @@
 }
 
 .contact-wrap {
-    max-width: 980px;
+    max-width: var(--content-max-lg);
     margin: 0 auto;
     padding: 0 1.25rem;
     position: relative;
@@ -30,7 +30,8 @@
 
 .contact-header {
     text-align: center;
-    margin-bottom: 2.2rem;
+    padding-top: var(--section-title-top-offset);
+    margin-bottom: var(--section-heading-gap);
 }
 
 .contact-eyebrow {
@@ -176,7 +177,7 @@
 
 @media (max-width: 740px) {
     .contact-section {
-        padding: 4rem 0 5rem;
+        padding: var(--section-pad-top-mobile) 0 var(--section-pad-bottom-mobile);
     }
 
     .contact-form {
