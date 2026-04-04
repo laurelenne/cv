@@ -1,0 +1,173 @@
+[
+    {
+        "id": "evolution",
+        "title": "Evolution",
+        "year": 2019,
+        "type": "Jeu",
+        "eyebrow": "Etude de cas",
+        "lead": "Projet de jeu clicker realise en groupe avec logique de progression, gestion de ressources et organisation collaborative.",
+        "objectif": "Concevoir un jeu de type clicker avec une boucle de progression claire, une difficulte croissante et une experience fluide pour le joueur.",
+        "tech": ["Java", "POO", "Travail en equipe"],
+        "travailRealise": [
+            "Participation a l'architecture des classes et a la logique metier.",
+            "Mise en place de mecaniques d'evolution et de progression.",
+            "Coordination en equipe sur le decoupage et l'integration."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu du projet Evolution",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "risk-jules-verne",
+        "title": "Risk Jules Verne",
+        "year": 2019,
+        "type": "Jeu",
+        "eyebrow": "Etude de cas",
+        "lead": "Adaptation du jeu Risk dans un univers Jules Verne, avec une logique de jeu tour par tour et une realisation collective.",
+        "objectif": "Adapter les regles de Risk dans un environnement thematique Jules Verne en proposant une experience ludique coherente.",
+        "tech": ["Java", "Swing", "Algorithmique", "Travail en equipe"],
+        "travailRealise": [
+            "Contribution aux regles de conquete et de resolution des combats.",
+            "Implementation de composants d'interface en Java Swing.",
+            "Synchronisation du travail d'equipe sur les fonctionnalites principales."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu du projet Risk Jules Verne",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "restaurant-x",
+        "title": "Site vitrine - Restaurant X",
+        "year": 2025,
+        "type": "Site vitrine",
+        "eyebrow": "Etude de cas",
+        "lead": "Presentation detaillee du projet avec les objectifs, les technologies utilisees et les livrables realises.",
+        "objectif": "Creer un site vitrine moderne sous WordPress pour mettre en avant l'identite du restaurant, le menu et les informations pratiques.",
+        "tech": ["WordPress", "Elementor", "CSS personnalise"],
+        "travailRealise": [
+            "Integration complete des pages du site.",
+            "Personnalisation du theme selon la charte du client.",
+            "Optimisation mobile pour une navigation fluide."
+        ],
+        "apercu": "public/assets/images/integrations-bg.png",
+        "apercu_alt": "Apercu du projet Site vitrine Restaurant X",
+        "demo": null,
+        "github": "https://github.com/laurelenne"
+    },
+    {
+        "id": "portail-integrations",
+        "title": "Portail Intégrations",
+        "year": 2024,
+        "type": "Frontend",
+        "eyebrow": "Etude de cas",
+        "lead": "Recueil de projets d'intégration web réalisés en formation : mises en page responsives et composants UI variés.",
+        "objectif": "Regrouper et présenter les exercices d'intégration HTML/CSS réalisés pendant la formation, accessibles en ligne.",
+        "tech": ["HTML", "CSS", "Bootstrap", "Responsive"],
+        "travailRealise": [
+            "Intégration de plusieurs mises en page desktop et mobile.",
+            "Création de composants UI réutilisables en Bootstrap.",
+            "Publication sur GitHub Pages."
+        ],
+        "apercu": "public/assets/images/integrations-bg.png",
+        "apercu_alt": "Apercu du Portail Intégrations",
+        "demo": null,
+        "github": "https://github.com/laurelenne/integrations"
+    },
+    {
+        "id": "api-todo",
+        "title": "API REST – Gestion de tâches",
+        "year": 2025,
+        "type": "API",
+        "eyebrow": "Etude de cas",
+        "lead": "API REST CRUD complète pour gérer des tâches, avec authentification et gestion des rôles utilisateurs.",
+        "objectif": "Concevoir une API REST robuste avec Spring Boot permettant de créer, lire, modifier et supprimer des tâches.",
+        "tech": ["Java", "Spring Boot", "REST API", "PostgreSQL", "Spring Security"],
+        "travailRealise": [
+            "Mise en place des endpoints CRUD avec validation des données.",
+            "Authentification par token et gestion des rôles (admin/user).",
+            "Tests des routes via Postman."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu de l'API REST Gestion de tâches",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "blog-spring",
+        "title": "Application Blog",
+        "year": 2024,
+        "type": "Application web",
+        "eyebrow": "Etude de cas",
+        "lead": "Application web de blog avec interface d'administration, gestion des articles et des commentaires.",
+        "objectif": "Développer une application blog fullstack avec Spring MVC côté serveur et rendu HTML via Thymeleaf.",
+        "tech": ["Java", "Spring MVC", "Thymeleaf", "MySQL", "Hibernate"],
+        "travailRealise": [
+            "Modélisation de la base de données et des entités JPA.",
+            "Interface d'administration pour créer et gérer les articles.",
+            "Gestion des commentaires et pagination des résultats."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu de l'application Blog",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "dashboard-meteo",
+        "title": "Dashboard Météo",
+        "year": 2024,
+        "type": "Dashboard",
+        "eyebrow": "Etude de cas",
+        "lead": "Interface dynamique de visualisation météo consommant une API publique avec affichage responsive.",
+        "objectif": "Consommer une API météo tierce et afficher les données de façon claire et adaptée à tous les écrans.",
+        "tech": ["JavaScript", "Fetch API", "HTML", "CSS", "JSON"],
+        "travailRealise": [
+            "Appels asynchrones à une API publique (OpenWeatherMap).",
+            "Affichage dynamique des données sans rechargement de page.",
+            "Interface responsive adaptée mobile/desktop."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu du Dashboard Météo",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "mini-ecommerce",
+        "title": "Mini E-commerce",
+        "year": 2025,
+        "type": "Application web",
+        "eyebrow": "Etude de cas",
+        "lead": "Application e-commerce simplifiée avec catalogue produits, panier et gestion des commandes.",
+        "objectif": "Mettre en pratique les patterns Spring Boot, Hibernate/JPA et la gestion de sessions sur un cas concret.",
+        "tech": ["Java", "Spring Boot", "Hibernate / JPA", "SQL", "Bootstrap"],
+        "travailRealise": [
+            "Modélisation du catalogue produits et des commandes.",
+            "Gestion du panier en session avec calcul du total.",
+            "Interface utilisateur responsive avec Bootstrap."
+        ],
+        "apercu": "public/assets/images/lp-logo.png",
+        "apercu_alt": "Apercu du Mini E-commerce",
+        "demo": null,
+        "github": null
+    },
+    {
+        "id": "cv-portfolio",
+        "title": "CV Portfolio",
+        "year": 2026,
+        "type": "Portfolio",
+        "eyebrow": "Etude de cas",
+        "lead": "Ce portfolio lui-même : site CV animé, responsive, sans framework JS, déployé sur GitHub Pages.",
+        "objectif": "Concevoir un CV en ligne moderne qui reflète mes compétences front-end et ma rigueur de développement.",
+        "tech": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+        "travailRealise": [
+            "Architecture modulaire CSS (base, sections, utilities).",
+            "Animations JS (hero rotatif, canvas, timeline au scroll).",
+            "Données externalisées en JSON pour projets et parcours."
+        ],
+        "apercu": "public/assets/images/bg-site.png",
+        "apercu_alt": "Apercu du CV Portfolio",
+        "demo": "https://laurelenne.github.io/cv/",
+        "github": "https://github.com/laurelenne/cv"
+    }
+]

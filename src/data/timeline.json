@@ -1,0 +1,47 @@
+[
+    {
+        "icon": "fa fa-laptop",
+        "tag": "Formation",
+        "tagType": "formation",
+        "date": "En cours",
+        "title": "Développeuse Web Java",
+        "desc": "Titre professionnel de niveau III (Bac +2) : Développeur·se Web et Web Mobile.",
+        "chips": []
+    },
+    {
+        "icon": "fa fa-code",
+        "tag": "Formation",
+        "tagType": "formation",
+        "date": "Juillet 2019",
+        "title": "Formation Développeur Web Java",
+        "desc": "Formation complète préparant au TP Développeur Web et Web Mobile : maquettage, interfaces statiques et dynamiques, bases de données, composants back-end et projet n-tiers.",
+        "chips": ["Frontend", "Backend", "Base de données", "Projet n-tiers"]
+    },
+    {
+        "icon": "fa fa-briefcase",
+        "tag": "Projet",
+        "tagType": "projet",
+        "date": "Mai 2019",
+        "title": "Projet Pro Numérique",
+        "desc": "Formation d'insertion professionnelle vers les métiers du Numérique pour les demandeurs d'emploi souhaitant se qualifier dans le secteur.",
+        "chips": []
+    },
+    {
+        "icon": "fa fa-graduation-cap",
+        "tag": "Diplôme",
+        "tagType": "diplome",
+        "date": "2014",
+        "title": "Bac Pro — Services de Proximité et de Vie Locale",
+        "desc": "Diplôme orienté aide sociale et maintien du lien social, travail avec tout public en centres d'action sociale, associations et foyers.",
+        "chips": []
+    },
+    {
+        "icon": "fa fa-users",
+        "tag": "Diplôme",
+        "tagType": "diplome",
+        "date": "2013",
+        "title": "CAP Agent de Prévention et de Médiation",
+        "desc": "Diplôme de médiation en espaces publics et privés, en lien avec les partenaires locaux pour le maintien du lien social et la sécurité des personnes.",
+        "chips": []
+    }
+]

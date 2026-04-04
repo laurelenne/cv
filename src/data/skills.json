@@ -1,0 +1,104 @@
+[
+    {
+        "domain": "frontend",
+        "title": "Frontend",
+        "icon": "fa fa-desktop",
+        "description": "Creation d'interfaces accessibles, responsives et performantes.",
+        "proof": [
+            "Interfaces responsive desktop/mobile livrees sur projets.",
+            "Formulaires valides et ergonomiques avec retours utilisateur.",
+            "Composants dynamiques en JavaScript et React."
+        ],
+        "skills": [
+            { "key": "html", "name": "HTML", "icon": "fab fa-html5", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "css", "name": "CSS", "icon": "fab fa-css3-alt", "level": "mastery", "featured": false, "methodo": false },
+            { "key": "bootstrap", "name": "Bootstrap", "icon": "fab fa-bootstrap", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "javascript", "name": "JavaScript", "icon": "fab fa-js-square", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "react", "name": "React", "icon": "fab fa-react", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "vue", "name": "Vue.js", "icon": "fab fa-vuejs", "level": "notions", "featured": false, "methodo": false },
+            { "key": "sass", "name": "SCSS / Sass", "icon": "fab fa-sass", "level": "notions", "featured": false, "methodo": false },
+            { "key": "typescript", "name": "TypeScript", "icon": "fas fa-code", "level": "notions", "featured": false, "methodo": false },
+            { "key": "jquery", "name": "jQuery", "icon": "fas fa-code", "level": "notions", "featured": false, "methodo": false },
+            { "key": "accessibilite", "name": "Accessibilite web", "icon": "fas fa-universal-access", "level": "notions", "featured": false, "methodo": false },
+            { "key": "responsive", "name": "Responsive design", "icon": "fas fa-mobile-alt", "level": "notions", "featured": false, "methodo": false },
+            { "key": "form-validation", "name": "Validation de formulaires", "icon": "fas fa-check-circle", "level": "notions", "featured": false, "methodo": false },
+            { "key": "json", "name": "JSON", "icon": "fas fa-file-code", "level": "intermediate", "featured": false, "methodo": false }
+        ]
+    },
+    {
+        "domain": "backend",
+        "title": "Backend",
+        "icon": "fa fa-server",
+        "description": "Developpement de logique metier et services cote serveur.",
+        "proof": [
+            "API REST CRUD developpees avec Spring Boot.",
+            "Auth securisee et gestion des roles avec Spring Security.",
+            "Gestion d'erreurs et structuration MVC cote serveur."
+        ],
+        "skills": [
+            { "key": "java", "name": "Java", "icon": "fab fa-java", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "spring", "name": "Spring Boot", "icon": "fas fa-leaf", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "rest", "name": "REST API", "icon": "fas fa-plug", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "hibernate", "name": "Hibernate / JPA", "icon": "fas fa-layer-group", "level": "notions", "featured": false, "methodo": false },
+            { "key": "junit", "name": "JUnit", "icon": "fas fa-vial", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "spring-security", "name": "Spring Security", "icon": "fas fa-shield-alt", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "spring-mvc", "name": "Spring MVC", "icon": "fas fa-sitemap", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "mvc", "name": "MVC", "icon": "fas fa-layer-group", "level": "notions", "featured": false, "methodo": false },
+            { "key": "http", "name": "Methodes HTTP", "icon": "fas fa-exchange-alt", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "error-handling", "name": "Gestion des erreurs", "icon": "fas fa-bug", "level": "notions", "featured": false, "methodo": false },
+            { "key": "poo", "name": "POO", "icon": "fas fa-cubes", "level": "notions", "featured": false, "methodo": false }
+        ]
+    },
+    {
+        "domain": "bdd",
+        "title": "Bases de donnees",
+        "icon": "fa fa-database",
+        "description": "Conception de schemas, requetes et optimisation des donnees.",
+        "proof": [
+            "Schemas relationnels modelises avec Merise/UML.",
+            "Requetes SQL pour extraction, jointures et filtres avances.",
+            "Administration et verification de jeux de donnees en environnement projet."
+        ],
+        "skills": [
+            { "key": "postgresql", "name": "PostgreSQL", "icon": "fas fa-database", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "mysql", "name": "MySQL", "icon": "fas fa-server", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "sql", "name": "SQL", "icon": "fas fa-table", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "merise", "name": "Merise / MCD", "icon": "fas fa-project-diagram", "level": "notions", "featured": false, "methodo": true },
+            { "key": "phpmyadmin", "name": "phpMyAdmin", "icon": "fab fa-php", "level": "notions", "featured": false, "methodo": false },
+            { "key": "uml", "name": "UML", "icon": "fas fa-sitemap", "level": "notions", "featured": false, "methodo": true },
+            { "key": "drawio", "name": "Draw.io / Diagrams", "icon": "fas fa-draw-polygon", "level": "notions", "featured": false, "methodo": true }
+        ]
+    },
+    {
+        "domain": "outils",
+        "title": "Outils et environnement",
+        "icon": "fa fa-wrench",
+        "description": "Workflow, collaboration et environnement de developpement quotidien.",
+        "proof": [
+            "Suivi de sprint et priorisation des taches en mode Scrum.",
+            "Versionning Git/GitHub avec collaboration equipe.",
+            "Tests et debogage avec Postman et Chrome DevTools."
+        ],
+        "skills": [
+            { "key": "eclipse", "name": "Eclipse", "icon": "fas fa-code", "level": "notions", "featured": false, "methodo": false },
+            { "key": "vscode", "name": "VS Code", "icon": "fas fa-terminal", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "brackets", "name": "Brackets", "icon": "fa fa-code", "level": "notions", "featured": false, "methodo": false },
+            { "key": "git", "name": "Git", "icon": "fab fa-git-alt", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "trello", "name": "Trello", "icon": "fab fa-trello", "level": "notions", "featured": false, "methodo": true },
+            { "key": "agile", "name": "Agile", "icon": "fa fa-users", "level": "notions", "featured": false, "methodo": true },
+            { "key": "github", "name": "GitHub", "icon": "fab fa-github", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "figma", "name": "Figma", "icon": "fab fa-figma", "level": "notions", "featured": false, "methodo": false },
+            { "key": "postman", "name": "Postman", "icon": "fas fa-paper-plane", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "npm", "name": "npm / Node.js", "icon": "fab fa-node-js", "level": "notions", "featured": false, "methodo": false },
+            { "key": "jira", "name": "Jira", "icon": "fab fa-jira", "level": "notions", "featured": false, "methodo": true },
+            { "key": "markdown", "name": "Markdown", "icon": "fab fa-markdown", "level": "notions", "featured": false, "methodo": true },
+            { "key": "notion", "name": "Notion", "icon": "fas fa-book", "level": "notions", "featured": false, "methodo": true },
+            { "key": "slack", "name": "Slack", "icon": "fab fa-slack", "level": "notions", "featured": false, "methodo": false },
+            { "key": "adobe-xd", "name": "Adobe XD", "icon": "fa fa-pencil-square-o", "level": "notions", "featured": false, "methodo": false },
+            { "key": "canva", "name": "Canva", "icon": "fas fa-palette", "level": "notions", "featured": false, "methodo": false },
+            { "key": "ia", "name": "IA", "icon": "fa fa-lightbulb-o", "level": "notions", "featured": false, "methodo": false },
+            { "key": "scrum", "name": "Scrum", "icon": "fas fa-sync-alt", "level": "mastery", "featured": true, "methodo": true },
+            { "key": "devtools", "name": "Chrome DevTools", "icon": "fab fa-chrome", "level": "notions", "featured": false, "methodo": false }
+        ]
+    }
+]
