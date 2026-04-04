@@ -111,12 +111,13 @@
                               if (target) {
                                     event.preventDefault();
                                     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                    var targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 12);
+                                    var scrollOffset = nav.offsetHeight;
+                                    var targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - scrollOffset);
 
                                     if (reducedMotion) {
                                           window.scrollTo(0, targetY);
                                     } else {
-                                          smoothScrollTo(targetY, 520);
+                                          smoothScrollTo(targetY, 300);
                                     }
 
                                     if (history.pushState) {
