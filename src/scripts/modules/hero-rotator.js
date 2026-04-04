@@ -14,13 +14,6 @@
         var currentIndex = 0;
         var timer = null;
         var intervalMs = 3200;
-        var itemHeight = 0;
-
-        function measureItemHeight() {
-            itemHeight = items[0].offsetHeight || 66;
-            setIndex(currentIndex, false);
-        }
-
         function setActiveDot(index) {
             if (!dotsHost) return;
             var dots = dotsHost.querySelectorAll(".content__dot");
@@ -31,19 +24,25 @@
             });
         }
 
+        function setActiveItem(index, animate) {
+            items.forEach(function (item, i) {
+                if (!animate) {
+                    item.style.transition = "none";
+                } else {
+                    item.style.transition = "opacity 320ms ease, transform 320ms ease";
+                }
+                item.classList.toggle("is-active", i === index);
+                if (!animate) {
+                    window.requestAnimationFrame(function () {
+                        item.style.transition = "opacity 320ms ease, transform 320ms ease";
+                    });
+                }
+            });
+        }
+
         function setIndex(index, animate) {
             currentIndex = (index + items.length) % items.length;
-            if (!animate) {
-                list.style.transition = "none";
-            } else {
-                list.style.transition = "transform 560ms cubic-bezier(0.65, 0, 0.35, 1)";
-            }
-            list.style.transform = "translateY(" + (-currentIndex * itemHeight) + "px)";
-            if (!animate) {
-                window.requestAnimationFrame(function () {
-                    list.style.transition = "transform 560ms cubic-bezier(0.65, 0, 0.35, 1)";
-                });
-            }
+            setActiveItem(currentIndex, animate);
             setActiveDot(currentIndex);
         }
 
@@ -54,9 +53,9 @@
         }
 
         function startAutoplay() {
-            if (reducedMotion || timer) return;
+            if (timer) return;
             timer = setInterval(function () {
-                setIndex(currentIndex + 1, true);
+                setIndex(currentIndex + 1, !reducedMotion);
             }, intervalMs);
         }
 
@@ -71,7 +70,7 @@
                 dot.setAttribute("aria-label", "Message " + (i + 1));
                 dot.setAttribute("aria-selected", "false");
                 dot.addEventListener("click", function () {
-                    setIndex(i, true);
+                    setIndex(i, !reducedMotion);
                     stopAutoplay();
                     startAutoplay();
                 });
@@ -80,7 +79,6 @@
         }
 
         buildDots();
-        measureItemHeight();
         setIndex(0, false);
         startAutoplay();
 
@@ -116,31 +114,9 @@
             }
         }
 
-        root.addEventListener("mouseenter", stopAutoplay);
-        root.addEventListener("mouseleave", startAutoplay);
-        root.addEventListener("focusin", stopAutoplay);
-        root.addEventListener("focusout", startAutoplay);
-
         window.addEventListener("resize", function () {
-            measureItemHeight();
+            setIndex(currentIndex, false);
         });
-
-        window.addEventListener("load", function () {
-            measureItemHeight();
-        });
-
-        if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(function () {
-                measureItemHeight();
-            });
-        }
-
-        if (window.ResizeObserver) {
-            var ro = new ResizeObserver(function () {
-                measureItemHeight();
-            });
-            ro.observe(items[0]);
-        }
     }
 
     if (document.readyState === "loading") {

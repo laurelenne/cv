@@ -1,14 +1,17 @@
 (function () {
       "use strict";
 
+      var MOBILE_NAV_BREAKPOINT = 1140;
+
       function initNavbar() {
             var nav = document.querySelector(".primary-nav");
             var menuButton = document.querySelector(".menu-icon");
-            var menuList = document.querySelector(".primary-nav ul");
-            var menuLinks = document.querySelectorAll(".primary-nav ul li a");
+            var menuContainer = document.querySelector(".menu");
+            var menuList = document.querySelector("#primary-menu");
+            var menuLinks = document.querySelectorAll("#primary-menu li a");
             var ticking = false;
 
-            if (!nav || !menuButton || !menuList) return;
+            if (!nav || !menuButton || !menuList || !menuContainer) return;
 
             var navLinks = Array.prototype.slice.call(menuLinks).filter(function (link) {
                   var href = link.getAttribute("href") || "";
@@ -39,7 +42,7 @@
                   if (!sections.length) return;
 
                   var marker = window.scrollY + nav.offsetHeight + 24;
-                  var current = sections[0].href;
+                  var current = "";
 
                   sections.forEach(function (entry) {
                         if (entry.section.offsetTop <= marker) {
@@ -93,14 +96,51 @@
                   window.requestAnimationFrame(step);
             }
 
+            menuButton.setAttribute("aria-haspopup", "menu");
+            menuList.setAttribute("aria-hidden", "true");
+
+            function isMenuOpen() {
+                  return menuList.classList.contains("showing");
+            }
+
+            function openMenu() {
+                  menuList.classList.add("showing");
+                  menuContainer.classList.add("is-open");
+                  menuList.setAttribute("aria-hidden", "false");
+                  menuButton.setAttribute("aria-expanded", "true");
+                  document.body.classList.add("mobile-menu-open");
+            }
+
             function closeMenu() {
                   menuList.classList.remove("showing");
+                  menuContainer.classList.remove("is-open");
+                  menuList.setAttribute("aria-hidden", "true");
                   menuButton.setAttribute("aria-expanded", "false");
+                  document.body.classList.remove("mobile-menu-open");
             }
 
             menuButton.addEventListener("click", function () {
-                  var isOpen = menuList.classList.toggle("showing");
-                  menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                  if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
+                  if (isMenuOpen()) {
+                        closeMenu();
+                  } else {
+                        openMenu();
+                  }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                  if (event.key === "Escape" && isMenuOpen()) {
+                        closeMenu();
+                        menuButton.focus();
+                  }
+            });
+
+            document.addEventListener("click", function (event) {
+                  if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
+                  if (!isMenuOpen()) return;
+                  if (!nav.contains(event.target)) {
+                        closeMenu();
+                  }
             });
 
             menuLinks.forEach(function (link) {
@@ -128,14 +168,14 @@
                               }
                               setActiveLink(href);
                         }
-                        if (window.innerWidth <= 768) {
+                        if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) {
                               closeMenu();
                         }
                   });
             });
 
             window.addEventListener("resize", function () {
-                  if (window.innerWidth > 768) {
+                  if (window.innerWidth > MOBILE_NAV_BREAKPOINT) {
                         closeMenu();
                   }
                   requestNavUpdate();
@@ -143,6 +183,7 @@
 
             window.addEventListener("scroll", requestNavUpdate, { passive: true });
             window.addEventListener("hashchange", requestNavUpdate);
+            closeMenu();
             requestNavUpdate();
       }
 

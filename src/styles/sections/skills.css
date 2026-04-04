@@ -9,6 +9,11 @@
     position: relative;
 }
 
+.skills-section,
+.skills-section * {
+    box-sizing: border-box;
+}
+
 .skills-section::before {
     content: "";
     position: absolute;
@@ -1149,6 +1154,10 @@
     margin-bottom: 0.4rem;
 }
 
+.skills-grid > * {
+    min-width: 0;
+}
+
 .skills-grid .skill-badge:nth-child(1) { animation-delay: 0.05s; }
 .skills-grid .skill-badge:nth-child(2) { animation-delay: 0.10s; }
 .skills-grid .skill-badge:nth-child(3) { animation-delay: 0.15s; }
@@ -1220,6 +1229,42 @@
 }
 
 @media (max-width: 767px) {
+    .skills-section--cohesive,
+    .skills-section--cohesive .skills-layout,
+    .skills-section--cohesive .skills-col-left,
+    .skills-section--cohesive .skills-col-right,
+    .skills-section--cohesive .skills-col-right-header,
+    .skills-section--cohesive .skills-col-right-scroll,
+    .skills-section--cohesive .skills-filter,
+    .skills-section--cohesive .skills-grid,
+    .positioning-section,
+    .positioning-wrap,
+    .positioning-section .skills-positioning,
+    .positioning-section .skills-positioning-card {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .skills-section--cohesive,
+    .positioning-section {
+        overflow-x: clip;
+    }
+
+    .skills-section--cohesive .skills-meta,
+    .skills-section--cohesive .skills-meta-pill {
+        max-width: 100%;
+    }
+
+    .skills-section--cohesive .skills-meta {
+        row-gap: 0.5rem;
+    }
+
+    .skills-section--cohesive .skills-meta-pill {
+        min-width: 0;
+        white-space: normal;
+    }
+
     .skills-col-right-header {
         padding: 1rem 0.9rem 0.7rem;
     }
@@ -1233,6 +1278,7 @@
     .skills-filter {
         flex-wrap: nowrap;
         overflow-x: auto;
+        max-width: 100%;
         padding-bottom: 0.2rem;
         -webkit-overflow-scrolling: touch;
     }
@@ -1243,7 +1289,12 @@
 
     .skill-badge {
         padding: 1rem;
-        margin: 0.5rem;
+        margin: 0;
+    }
+
+    .skill-badge:hover,
+    .skill-badge:focus-visible {
+        transform: none;
     }
 
     .skill-icon {
@@ -1281,13 +1332,15 @@
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.5rem;
+        width: 100%;
     }
 
     .skill-badge {
+        width: 100%;
         padding: 0.75rem;
-        margin: 0.25rem;
+        margin: 0;
     }
 
     .skill-icon {
@@ -1530,5 +1583,37 @@
 
     .positioning-section {
         padding: var(--section-pad-top-mobile) 0 var(--section-pad-bottom-mobile);
+    }
+
+    .positioning-section .skills-positioning-card {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* ===== Fix overflow mobile — doit rester EN FIN DE FICHIER pour surcharger le bloc cohesive ===== */
+@media (max-width: 767px) {
+    /* Le bloc .skills-section--cohesive déclare overflow:visible après les media queries ci-dessus,
+       ce qui annulait toutes les tentatives précédentes. Ce bloc final rétablit le clip. */
+    .skills-section--cohesive {
+        overflow-x: clip;
+    }
+
+    .skills-section--cohesive .skills-col-left,
+    .skills-section--cohesive .skills-col-right {
+        overflow-x: hidden;
+    }
+
+    /* @media(max-width:991px) réinitialise overflow:visible sur col-right-scroll — on le re-fixe ici */
+    .skills-section--cohesive .skills-col-right-scroll {
+        overflow-x: hidden;
+    }
+
+    .skills-section--cohesive .skills-layout {
+        overflow-x: hidden;
+    }
+
+    .skills-section--cohesive .skills-col-right-header {
+        overflow-x: hidden;
     }
 }
