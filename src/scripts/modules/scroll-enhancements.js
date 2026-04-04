@@ -230,10 +230,68 @@
         mo.observe(main, { childList: true, subtree: true });
     }
 
+    function initBackToTopFab() {
+        var fab = document.getElementById("back-to-top-fab");
+        if (!fab) return;
+
+        var threshold = 300;
+        var ticking = false;
+        var footer = document.querySelector(".site-footer");
+        var footerVisible = false;
+
+        function setVisibility(isVisible) {
+            fab.classList.toggle("is-visible", isVisible);
+            fab.setAttribute("aria-hidden", isVisible ? "false" : "true");
+            fab.tabIndex = isVisible ? 0 : -1;
+        }
+
+        function update() {
+            ticking = false;
+            var scrollTop = window.scrollY || window.pageYOffset || 0;
+            
+            if (footer && !("IntersectionObserver" in window)) {
+                var rect = footer.getBoundingClientRect();
+                footerVisible = rect.top < window.innerHeight;
+            }
+
+            setVisibility(scrollTop > threshold && !footerVisible);
+        }
+
+        function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        }
+
+        fab.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: prefersReducedMotion() ? "auto" : "smooth"
+            });
+        });
+
+        if (footer && "IntersectionObserver" in window) {
+            var footerObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    footerVisible = entry.isIntersecting;
+                });
+                update();
+            }, {
+                threshold: 0.02
+            });
+            footerObserver.observe(footer);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        update();
+    }
+
     function init() {
         initScrollProgress();
         initCinematicWheelScroll();
         initRevealOnScroll();
+        initBackToTopFab();
     }
 
     if (document.readyState === "loading") {

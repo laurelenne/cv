@@ -1,387 +1,576 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript, Java, React, font-end, back-end, Développement, Developpement web, Developpeuse web">
-    <meta name="description" content="Développeuse Web - Laurélenne Poussin">
-    <meta property="og:title" content="Développeuse Web"/>
-    <meta property="og:image" content="//laurelenne.github.io/cv/assets/images/bg-site.png"/>
-    <meta property="og:description" content="Développeuse Web"/>
-    <meta property="og:url" content="//raw.githubusercontent.com/laurelenne/cv/master/assets/images/bg-site.png" />
-    <title>Laurélenne Poussin — Développeuse Web Java / Spring</title>
-    <!-- Link Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/132df433f5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="src/styles/base/style.css">
-    <link href="src/styles/sections/timeline.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/sections/services.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/utilities/form.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link href="src/styles/sections/text-anim.css?v=20260404b" type="text/css" rel="stylesheet">
-    <link href="src/styles/sections/skills.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/sections/about.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/sections/projects.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/sections/contact.css" rel="stylesheet" type="text/css">
-    <link href="src/styles/sections/footer.css" rel="stylesheet" type="text/css">
-</head>
-<body id="top" class="m-0 p-0 cv-page">
-    <!-- En-tete: navigation et hero -->
-    <header class="site-header">
-        <nav class="primary-nav">
-            <a class="logo" href="#top" aria-label="Retour accueil">
-                <span id="text1">Laurelenne Poussin</span><span id="text2"> - Developpeuse Web</span>
-            </a>
-
-            <button class="menu-icon" type="button" aria-label="Ouvrir le menu" aria-controls="primary-menu" aria-expanded="false">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-
-            <div class="menu">
-                <ul id="primary-menu">
-                    <li><a href="#about">Présentation</a></li>
-                    <li><a href="#competences">Competences</a></li>
-                    <li><a href="#positionnement">Positionnement</a></li>
-                    <li><a href="#parcours">Parcours</a></li>
-                    <li><a href="#realisations">Realisations</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="mobile-menu-social" aria-label="Comptes et contact rapide">
-                    <a href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="#contact" aria-label="Aller à la section contact">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <span>Contact</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nav-social" aria-label="Liens sociaux">
-                <a href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <i class="fab fa-github" aria-hidden="true"></i>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta
+            name="keywords"
+            content="HTML, CSS, XML, XHTML, JavaScript, Java, React, font-end, back-end, Développement, Developpement web, Developpeuse web">
+        <meta name="description" content="Développeuse Web - Laurélenne Poussin">
+        <meta property="og:title" content="Développeuse Web"/>
+        <meta
+            property="og:image"
+            content="//laurelenne.github.io/cv/assets/images/bg-site.png"/>
+        <meta property="og:description" content="Développeuse Web"/>
+        <meta
+            property="og:url"
+            content="//raw.githubusercontent.com/laurelenne/cv/master/assets/images/bg-site.png"/>
+        <title>Laurélenne Poussin — Développeuse Web Java / Spring</title>
+        <!-- Link Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/132df433f5.js" crossorigin="anonymous"></script>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="src/styles/base/style.css">
+        <link href="src/styles/sections/timeline.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/sections/services.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/utilities/form.css" rel="stylesheet" type="text/css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap"
+            rel="stylesheet">
+        <link
+            href="src/styles/sections/text-anim.css?v=20260404b"
+            type="text/css"
+            rel="stylesheet">
+        <link href="src/styles/sections/skills.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/sections/about.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/sections/projects.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/sections/contact.css" rel="stylesheet" type="text/css">
+        <link href="src/styles/sections/footer.css" rel="stylesheet" type="text/css">
+    </head>
+    <body id="top" class="m-0 p-0 cv-page">
+        <!-- En-tete: navigation et hero -->
+        <header class="site-header">
+            <nav class="primary-nav">
+                <a class="logo" href="#top" aria-label="Retour accueil">
+                    <span id="text1">Laurelenne Poussin</span>
+                    <span id="text2">
+                        - Developpeuse Web</span>
                 </a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-            </div>
-        </nav>
-        <canvas id="canvas"></canvas>
 
-        <!-- Hero: texte anime des services -->
-        <div id="hero-rotating-text" class="content">
-            <p class="content__kicker">Disponible pour un poste Java / Spring</p>
-            <div class="content__container">
-                <p class="content__container__text">
-                    Développement
-                </p>
-                <ul class="content__container__list">
-                    <li class="content__container__list__item is-active">d'idées en expériences web</li>
-                    <li class="content__container__list__item">d'interfaces qui donnent envie</li>
-                    <li class="content__container__list__item">d'API solides pour aller loin</li>
-                    <li class="content__container__list__item">de produits utiles et vivants</li>
-                </ul>
-            </div>
-            <div class="content__footer">
-                <div class="content__dots" role="tablist" aria-label="Messages du hero"></div>
-                <div class="content__actions">
-                    <a href="#realisations" class="content__cta content__cta--primary">Voir mes realisations</a>
-                    <a href="#contact" class="content__cta content__cta--ghost">Me contacter</a>
-                </div>
-            </div>
-        </div>
-    </header>
+                <button
+                    class="menu-icon"
+                    type="button"
+                    aria-label="Ouvrir le menu"
+                    aria-controls="primary-menu"
+                    aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
 
-    <!-- Contenu principal du CV -->
-    <div id="main-content" class="container-fluid p-lg-4 mb-4 cv-main">
-        <!-- Section: A propos -->
-        <section id="about" class="about-section about-section--cohesive">
-            <div class="about-container">
-                <div class="row m-0 about-card">
-                    <div class="col-lg-4 col-md-5 col-sm-12 p-0 about-photo-wrap">
-                        <img id="profile-photo" src="public/assets/images/lp-logo.png" class="img-fluid about-photo" alt="Logo de Laurelenne Poussin">
-                    </div>
-                    <div class="col-lg-8 col-md-7 col-sm-12 m-0 about-content">
-                        <div class="about-heading">
-                            <p class="about-kicker m-0">Presentation</p>
-                            <h3 class="about-section-title m-0">Qui je suis</h3>
-                            <p class="about-subtitle m-0">Developpeuse web Java orientee backend, avec une base frontend solide pour livrer des experiences completes.</p>
-                        </div>
-                        <p id="about-description" class="m-0">Je suis une developpeuse web curieuse, rigoureuse et orientee solution. J'aime comprendre le besoin reel derriere une demande, transformer une idee en reponse concrete et livrer un resultat propre, lisible et maintenable.<br><br>Au quotidien, je travaille avec un vrai sens du collectif, une communication claire et une attention particuliere a l'experience utilisateur. Je souhaite continuer a m'ameliorer, apprendre de nouvelles technologies et m'adapter efficacement a chaque environnement de travail pour apporter de la valeur des les premiers jours.</p>
-                        <div class="about-impact-grid" aria-label="Points forts">
-                            <article class="about-impact-item">
-                                <i class="fa fa-bolt" aria-hidden="true"></i>
-                                <h5 class="m-0">Adaptation rapide</h5>
-                                <p class="m-0">Integration efficace dans un nouvel environnement technique ou equipe.</p>
-                            </article>
-                            <article class="about-impact-item">
-                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                <h5 class="m-0">Apprentissage continu</h5>
-                                <p class="m-0">Veille active et montee en competence sur de nouvelles technologies.</p>
-                            </article>
-                            <article class="about-impact-item">
-                                <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                <h5 class="m-0">Resultat concret</h5>
-                                <p class="m-0">Focus qualite, lisibilite du code et valeur fonctionnelle livree.</p>
-                            </article>
-                        </div>
-                        <div class="about-traits" aria-label="Traits professionnels">
-                            <span>Curieuse</span>
-                            <span>Rigoureuse</span>
-                            <span>Esprit d'equipe</span>
-                            <span>Orientee solution</span>
-                        </div>
-                        <p class="about-signature m-0">Je conçois des experiences web utiles, claires et durables, avec une logique d'apprentissage continu.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Section: Competences -->
-        <section id="competences" class="skills-section skills-section--cohesive">
-            <div class="skills-layout">
-
-                <!-- COLONNE GAUCHE : intro + positionnement -->
-                <div class="skills-col-left">
-                    <div class="skills-hero">
-                        <p class="skills-eyebrow text-uppercase text-center m-0">Parcours technique</p>
-                        <h3 class="text-center m-0">Compétences</h3>
-                        <p class="skills-intro text-center m-0">Cette liste illustre mon parcours de développeuse : des langages, outils et technologies que j'ai utilisés à différents moments, certains régulièrement, d'autres plus ponctuellement selon les projets.</p>
-                        <div class="skills-meta d-flex flex-wrap justify-content-center gap-2 mt-3">
-                            <span class="skills-meta-pill">
-                                <i class="fa fa-code" aria-hidden="true"></i>
-                                <span class="skills-meta-number" data-target="50">0</span>
-                                <span>technologies</span>
-                            </span>
-                            <span class="skills-meta-pill">
-                                <i class="fa fa-laptop" aria-hidden="true"></i>
-                                <span class="skills-meta-number" data-target="4">0</span>
-                                <span>domaines</span>
-                            </span>
-                            <span class="skills-meta-pill">
-                                <i class="fa fa-database" aria-hidden="true"></i>
-                                <span>parcours polyvalent</span>
-                            </span>
-                        </div>
+                <div class="menu">
+                    <ul id="primary-menu">
+                        <li>
+                            <a href="#about">Présentation</a>
+                        </li>
+                        <li>
+                            <a href="#competences">Competences</a>
+                        </li>
+                        <li>
+                            <a href="#positionnement">Positionnement</a>
+                        </li>
+                        <li>
+                            <a href="#parcours">Parcours</a>
+                        </li>
+                        <li>
+                            <a href="#realisations">Realisations</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="mobile-menu-social" aria-label="Comptes et contact rapide">
+                        <a
+                            href="https://github.com/laurelenne"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#contact" aria-label="Aller à la section contact">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a
+                            href="cv.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="CV en ligne">
+                            <i class="fa fa-file-alt" aria-hidden="true"></i>
+                            <span>CV PDF</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- COLONNE DROITE : filtres + badges -->
-                <div class="skills-col-right">
-                    <div class="skills-col-right-header">
-                        <div class="skills-filter" role="toolbar" aria-label="Filtrer les competences">
-                            <button type="button" class="skills-filter-btn is-active" data-filter="all" aria-pressed="true">Toutes</button>
-                            <button type="button" class="skills-filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
-                            <button type="button" class="skills-filter-btn" data-filter="backend" aria-pressed="false">Backend</button>
-                            <button type="button" class="skills-filter-btn" data-filter="bdd" aria-pressed="false">BDD</button>
-                            <button type="button" class="skills-filter-btn" data-filter="outils" aria-pressed="false">Outils</button>
-                            <button type="button" class="skills-filter-btn" data-filter="methodo" aria-pressed="false">Methodo</button>
-                        </div>
-                    </div>
-
-                    <div class="skills-col-right-scroll" id="skills-categories-scroll">
-                        <!-- Categories et competences generees dynamiquement depuis src/data/skills.json -->
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section id="positionnement" class="positioning-section">
-            <div class="positioning-header">
-                <p class="positioning-eyebrow text-uppercase">Positionnement</p>
-                <h3 class="positioning-heading">Cible & usage</h3>
-                <p class="positioning-subtitle">Repere rapide sur mon axe technique et l'usage reel des outils en contexte projet.</p>
-            </div>
-
-            <div class="positioning-wrap" aria-label="Positionnement technique">
-                <div class="skills-positioning">
-                    <div class="skills-positioning-card">
-                        <h5>Positionnement cible</h5>
-                        <p>Profil orienté developpement Java/Spring avec une base frontend solide pour livrer des applications web completes.</p>
-                        <div class="skills-focus-chips">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>REST API</span>
-                            <span>SQL</span>
-                            <span>Git</span>
-                            <span>Scrum</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                    <div class="skills-positioning-card">
-                        <h5>Usage reel</h5>
-                        <div class="skills-usage-group">
-                            <span class="skills-usage-label">Utilise regulierement</span>
-                            <p>Java, Spring Boot, SQL, Git, HTML/CSS, JavaScript</p>
-                        </div>
-                        <div class="skills-usage-group">
-                            <span class="skills-usage-label">Deja pratique en projet</span>
-                            <p>Spring Security, React, Jira, Postman, UML, Draw.io</p>
-                        </div>
-                        <div class="skills-usage-group">
-                            <span class="skills-usage-label">En progression</span>
-                            <p>TypeScript, Hibernate/JPA, Accessibilite web</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Parcours -->
-        <section id="parcours" class="timeline-section">
-            <div class="timeline-section-header">
-                <p class="timeline-eyebrow text-uppercase">Parcours</p>
-                <h3 class="timeline-heading">Formation &amp; Dipl&#244;mes</h3>
-            </div>
-
-            <div class="timeline-container">
-                <div class="timeline-track" aria-hidden="true"></div>
-                <!-- Items generes dynamiquement depuis src/data/timeline.json -->
-            </div>
-        </section>
-
-        <!-- Section: Realisations -->
-        <section id="realisations" class="projects-section">
-            <div class="projects-header">
-                <p class="projects-eyebrow text-uppercase">Portfolio</p>
-                <h3 class="projects-heading">Réalisations</h3>
-                <p class="projects-intro">Selection de projets classes du plus recent au plus ancien, avec filtres par techno et type de projet.</p>
-            </div>
-
-            <div class="projects-shell">
-                <div class="projects-filters" aria-label="Filtrer les projets">
-                    <div class="projects-filter-field">
-                        <label for="projects-tech-filter">Techno</label>
-                        <select id="projects-tech-filter" name="projects-tech-filter">
-                            <option value="">Toutes les technos</option>
-                        </select>
-                    </div>
-                    <div class="projects-filter-field">
-                        <label for="projects-type-filter">Type de projet</label>
-                        <select id="projects-type-filter" name="projects-type-filter">
-                            <option value="">Tous les types</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="projects-grid">
-                    <!-- Cartes generees dynamiquement depuis src/data/projects.json -->
-                </div>
-
-                <div class="projects-actions">
-                    <button type="button" id="projects-see-more" class="projects-see-more">Voir plus</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Contact -->
-        <section id="contact" class="contact-section">
-            <div class="contact-wrap">
-                <div class="contact-header">
-                    <p class="contact-eyebrow text-uppercase">Disponibilite</p>
-                    <h3 class="contact-heading">Contact</h3>
-                    <p class="contact-subtitle">Vous pouvez m'envoyer un message directement depuis ce formulaire pour parler opportunites, mission ou collaboration.</p>
-                </div>
-
-                <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/poussin.laurelenne@gmail.com" method="POST" novalidate>
-                    <input type="hidden" name="_subject" value="Nouveau message depuis le CV">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <label class="visually-hidden" for="contact-company">Entreprise (ne pas remplir)</label>
-                    <input class="visually-hidden" type="text" id="contact-company" name="_honey" tabindex="-1" autocomplete="off">
-
-                    <div class="contact-grid">
-                        <div class="contact-field">
-                            <label class="contact-label" for="contact-name">Nom</label>
-                            <input class="contact-input" type="text" id="contact-name" name="name" required maxlength="80" placeholder="Votre nom">
-                        </div>
-
-                        <div class="contact-field">
-                            <label class="contact-label" for="contact-email">Email</label>
-                            <input class="contact-input" type="email" id="contact-email" name="email" required maxlength="120" placeholder="vous@exemple.com">
-                        </div>
-
-                        <div class="contact-field contact-field--full">
-                            <label class="contact-label" for="contact-subject">Sujet</label>
-                            <input class="contact-input" type="text" id="contact-subject" name="subject" required maxlength="120" placeholder="Objet de votre message">
-                        </div>
-
-                        <div class="contact-field contact-field--full">
-                            <label class="contact-label" for="contact-message">Message</label>
-                            <textarea class="contact-textarea" id="contact-message" name="message" required minlength="15" maxlength="3000" placeholder="Votre message"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="contact-actions">
-                        <button class="contact-submit" type="submit">Envoyer</button>
-                        <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </div>
-
-    <!-- Pied de page -->
-    <footer class="site-footer">
-        <div class="footer-wrap">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <p class="footer-name">Laurelenne Poussin</p>
-                    <p class="footer-availability">Disponible pour de nouvelles opportunites</p>
-                    <a class="footer-email" href="mailto:poussin.laurelenne@gmail.com" aria-label="Envoyer un email">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        poussin.laurelenne@gmail.com
-                    </a>
-                </div>
-
-                <div class="footer-right">
-                    <a class="footer-social" href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <div class="nav-social" aria-label="Liens sociaux">
+                    <a
+                        href="https://github.com/laurelenne"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub">
                         <i class="fab fa-github" aria-hidden="true"></i>
                     </a>
-                    <a class="footer-social" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
-                    <a class="footer-top-link" href="#top">Retour en haut</a>
+                    <a
+                        href="cv.html"
+                        class="nav-cv-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="CV en ligne"
+                        data-tooltip="Voir le CV">
+                        <i class="fa fa-file-alt" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </nav>
+            <canvas id="canvas"></canvas>
+
+            <!-- Hero: texte anime des services -->
+            <div id="hero-rotating-text" class="content">
+                <p class="content__kicker">Disponible pour un poste Java / Spring</p>
+                <div class="content__container">
+                    <p class="content__container__text">
+                        Développement
+                    </p>
+                    <ul class="content__container__list">
+                        <li class="content__container__list__item is-active">d'idées en expériences web</li>
+                        <li class="content__container__list__item">d'interfaces qui donnent envie</li>
+                        <li class="content__container__list__item">d'API solides pour aller loin</li>
+                        <li class="content__container__list__item">de produits utiles et vivants</li>
+                    </ul>
+                </div>
+                <div class="content__footer">
+                    <div class="content__dots" role="tablist" aria-label="Messages du hero"></div>
+                    <div class="content__actions">
+                        <a href="#realisations" class="content__cta content__cta--primary">Voir mes realisations</a>
+                        <a href="#contact" class="content__cta content__cta--ghost">Me contacter</a>
+                        <a
+                            href="cv.html"
+                            class="content__cta content__cta--cv"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Voir le CV en ligne"
+                            data-tooltip="Voir le CV">
+                            <i class="fa fa-file-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <div class="footer-divider" aria-hidden="true"></div>
+        <!-- Contenu principal du CV -->
+        <div id="main-content" class="container-fluid p-lg-4 mb-4 cv-main">
+            <!-- Section: A propos -->
+            <section id="about" class="about-section about-section--cohesive">
+                <div class="about-container">
+                    <div class="row m-0 about-card">
+                        <div class="col-lg-4 col-md-5 col-sm-12 p-0 about-photo-wrap">
+                            <img
+                                id="profile-photo"
+                                src="public/assets/images/lp-logo.png"
+                                class="img-fluid about-photo"
+                                alt="Logo de Laurelenne Poussin">
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-sm-12 m-0 about-content">
+                            <div class="about-heading">
+                                <p class="about-kicker m-0">Presentation</p>
+                                <h3 class="about-section-title m-0">Qui je suis</h3>
+                                <p class="about-subtitle m-0">Developpeuse web Java orientee backend, avec une
+                                    base frontend solide pour livrer des experiences completes.</p>
+                            </div>
+                            <p id="about-description" class="m-0">Je suis une developpeuse web curieuse,
+                                rigoureuse et orientee solution. J'aime comprendre le besoin reel derriere une
+                                demande, transformer une idee en reponse concrete et livrer un resultat propre,
+                                lisible et maintenable.<br><br>Au
+                                quotidien, je travaille avec un vrai sens du collectif, une communication claire
+                                et une attention particuliere a l'experience utilisateur. Je souhaite continuer
+                                a m'ameliorer, apprendre de nouvelles technologies et m'adapter efficacement a
+                                chaque environnement de travail pour apporter de la valeur des les premiers
+                                jours.</p>
+                            <div class="about-impact-grid" aria-label="Points forts">
+                                <article class="about-impact-item">
+                                    <i class="fa fa-bolt" aria-hidden="true"></i>
+                                    <h5 class="m-0">Adaptation rapide</h5>
+                                    <p class="m-0">Integration efficace dans un nouvel environnement technique ou equipe.</p>
+                                </article>
+                                <article class="about-impact-item">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                    <h5 class="m-0">Apprentissage continu</h5>
+                                    <p class="m-0">Veille active et montee en competence sur de nouvelles technologies.</p>
+                                </article>
+                                <article class="about-impact-item">
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    <h5 class="m-0">Resultat concret</h5>
+                                    <p class="m-0">Focus qualite, lisibilite du code et valeur fonctionnelle livree.</p>
+                                </article>
+                            </div>
+                            <div class="about-traits" aria-label="Traits professionnels">
+                                <span>Curieuse</span>
+                                <span>Rigoureuse</span>
+                                <span>Esprit d'equipe</span>
+                                <span>Orientee solution</span>
+                            </div>
+                            <p class="about-signature m-0">Je conçois des experiences web utiles, claires et
+                                durables, avec une logique d'apprentissage continu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Competences -->
+            <section id="competences" class="skills-section skills-section--cohesive">
+                <div class="skills-layout">
 
-            <div class="footer-bottom">
-                <p class="footer-copy">2026 © Laurelenne Poussin</p>
-                <p class="footer-note">Portfolio developpeuse web Java</p>
-            </div>
+                    <!-- COLONNE GAUCHE : intro + positionnement -->
+                    <div class="skills-col-left">
+                        <div class="skills-hero">
+                            <p class="skills-eyebrow text-uppercase text-center m-0">Parcours technique</p>
+                            <h3 class="text-center m-0">Compétences</h3>
+                            <p class="skills-intro text-center m-0">Cette liste illustre mon parcours de
+                                développeuse : des langages, outils et technologies que j'ai utilisés à
+                                différents moments, certains régulièrement, d'autres plus ponctuellement selon
+                                les projets.</p>
+                            <div class="skills-meta d-flex flex-wrap justify-content-center gap-2 mt-3">
+                                <span class="skills-meta-pill">
+                                    <i class="fa fa-code" aria-hidden="true"></i>
+                                    <span class="skills-meta-number" data-target="50">0</span>
+                                    <span>technologies</span>
+                                </span>
+                                <span class="skills-meta-pill">
+                                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                                    <span class="skills-meta-number" data-target="4">0</span>
+                                    <span>domaines</span>
+                                </span>
+                                <span class="skills-meta-pill">
+                                    <i class="fa fa-database" aria-hidden="true"></i>
+                                    <span>parcours polyvalent</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLONNE DROITE : filtres + badges -->
+                    <div class="skills-col-right">
+                        <div class="skills-col-right-header">
+                            <div class="skills-filter" role="toolbar" aria-label="Filtrer les competences">
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn is-active"
+                                    data-filter="all"
+                                    aria-pressed="true">Toutes</button>
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn"
+                                    data-filter="frontend"
+                                    aria-pressed="false">Frontend</button>
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn"
+                                    data-filter="backend"
+                                    aria-pressed="false">Backend</button>
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn"
+                                    data-filter="bdd"
+                                    aria-pressed="false">BDD</button>
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn"
+                                    data-filter="outils"
+                                    aria-pressed="false">Outils</button>
+                                <button
+                                    type="button"
+                                    class="skills-filter-btn"
+                                    data-filter="methodo"
+                                    aria-pressed="false">Methodo</button>
+                            </div>
+                        </div>
+
+                        <div class="skills-col-right-scroll" id="skills-categories-scroll">
+                            <!-- Categories et competences generees dynamiquement depuis src/data/skills.json -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="positionnement" class="positioning-section">
+                <div class="positioning-header">
+                    <p class="positioning-eyebrow text-uppercase">Positionnement</p>
+                    <h3 class="positioning-heading">Cible & usage</h3>
+                    <p class="positioning-subtitle">Repere rapide sur mon axe technique et l'usage
+                        reel des outils en contexte projet.</p>
+                </div>
+
+                <div class="positioning-wrap" aria-label="Positionnement technique">
+                    <div class="skills-positioning">
+                        <div class="skills-positioning-card">
+                            <h5>Positionnement cible</h5>
+                            <p>Profil orienté developpement Java/Spring avec une base frontend solide pour
+                                livrer des applications web completes.</p>
+                            <div class="skills-focus-chips">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>REST API</span>
+                                <span>SQL</span>
+                                <span>Git</span>
+                                <span>Scrum</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                        <div class="skills-positioning-card">
+                            <h5>Usage reel</h5>
+                            <div class="skills-usage-group">
+                                <span class="skills-usage-label">Utilise regulierement</span>
+                                <p>Java, Spring Boot, SQL, Git, HTML/CSS, JavaScript</p>
+                            </div>
+                            <div class="skills-usage-group">
+                                <span class="skills-usage-label">Deja pratique en projet</span>
+                                <p>Spring Security, React, Jira, Postman, UML, Draw.io</p>
+                            </div>
+                            <div class="skills-usage-group">
+                                <span class="skills-usage-label">En progression</span>
+                                <p>TypeScript, Hibernate/JPA, Accessibilite web</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Parcours -->
+            <section id="parcours" class="timeline-section">
+                <div class="timeline-section-header">
+                    <p class="timeline-eyebrow text-uppercase">Parcours</p>
+                    <h3 class="timeline-heading">Formation &amp; Dipl&#244;mes</h3>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-track" aria-hidden="true"></div>
+                    <!-- Items generes dynamiquement depuis src/data/timeline.json -->
+                </div>
+            </section>
+
+            <!-- Section: Realisations -->
+            <section id="realisations" class="projects-section">
+                <div class="projects-header">
+                    <p class="projects-eyebrow text-uppercase">Portfolio</p>
+                    <h3 class="projects-heading">Réalisations</h3>
+                    <p class="projects-intro">Selection de projets classes du plus recent au plus
+                        ancien, avec filtres par techno et type de projet.</p>
+                </div>
+
+                <div class="projects-shell">
+                    <div class="projects-filters" aria-label="Filtrer les projets">
+                        <div class="projects-filter-field">
+                            <label for="projects-tech-filter">Techno</label>
+                            <select id="projects-tech-filter" name="projects-tech-filter">
+                                <option value="">Toutes les technos</option>
+                            </select>
+                        </div>
+                        <div class="projects-filter-field">
+                            <label for="projects-type-filter">Type de projet</label>
+                            <select id="projects-type-filter" name="projects-type-filter">
+                                <option value="">Tous les types</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Cartes generees dynamiquement depuis src/data/projects.json -->
+                    </div>
+
+                    <div class="projects-actions">
+                        <button type="button" id="projects-see-more" class="projects-see-more">Voir plus</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Contact -->
+            <section id="contact" class="contact-section">
+                <div class="contact-wrap">
+                    <div class="contact-header">
+                        <p class="contact-eyebrow text-uppercase">Disponibilite</p>
+                        <h3 class="contact-heading">Contact</h3>
+                        <p class="contact-subtitle">Vous pouvez m'envoyer un message directement depuis
+                            ce formulaire pour parler opportunites, mission ou collaboration.</p>
+                    </div>
+
+                    <form
+                        id="contact-form"
+                        class="contact-form"
+                        action="https://formsubmit.co/ajax/poussin.laurelenne@gmail.com"
+                        method="POST"
+                        novalidate>
+                        <input type="hidden" name="_subject" value="Nouveau message depuis le CV">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <label class="visually-hidden" for="contact-company">Entreprise (ne pas remplir)</label>
+                        <input
+                            class="visually-hidden"
+                            type="text"
+                            id="contact-company"
+                            name="_honey"
+                            tabindex="-1"
+                            autocomplete="off">
+
+                        <div class="contact-grid">
+                            <div class="contact-field">
+                                <label class="contact-label" for="contact-name">Nom</label>
+                                <input
+                                    class="contact-input"
+                                    type="text"
+                                    id="contact-name"
+                                    name="name"
+                                    required
+                                    maxlength="80"
+                                    placeholder="Votre nom">
+                            </div>
+
+                            <div class="contact-field">
+                                <label class="contact-label" for="contact-email">Email</label>
+                                <input
+                                    class="contact-input"
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    required
+                                    maxlength="120"
+                                    placeholder="vous@exemple.com">
+                            </div>
+
+                            <div class="contact-field contact-field--full">
+                                <label class="contact-label" for="contact-subject">Sujet</label>
+                                <input
+                                    class="contact-input"
+                                    type="text"
+                                    id="contact-subject"
+                                    name="subject"
+                                    required
+                                    maxlength="120"
+                                    placeholder="Objet de votre message">
+                            </div>
+
+                            <div class="contact-field contact-field--full">
+                                <label class="contact-label" for="contact-message">Message</label>
+                                <textarea
+                                    class="contact-textarea"
+                                    id="contact-message"
+                                    name="message"
+                                    required
+                                    minlength="15"
+                                    maxlength="3000"
+                                    placeholder="Votre message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="contact-actions">
+                            <button class="contact-submit" type="submit">Envoyer</button>
+                            <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
-    </footer>
 
-    <!-- Scripts tiers -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Pied de page -->
+        <footer class="site-footer">
+            <div class="footer-wrap">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <p class="footer-name">Laurelenne Poussin</p>
+                        <p class="footer-availability">Disponible pour de nouvelles opportunites</p>
+                        <a
+                            class="footer-email"
+                            href="mailto:poussin.laurelenne@gmail.com"
+                            aria-label="Envoyer un email">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            poussin.laurelenne@gmail.com
+                        </a>
+                    </div>
 
-    <!-- Scripts du site -->
-    <script src="src/scripts/modules/navbar.js"></script>
-    <script src="src/scripts/modules/canvas.js"></script>
-    <script src="src/scripts/modules/skills-meta-counter.js"></script>
-    <script src="src/scripts/modules/skills-enhancer.js"></script>
-    <script src="src/scripts/modules/hero-rotator.js?v=20260404c"></script>
-    <script src="src/scripts/modules/timeline.js"></script>
-    <script src="src/scripts/modules/contact-form.js"></script>
-    <script src="src/scripts/modules/projects.js"></script>
-    <script src="src/scripts/modules/scroll-enhancements.js"></script>
-</body></html>
+                    <div class="footer-right">
+                        <a
+                            class="footer-social"
+                            href="https://github.com/laurelenne"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a
+                            class="footer-social"
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-top-link" href="#top" aria-label="Retour en haut" title="Retour en haut">
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="footer-divider" aria-hidden="true"></div>
 
+                <div class="footer-bottom">
+                    <p class="footer-copy">2026 © Laurelenne Poussin</p>
+                    <p class="footer-note">Portfolio developpeuse web Java</p>
+                </div>
+            </div>
+        </footer>
 
+        <button
+            id="back-to-top-fab"
+            class="back-to-top-fab"
+            type="button"
+            aria-label="Retour en haut"
+            title="Retour en haut"
+            aria-hidden="true"
+            tabindex="-1">
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        </button>
 
+        <!-- Scripts tiers -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
+        <!-- Scripts du site -->
+        <script src="src/scripts/modules/navbar.js"></script>
+        <script src="src/scripts/modules/canvas.js"></script>
+        <script src="src/scripts/modules/skills-meta-counter.js"></script>
+        <script src="src/scripts/modules/skills-enhancer.js"></script>
+        <script src="src/scripts/modules/hero-rotator.js?v=20260404c"></script>
+        <script src="src/scripts/modules/timeline.js"></script>
+        <script src="src/scripts/modules/contact-form.js"></script>
+        <script src="src/scripts/modules/projects.js"></script>
+        <script src="src/scripts/modules/scroll-enhancements.js"></script>
+    </body>
+</html>

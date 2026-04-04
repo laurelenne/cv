@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>CV — Laurélenne Poussin · Développeuse Web Java / Spring</title>
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icônes (Font Awesome 6) -->
+    <script src="https://kit.fontawesome.com/132df433f5.js" crossorigin="anonymous"></script>
+
+    <!-- Styles de la page CV -->
+    <link rel="stylesheet" href="src/styles/pages/cv.css">
+</head>
+<body class="cv-body">
+
+    <!-- ── Barre d'actions (masquée à l'impression) ─────────────── -->
+    <div class="cv-toolbar no-print" role="toolbar" aria-label="Actions de la page CV">
+        <a href="index.html" class="cv-back-link">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Retour au site
+        </a>
+        <div class="cv-toolbar-right">
+            <span class="cv-print-hint">
+                Astuce : choisir <strong>« Enregistrer en PDF »</strong> dans l'aperçu impression
+            </span>
+            <button type="button" class="cv-print-btn" onclick="window.print()">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Télécharger PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- ── Fond de page ──────────────────────────────────────────── -->
+    <div class="cv-page-bg">
+
+        <!-- ── Document CV ──────────────────────────────────────── -->
+        <article class="cv-document" role="main" aria-label="Curriculum Vitæ — Laurélenne Poussin">
+
+            <!-- ───────── En-tête ────────────────────────────── -->
+            <header class="cv-header">
+                <div class="cv-header-photo-wrap">
+                    <img src="public/assets/images/lp-logo.png"
+                         class="cv-photo"
+                         width="88" height="88"
+                         alt="Laurélenne Poussin">
+                    <span class="cv-avail-badge" title="Actuellement disponible">
+                        <span class="cv-avail-dot" aria-hidden="true"></span>
+                        Disponible
+                    </span>
+                </div>
+
+                <div class="cv-header-info">
+                    <h1 class="cv-name">Laurélenne Poussin</h1>
+                    <p class="cv-job-title">Développeuse Web Java / Spring</p>
+                    <p class="cv-tagline">Backend orienté Java &middot; Base frontend solide &middot; Livraison complète</p>
+
+                    <ul class="cv-contacts" aria-label="Coordonnées">
+                        <li>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:poussin.laurelenne@gmail.com">poussin.laurelenne@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <a href="https://github.com/laurelenne" target="_blank" rel="noopener noreferrer">github.com/laurelenne</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">linkedin.com/in/laurelenne-poussin</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- ───────── Corps ───────────────────────────────── -->
+            <div class="cv-body-grid">
+
+                <!-- COLONNE PRINCIPALE -->
+                <div class="cv-main-col">
+
+                    <!-- Profil -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Profil</h2>
+                        <p class="cv-profile-text">
+                            Développeuse web curieuse, rigoureuse et orientée solution. J'aime comprendre le besoin réel derrière une demande, transformer une idée en réponse concrète et livrer un résultat propre, lisible et maintenable. Bon sens du collectif, communication claire et attention constante à l'expérience utilisateur. Cherche à apporter de la valeur dès les premiers jours.
+                        </p>
+                    </section>
+
+                    <!-- Formation & Diplômes — chargé depuis timeline.json -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Formation &amp; Diplômes</h2>
+                        <div id="cv-timeline" class="cv-timeline">
+                            <p class="cv-loading" aria-live="polite">Chargement…</p>
+                        </div>
+                    </section>
+
+                    <!-- Réalisations — chargé depuis projects.json -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Réalisations</h2>
+                        <div id="cv-projects" class="cv-projects">
+                            <p class="cv-loading" aria-live="polite">Chargement…</p>
+                        </div>
+                    </section>
+
+                </div><!-- /.cv-main-col -->
+
+                <!-- BARRE LATÉRALE -->
+                <aside class="cv-sidebar-col">
+
+                    <!-- Compétences — chargé depuis skills.json -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Compétences</h2>
+                        <div id="cv-skills" class="cv-skills">
+                            <p class="cv-loading" aria-live="polite">Chargement…</p>
+                        </div>
+                    </section>
+
+                    <!-- Atouts -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Atouts</h2>
+                        <ul class="cv-bullets">
+                            <li>Adaptation rapide en équipe</li>
+                            <li>Apprentissage continu</li>
+                            <li>Orientée résultat concret</li>
+                            <li>Communication claire</li>
+                            <li>Curiosité technique</li>
+                        </ul>
+                    </section>
+
+                    <!-- Langues -->
+                    <section class="cv-section">
+                        <h2 class="cv-section-title">Langues</h2>
+                        <ul class="cv-lang-list">
+                            <li>
+                                <span class="cv-lang-name">Français</span>
+                                <span class="cv-lang-level">Langue maternelle</span>
+                            </li>
+                            <li>
+                                <span class="cv-lang-name">Anglais</span>
+                                <span class="cv-lang-level">Technique — lecture</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                </aside><!-- /.cv-sidebar-col -->
+
+            </div><!-- /.cv-body-grid -->
+
+            <!-- Pied de page du document (masqué à l'impression) -->
+            <footer class="cv-doc-footer no-print">
+                <p>Généré dynamiquement depuis <a href="index.html">le portfolio</a> · Les données sont synchronisées avec le site</p>
+            </footer>
+
+        </article><!-- /.cv-document -->
+
+    </div><!-- /.cv-page-bg -->
+
+    <!-- Script de rendu (charge les JSON et construit le contenu) -->
+    <script src="src/scripts/pages/cv.js"></script>
+
+</body>
+</html>

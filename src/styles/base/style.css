@@ -91,6 +91,52 @@ body {
     animation: gradient-shift 2.5s ease-in-out infinite, trailing-glow 1.6s ease-in-out infinite;
 }
 
+.back-to-top-fab {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(56, 189, 248, 0.38);
+    border-radius: 50%;
+    background: rgba(6, 18, 31, 0.92);
+    color: #67e8f9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35), 0 0 12px rgba(56, 189, 248, 0.22);
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+    pointer-events: none;
+    z-index: 115;
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top-fab.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.back-to-top-fab:hover,
+.back-to-top-fab:focus-visible {
+    background: rgba(26, 63, 95, 0.95);
+    color: #d9f7ff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42), 0 0 16px rgba(56, 189, 248, 0.3);
+    outline: none;
+}
+
+.back-to-top-fab i {
+    font-size: 0.88rem;
+    line-height: 1;
+}
+
+@media (min-width: 992px) {
+    .back-to-top-fab {
+        display: none;
+    }
+}
+
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
@@ -268,6 +314,63 @@ header {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Bouton CV dans la navbar desktop */
+.nav-cv-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    background: rgba(56, 189, 248, 0.14);
+    color: #67e8f9;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+}
+.nav-cv-btn:hover,
+.nav-cv-btn:focus-visible {
+    background: rgba(56, 189, 248, 0.28);
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.32);
+    color: #bae6fd;
+    text-decoration: none;
+}
+
+.nav-cv-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%) translateY(4px);
+    padding: 0.24rem 0.5rem;
+    border-radius: 7px;
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    background: rgba(6, 18, 31, 0.94);
+    color: #d9f7ff;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-cv-btn:hover::after,
+.nav-cv-btn:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Masqué sur mobile (géré via le menu hamburger) */
+@media (max-width: 1140px) {
+    .nav-cv-btn { display: none; }
 }
 
 .menu-icon[aria-expanded="true"] {
@@ -459,6 +562,10 @@ h5 {
     .reveal-on-scroll.is-visible {
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+
+    .back-to-top-fab {
         transition: none;
     }
 }
