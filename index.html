@@ -194,7 +194,7 @@
                     </div>
                 </div>
 
-                <!-- COLONNE DROITE : filtres + badges paginés -->
+                <!-- COLONNE DROITE : filtres + badges -->
                 <div class="skills-col-right">
                     <div class="skills-col-right-header">
                         <div class="skills-filter" role="toolbar" aria-label="Filtrer les competences">
@@ -204,125 +204,12 @@
                             <button type="button" class="skills-filter-btn" data-filter="outils" aria-pressed="false">Outils</button>
                             <button type="button" class="skills-filter-btn" data-filter="methodo" aria-pressed="false">Methodo</button>
                         </div>
-                        <div class="skills-level-legend">
-                            <span class="skills-level-chip level-1">Bonne maitrise</span>
-                            <span class="skills-level-chip level-2">Intermediaire</span>
-                            <span class="skills-level-chip level-3">Notions</span>
-                        </div>
                     </div>
 
                     <div class="skills-col-right-scroll" id="skills-categories-scroll">
-                        <div class="skills-category" data-domain="frontend">
-                            <h5 class="skills-category-title"><i class="fa fa-desktop" aria-hidden="true"></i> Frontend</h5>
-                            <p class="skills-category-description">Création d'interfaces accessibles, responsives et performantes.</p>
-                            <ul class="skills-proof-list">
-                                <li>Interfaces responsive desktop/mobile livrees sur projets.</li>
-                                <li>Formulaires valides et ergonomiques avec retours utilisateur.</li>
-                                <li>Composants dynamiques en JavaScript et React.</li>
-                            </ul>
-                            <div class="skills-grid">
-                                <div class="skill-badge skill-html" tabindex="0"><div class="skill-icon"><i class="fab fa-html5" aria-hidden="true"></i></div><div class="skill-name">HTML</div></div>
-                                <div class="skill-badge skill-css" tabindex="0"><div class="skill-icon"><i class="fab fa-css3-alt" aria-hidden="true"></i></div><div class="skill-name">CSS</div></div>
-                                <div class="skill-badge skill-bootstrap" tabindex="0"><div class="skill-icon"><i class="fab fa-bootstrap" aria-hidden="true"></i></div><div class="skill-name">Bootstrap</div></div>
-                                <div class="skill-badge skill-javascript" tabindex="0"><div class="skill-icon"><i class="fab fa-js-square" aria-hidden="true"></i></div><div class="skill-name">JavaScript</div></div>
-                                <div class="skill-badge skill-react" tabindex="0"><div class="skill-icon"><i class="fab fa-react" aria-hidden="true"></i></div><div class="skill-name">React</div></div>
-                                <div class="skill-badge skill-vue" tabindex="0"><div class="skill-icon"><i class="fab fa-vuejs" aria-hidden="true"></i></div><div class="skill-name">Vue.js</div></div>
-                                <div class="skill-badge skill-sass" tabindex="0"><div class="skill-icon"><i class="fab fa-sass" aria-hidden="true"></i></div><div class="skill-name">SCSS / Sass</div></div>
-                                <div class="skill-badge skill-typescript" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">TypeScript</div></div>
-                                <div class="skill-badge skill-jquery" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">jQuery</div></div>
-                                <div class="skill-badge skill-accessibilite" tabindex="0"><div class="skill-icon"><i class="fas fa-universal-access" aria-hidden="true"></i></div><div class="skill-name">Accessibilite web</div></div>
-                                <div class="skill-badge skill-responsive" tabindex="0"><div class="skill-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div><div class="skill-name">Responsive design</div></div>
-                                <div class="skill-badge skill-form-validation" tabindex="0"><div class="skill-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div><div class="skill-name">Validation de formulaires</div></div>
-                                <div class="skill-badge skill-json" tabindex="0"><div class="skill-icon"><i class="fas fa-file-code" aria-hidden="true"></i></div><div class="skill-name">JSON</div></div>
-                            </div>
-                        </div>
-
-                        <div class="skills-category" data-domain="backend">
-                            <h5 class="skills-category-title"><i class="fa fa-server" aria-hidden="true"></i> Backend</h5>
-                            <p class="skills-category-description">Développement de logique métier et services côté serveur.</p>
-                            <ul class="skills-proof-list">
-                                <li>API REST CRUD developpees avec Spring Boot.</li>
-                                <li>Auth securisee et gestion des roles avec Spring Security.</li>
-                                <li>Gestion d'erreurs et structuration MVC cote serveur.</li>
-                            </ul>
-                            <div class="skills-grid">
-                                <div class="skill-badge skill-java" tabindex="0"><div class="skill-icon"><i class="fab fa-java" aria-hidden="true"></i></div><div class="skill-name">Java</div></div>
-                                <div class="skill-badge skill-spring" tabindex="0"><div class="skill-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div><div class="skill-name">Spring Boot</div></div>
-                                <div class="skill-badge skill-rest" tabindex="0"><div class="skill-icon"><i class="fas fa-plug" aria-hidden="true"></i></div><div class="skill-name">REST API</div></div>
-                                <div class="skill-badge skill-hibernate" tabindex="0"><div class="skill-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div><div class="skill-name">Hibernate / JPA</div></div>
-                                <div class="skill-badge skill-junit" tabindex="0"><div class="skill-icon"><i class="fas fa-vial" aria-hidden="true"></i></div><div class="skill-name">JUnit</div></div>
-                                <div class="skill-badge skill-spring-security" tabindex="0"><div class="skill-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div class="skill-name">Spring Security</div></div>
-                                <div class="skill-badge skill-spring-mvc" tabindex="0"><div class="skill-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div><div class="skill-name">Spring MVC</div></div>
-                                <div class="skill-badge skill-mvc" tabindex="0"><div class="skill-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div><div class="skill-name">MVC</div></div>
-                                <div class="skill-badge skill-http" tabindex="0"><div class="skill-icon"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div><div class="skill-name">Methodes HTTP</div></div>
-                                <div class="skill-badge skill-error-handling" tabindex="0"><div class="skill-icon"><i class="fas fa-bug" aria-hidden="true"></i></div><div class="skill-name">Gestion des erreurs</div></div>
-                                <div class="skill-badge skill-poo" tabindex="0"><div class="skill-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div><div class="skill-name">POO</div></div>
-                            </div>
-                        </div>
-
-                        <div class="skills-category" data-domain="bdd">
-                            <h5 class="skills-category-title"><i class="fa fa-database" aria-hidden="true"></i> Bases de données</h5>
-                            <p class="skills-category-description">Conception de schémas, requêtes et optimisation des données.</p>
-                            <ul class="skills-proof-list">
-                                <li>Schemas relationnels modelises avec Merise/UML.</li>
-                                <li>Requetes SQL pour extraction, jointures et filtres avances.</li>
-                                <li>Administration et verification de jeux de donnees en environnement projet.</li>
-                            </ul>
-                            <div class="skills-grid">
-                                <div class="skill-badge skill-postgresql" tabindex="0"><div class="skill-icon"><i class="fas fa-database" aria-hidden="true"></i></div><div class="skill-name">PostgreSQL</div></div>
-                                <div class="skill-badge skill-mysql" tabindex="0"><div class="skill-icon"><i class="fas fa-server" aria-hidden="true"></i></div><div class="skill-name">MySQL</div></div>
-                                <div class="skill-badge skill-sql" tabindex="0"><div class="skill-icon"><i class="fas fa-table" aria-hidden="true"></i></div><div class="skill-name">SQL</div></div>
-                                <div class="skill-badge skill-merise" tabindex="0"><div class="skill-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div><div class="skill-name">Merise / MCD</div></div>
-                                <div class="skill-badge skill-phpmyadmin" tabindex="0"><div class="skill-icon"><i class="fab fa-php" aria-hidden="true"></i></div><div class="skill-name">phpMyAdmin</div></div>
-                                <div class="skill-badge skill-uml" tabindex="0"><div class="skill-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div><div class="skill-name">UML</div></div>
-                                <div class="skill-badge skill-drawio" tabindex="0"><div class="skill-icon"><i class="fas fa-draw-polygon" aria-hidden="true"></i></div><div class="skill-name">Draw.io / Diagrams</div></div>
-                            </div>
-                        </div>
-
-                        <div class="skills-category" data-domain="outils">
-                            <h5 class="skills-category-title"><i class="fa fa-wrench" aria-hidden="true"></i> Outils et environnement</h5>
-                            <p class="skills-category-description">Workflow, collaboration et environnement de développement quotidien.</p>
-                            <ul class="skills-proof-list">
-                                <li>Suivi de sprint et priorisation des taches en mode Scrum.</li>
-                                <li>Versionning Git/GitHub avec collaboration equipe.</li>
-                                <li>Tests et debogage avec Postman et Chrome DevTools.</li>
-                            </ul>
-                            <div class="skills-grid">
-                                <div class="skill-badge skill-eclipse" tabindex="0"><div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div><div class="skill-name">Eclipse</div></div>
-                                <div class="skill-badge skill-vscode" tabindex="0"><div class="skill-icon"><i class="fas fa-terminal" aria-hidden="true"></i></div><div class="skill-name">VS Code</div></div>
-                                <div class="skill-badge skill-brackets" tabindex="0"><div class="skill-icon"><i class="fa fa-code" aria-hidden="true"></i></div><div class="skill-name">Brackets</div></div>
-                                <div class="skill-badge skill-git" tabindex="0"><div class="skill-icon"><i class="fab fa-git-alt" aria-hidden="true"></i></div><div class="skill-name">Git</div></div>
-                                <div class="skill-badge skill-trello" tabindex="0"><div class="skill-icon"><i class="fab fa-trello" aria-hidden="true"></i></div><div class="skill-name">Trello</div></div>
-                                <div class="skill-badge skill-agile" tabindex="0"><div class="skill-icon"><i class="fa fa-users" aria-hidden="true"></i></div><div class="skill-name">Agile</div></div>
-                                <div class="skill-badge skill-github" tabindex="0"><div class="skill-icon"><i class="fab fa-github" aria-hidden="true"></i></div><div class="skill-name">GitHub</div></div>
-                                <div class="skill-badge skill-figma" tabindex="0"><div class="skill-icon"><i class="fab fa-figma" aria-hidden="true"></i></div><div class="skill-name">Figma</div></div>
-                                <div class="skill-badge skill-postman" tabindex="0"><div class="skill-icon"><i class="fas fa-paper-plane" aria-hidden="true"></i></div><div class="skill-name">Postman</div></div>
-                                <div class="skill-badge skill-npm" tabindex="0"><div class="skill-icon"><i class="fab fa-node-js" aria-hidden="true"></i></div><div class="skill-name">npm / Node.js</div></div>
-                                <div class="skill-badge skill-jira" tabindex="0"><div class="skill-icon"><i class="fab fa-jira" aria-hidden="true"></i></div><div class="skill-name">Jira</div></div>
-                                <div class="skill-badge skill-markdown" tabindex="0"><div class="skill-icon"><i class="fab fa-markdown" aria-hidden="true"></i></div><div class="skill-name">Markdown</div></div>
-                                <div class="skill-badge skill-notion" tabindex="0"><div class="skill-icon"><i class="fas fa-book" aria-hidden="true"></i></div><div class="skill-name">Notion</div></div>
-                                <div class="skill-badge skill-slack" tabindex="0"><div class="skill-icon"><i class="fab fa-slack" aria-hidden="true"></i></div><div class="skill-name">Slack</div></div>
-                                <div class="skill-badge skill-adobe-xd" tabindex="0"><div class="skill-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div><div class="skill-name">Adobe XD</div></div>
-                                <div class="skill-badge skill-canva" tabindex="0"><div class="skill-icon"><i class="fas fa-palette" aria-hidden="true"></i></div><div class="skill-name">Canva</div></div>
-                                <div class="skill-badge skill-ia" tabindex="0"><div class="skill-icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div><div class="skill-name">IA</div></div>
-                                <div class="skill-badge skill-scrum" tabindex="0"><div class="skill-icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></div><div class="skill-name">Scrum</div></div>
-                                <div class="skill-badge skill-devtools" tabindex="0"><div class="skill-icon"><i class="fab fa-chrome" aria-hidden="true"></i></div><div class="skill-name">Chrome DevTools</div></div>
-                            </div>
-                        </div>
+                        <!-- Categories et competences generees dynamiquement depuis src/data/skills.json -->
                     </div>
 
-                    <nav class="skills-pagination" aria-label="Navigation entre catégories">
-                        <div class="skills-pagination-controls">
-                            <button class="skills-page-btn" id="skills-prev" aria-label="Catégorie précédente">
-                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                            </button>
-                            <span class="skills-page-indicator" id="skills-page-indicator">1 / 4</span>
-                            <button class="skills-page-btn" id="skills-next" aria-label="Catégorie suivante">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="skills-pagination-dots" id="skills-pagination-dots" aria-hidden="true"></div>
-                    </nav>
                 </div>
 
             </div>
@@ -336,73 +223,7 @@
 
             <div class="timeline-container">
                 <div class="timeline-track" aria-hidden="true"></div>
-
-                <article class="tl-item" data-tl-animate>
-                    <div class="tl-dot"><i class="fa fa-laptop" aria-hidden="true"></i></div>
-                    <div class="tl-card">
-                        <div class="tl-card-header">
-                            <span class="tl-tag tl-tag--formation">Formation</span>
-                            <span class="tl-date">En cours</span>
-                        </div>
-                        <h4 class="tl-title">D&#233;veloppeuse Web Java</h4>
-                        <p class="tl-desc">Titre professionnel de niveau III (Bac +2) : D&#233;veloppeur&#183;se Web et Web Mobile.</p>
-                    </div>
-                </article>
-
-                <article class="tl-item" data-tl-animate>
-                    <div class="tl-dot"><i class="fa fa-code" aria-hidden="true"></i></div>
-                    <div class="tl-card">
-                        <div class="tl-card-header">
-                            <span class="tl-tag tl-tag--formation">Formation</span>
-                            <span class="tl-date">Juillet 2019</span>
-                        </div>
-                        <h4 class="tl-title">Formation D&#233;veloppeur Web Java</h4>
-                        <p class="tl-desc">Formation compl&#232;te pr&#233;parant au TP D&#233;veloppeur Web et Web Mobile : maquettage, interfaces statiques et dynamiques, bases de donn&#233;es, composants back-end et projet n-tiers.</p>
-                        <div class="tl-chips">
-                            <span>Frontend</span>
-                            <span>Backend</span>
-                            <span>Base de donn&#233;es</span>
-                            <span>Projet n-tiers</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="tl-item" data-tl-animate>
-                    <div class="tl-dot"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-                    <div class="tl-card">
-                        <div class="tl-card-header">
-                            <span class="tl-tag tl-tag--projet">Projet</span>
-                            <span class="tl-date">Mai 2019</span>
-                        </div>
-                        <h4 class="tl-title">Projet Pro Num&#233;rique</h4>
-                        <p class="tl-desc">Formation d'insertion professionnelle vers les m&#233;tiers du Num&#233;rique pour les demandeurs d'emploi souhaitant se qualifier dans le secteur.</p>
-                    </div>
-                </article>
-
-                <article class="tl-item" data-tl-animate>
-                    <div class="tl-dot"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
-                    <div class="tl-card">
-                        <div class="tl-card-header">
-                            <span class="tl-tag tl-tag--diplome">Dipl&#244;me</span>
-                            <span class="tl-date">2014</span>
-                        </div>
-                        <h4 class="tl-title">Bac Pro &mdash; Services de Proximit&#233; et de Vie Locale</h4>
-                        <p class="tl-desc">Dipl&#244;me orient&#233; aide sociale et maintien du lien social, travail avec tout public en centres d'action sociale, associations et foyers.</p>
-                    </div>
-                </article>
-
-                <article class="tl-item" data-tl-animate>
-                    <div class="tl-dot"><i class="fa fa-users" aria-hidden="true"></i></div>
-                    <div class="tl-card">
-                        <div class="tl-card-header">
-                            <span class="tl-tag tl-tag--diplome">Dipl&#244;me</span>
-                            <span class="tl-date">2013</span>
-                        </div>
-                        <h4 class="tl-title">CAP Agent de Pr&#233;vention et de M&#233;diation</h4>
-                        <p class="tl-desc">Dipl&#244;me de m&#233;diation en espaces publics et priv&#233;s, en lien avec les partenaires locaux pour le maintien du lien social et la s&#233;curit&#233; des personnes.</p>
-                    </div>
-                </article>
-
+                <!-- Items generes dynamiquement depuis src/data/timeline.json -->
             </div>
         </section>
 
@@ -411,77 +232,30 @@
             <div class="projects-header">
                 <p class="projects-eyebrow text-uppercase">Portfolio</p>
                 <h3 class="projects-heading">Réalisations</h3>
+                <p class="projects-intro">Selection de projets classes du plus recent au plus ancien, avec filtres par techno et type de projet.</p>
+            </div>
+
+            <div class="projects-filters" aria-label="Filtrer les projets">
+                <div class="projects-filter-field">
+                    <label for="projects-tech-filter">Techno</label>
+                    <select id="projects-tech-filter" name="projects-tech-filter">
+                        <option value="">Toutes les technos</option>
+                    </select>
+                </div>
+                <div class="projects-filter-field">
+                    <label for="projects-type-filter">Type de projet</label>
+                    <select id="projects-type-filter" name="projects-type-filter">
+                        <option value="">Tous les types</option>
+                    </select>
+                </div>
             </div>
 
             <div class="projects-grid">
+                <!-- Cartes generees dynamiquement depuis src/data/projects.json -->
+            </div>
 
-                <!-- Projet 1 : Evolution -->
-                <article class="project-card" data-proj-animate>
-                    <div class="project-card-img-wrapper">
-                        <img src="assets/images/evolution-bg.png" alt="Capture du projet Evolution" class="project-card-img">
-                    </div>
-                    <div class="project-card-body">
-                        <h4 class="project-card-title">Evolution</h4>
-                        <p class="project-card-desc">Jeu clicker développé en groupe : gestion de ressources, progression et mécaniques d'évolution incrémentale.</p>
-                        <div class="project-stack">
-                            <span>Java</span>
-                            <span>POO</span>
-                            <span>Travail en équipe</span>
-                        </div>
-                        <div class="project-card-links">
-                            <span class="project-link project-link--ghost">
-                                <i class="fa fa-lock" aria-hidden="true"></i> Privé
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 2 : Risk Jules Verne -->
-                <article class="project-card" data-proj-animate>
-                    <div class="project-card-img-wrapper">
-                        <img src="assets/images/risk-bg.png" alt="Capture du projet Risk Jules Verne" class="project-card-img">
-                    </div>
-                    <div class="project-card-body">
-                        <h4 class="project-card-title">Risk Jules Verne</h4>
-                        <p class="project-card-desc">Adaptation du jeu de plateau Risk avec un univers Jules Verne, développée en groupe.</p>
-                        <div class="project-stack">
-                            <span>Java</span>
-                            <span>Swing</span>
-                            <span>Algorithmique</span>
-                            <span>Travail en équipe</span>
-                        </div>
-                        <div class="project-card-links">
-                            <span class="project-link project-link--ghost">
-                                <i class="fa fa-lock" aria-hidden="true"></i> Privé
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 3 : Portail Intégrations -->
-                <article class="project-card" data-proj-animate>
-                    <div class="project-card-img-wrapper">
-                        <a href="https://laurelenne.github.io/integrations/" target="_blank" rel="noopener noreferrer" aria-label="Voir le Portail Intégrations">
-                            <img src="assets/images/integrations-bg.png" alt="Capture du Portail Intégrations" class="project-card-img">
-                        </a>
-                    </div>
-                    <div class="project-card-body">
-                        <h4 class="project-card-title">Portail Intégrations</h4>
-                        <p class="project-card-desc">Recueil de projets d'intégration web : mises en page responsives et composants UI réalisés en formation.</p>
-                        <div class="project-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>Bootstrap</span>
-                            <span>Responsive</span>
-                        </div>
-                        <div class="project-card-links">
-                            <a href="https://laurelenne.github.io/integrations/" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">
-                                <i class="fa fa-external-link" aria-hidden="true"></i> Voir le projet
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
+            <div class="projects-actions">
+                <button type="button" id="projects-see-more" class="projects-see-more">Voir plus</button>
             </div>
         </section>
 
@@ -577,32 +351,7 @@
     <script src="src/scripts/modules/hero-rotator.js"></script>
     <script src="src/scripts/modules/timeline.js"></script>
     <script src="src/scripts/modules/contact-form.js"></script>
-    <script>
-    (function () {
-        function initProjects() {
-            var cards = document.querySelectorAll(".project-card[data-proj-animate]");
-            if (!cards.length) return;
-            if (!("IntersectionObserver" in window)) {
-                cards.forEach(function (el) { el.classList.add("is-visible"); });
-                return;
-            }
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            cards.forEach(function (el) { observer.observe(el); });
-        }
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", initProjects);
-        } else {
-            initProjects();
-        }
-    })();
-    </script>
+    <script src="src/scripts/modules/projects.js"></script>
 </body></html>
 
 
