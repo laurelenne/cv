@@ -52,8 +52,9 @@
 .timeline-heading::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
+    left: auto;
+    transform: translateX(0);
     bottom: 0;
     width: 50px;
     height: 3px;
@@ -223,6 +224,8 @@
 /* Responsive */
 @media (max-width: 640px) {
     .timeline-section { padding: var(--section-pad-top-mobile) 0 var(--section-pad-bottom-mobile); }
+    .timeline-section-header { text-align: center; padding-right: 0; }
+    .timeline-heading::after { left: 50%; right: auto; transform: translateX(-50%); }
     .timeline-container { padding: 0 1rem 0 2.8rem; }
     .timeline-track { left: 2.8rem; }
     .tl-dot { width: 36px; height: 36px; font-size: 0.85rem; }

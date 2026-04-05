@@ -52,8 +52,8 @@
 .projects-heading::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: translateX(0);
     bottom: 0;
     width: 50px;
     height: 3px;
@@ -63,7 +63,7 @@
 }
 
 .projects-intro {
-    margin: 1rem auto 0;
+    margin: 1rem 0 0;
     max-width: 70ch;
     font-size: 0.95rem;
     line-height: 1.65;
@@ -373,6 +373,9 @@
 /* Responsive */
 @media (max-width: 640px) {
     .projects-section { padding: var(--section-pad-top-mobile) 0 var(--section-pad-bottom-mobile); }
+    .projects-header { text-align: center; padding-left: 0; }
+    .projects-heading::after { left: 50%; transform: translateX(-50%); }
+    .projects-intro { margin: 1rem auto 0; }
     .projects-shell { margin: 0 1rem; }
     .projects-filters { grid-template-columns: 1fr; padding: 0.65rem 1rem 0.75rem; position: static; }
     .projects-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: 1.2rem; }
