@@ -615,3 +615,20 @@ h5 {
 
 }
 
+/* Suppression des liseres clairs entre sections et au-dessus du footer */
+.about-section--cohesive,
+.skills-section--cohesive,
+.timeline-section,
+.projects-section,
+.contact-section {
+    border-bottom: none !important;
+}
+
+.site-footer {
+    border-top: none !important;
+}
+
+.about-card {
+    border: none !important;
+}
+
