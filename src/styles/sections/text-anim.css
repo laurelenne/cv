@@ -157,26 +157,27 @@
 }
 
 .content__cta--primary {
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    color: #d7f7ff;
-    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    color: #ecf7ff;
+    background: rgba(56, 189, 248, 0.28);
+    font-weight: 800;
 }
 
 .content__cta--primary:hover,
 .content__cta--primary:focus-visible {
-    background: rgba(56, 189, 248, 0.3);
-    box-shadow: 0 0 16px rgba(56, 189, 248, 0.26);
+    background: rgba(56, 189, 248, 0.38);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
 }
 
 .content__cta--ghost {
-    border: 1px solid rgba(125, 211, 252, 0.22);
-    color: rgba(186, 230, 253, 0.88);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(125, 211, 252, 0.15);
+    color: rgba(186, 230, 253, 0.72);
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .content__cta--ghost:hover,
 .content__cta--ghost:focus-visible {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* CTA "CV PDF" — variante telechargement */

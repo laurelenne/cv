@@ -115,7 +115,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.35rem;
     font-family: "Space Grotesk", "Lato", sans-serif;
 }
 
@@ -178,12 +178,13 @@
     font-size: 1rem;
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.92);
+    max-width: 560px;
 }
 
 .about-impact-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.65rem;
+    gap: 0.9rem;
 }
 
 .about-impact-item {
@@ -236,7 +237,7 @@
 
 .about-signature {
     font-size: 0.92rem;
-    color: rgba(191, 236, 255, 0.94);
+    color: rgba(191, 236, 255, 0.68);
     font-style: italic;
     letter-spacing: 0.02em;
     border-left: 2px solid rgba(56, 189, 248, 0.65);
