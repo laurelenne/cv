@@ -568,6 +568,28 @@
     font-weight: 700;
 }
 
+.skill-favorite-badge {
+    position: absolute;
+    top: 0.45rem;
+    right: 0.45rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fb7185;
+    background: rgba(251, 113, 133, 0.16);
+    border: 1px solid rgba(251, 113, 133, 0.45);
+    box-shadow: 0 0 12px rgba(251, 113, 133, 0.25);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.skill-favorite-badge i {
+    font-size: 0.65rem;
+}
+
 .skill-badge.is-hidden,
 .skills-category.is-hidden {
     display: none;
@@ -783,6 +805,17 @@
     background: linear-gradient(135deg, rgba(204, 102, 153, 0.2), rgba(204, 102, 153, 0.1));
     border-color: #CC6699;
     box-shadow: 0 8px 24px rgba(204, 102, 153, 0.3);
+}
+
+.skill-stylus {
+    color: #FF6347;
+    --skill-color: #FF6347;
+}
+
+.skill-stylus:hover {
+    background: linear-gradient(135deg, rgba(255, 99, 71, 0.2), rgba(255, 99, 71, 0.1));
+    border-color: #FF6347;
+    box-shadow: 0 8px 24px rgba(255, 99, 71, 0.3);
 }
 
 .skill-typescript {

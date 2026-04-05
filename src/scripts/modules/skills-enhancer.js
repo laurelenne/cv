@@ -42,6 +42,7 @@
     function buildSkillBadge(skill, domain) {
         var level = getLevel(skill.level);
         var badge = document.createElement("div");
+        var favoriteHtml = "";
 
         badge.className = "skill-badge skill-" + escapeHtml(skill.key);
         badge.setAttribute("tabindex", "0");
@@ -50,9 +51,14 @@
 
         if (skill.featured) {
             badge.classList.add("skill-featured");
+            favoriteHtml =
+                '<span class="skill-favorite-badge" aria-label="Competence preferee" title="Competence preferee">' +
+                '<i class="fas fa-heart" aria-hidden="true"></i>' +
+                '</span>';
         }
 
         badge.innerHTML =
+            favoriteHtml +
             '<div class="skill-icon"><i class="' + escapeHtml(skill.icon) + '" aria-hidden="true"></i></div>' +
             '<div class="skill-name">' + escapeHtml(skill.name) + '</div>' +
             '<span class="skills-level-chip ' + level.css + '">' + level.label + '</span>';

@@ -17,6 +17,7 @@
             { "key": "react", "name": "React", "icon": "fab fa-react", "level": "intermediate", "featured": true, "methodo": false },
             { "key": "vue", "name": "Vue.js", "icon": "fab fa-vuejs", "level": "notions", "featured": false, "methodo": false },
             { "key": "sass", "name": "SCSS / Sass", "icon": "fab fa-sass", "level": "notions", "featured": false, "methodo": false },
+            { "key": "stylus", "name": "Stylus", "icon": "fas fa-pencil-ruler", "level": "notions", "featured": false, "methodo": false },
             { "key": "typescript", "name": "TypeScript", "icon": "fas fa-code", "level": "notions", "featured": false, "methodo": false },
             { "key": "jquery", "name": "jQuery", "icon": "fas fa-code", "level": "notions", "featured": false, "methodo": false },
             { "key": "accessibilite", "name": "Accessibilite web", "icon": "fas fa-universal-access", "level": "notions", "featured": false, "methodo": false },

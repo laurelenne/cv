@@ -72,7 +72,8 @@
                 }
             });
         }, {
-            threshold: 0.35
+            threshold: 0.01,
+            rootMargin: "0px 0px 8% 0px"
         });
 
         observer.observe(section);

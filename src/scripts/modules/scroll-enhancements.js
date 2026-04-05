@@ -12,32 +12,6 @@
         if (ENABLE_CINEMATIC_MODE) {
             document.body.classList.add("scroll-cinematic");
         }
-
-        var bar = document.createElement("div");
-        bar.className = "scroll-progress";
-        bar.setAttribute("aria-hidden", "true");
-        document.body.appendChild(bar);
-
-        var ticking = false;
-
-        function updateProgress() {
-            ticking = false;
-            var scrollTop = window.scrollY || window.pageYOffset || 0;
-            var doc = document.documentElement;
-            var maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
-            var progress = Math.min(1, Math.max(0, scrollTop / maxScroll));
-            bar.style.transform = "scaleX(" + progress + ")";
-        }
-
-        function onScroll() {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(updateProgress);
-        }
-
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll);
-        updateProgress();
     }
 
     function isScrollableElement(el) {
@@ -207,8 +181,9 @@
                     }
                 });
             }, {
-                threshold: 0.16,
-                rootMargin: "0px 0px -8% 0px"
+                // Un seuil trop eleve casse le reveal des blocs tres hauts (surtout sur mobile).
+                threshold: 0.01,
+                rootMargin: "0px 0px 6% 0px"
             });
         }
 

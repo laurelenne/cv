@@ -20,7 +20,6 @@ html {
     --reveal-distance: 16px;
     --reveal-duration: 500ms;
     --reveal-easing: ease;
-    --scroll-progress-height: 3px;
 }
 
 body {
@@ -73,22 +72,6 @@ body::-webkit-scrollbar-thumb {
 body {
     scrollbar-width: thin;
     scrollbar-color: rgba(56, 189, 248, 0.55) rgba(3, 11, 20, 0.9);
-}
-
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--scroll-progress-height);
-    z-index: 120;
-    pointer-events: none;
-    transform-origin: left center;
-    transform: scaleX(0);
-    background: linear-gradient(90deg, #38bdf8 0%, #22d3ee 50%, #38bdf8 100%);
-    background-size: 200% 100%;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
-    animation: gradient-shift 2.5s ease-in-out infinite, trailing-glow 1.6s ease-in-out infinite;
 }
 
 .back-to-top-fab {
@@ -154,12 +137,6 @@ body.scroll-cinematic {
     --reveal-distance: 12px;
     --reveal-duration: 420ms;
     --reveal-easing: cubic-bezier(0.22, 0.61, 0.36, 1);
-    --scroll-progress-height: 3px;
-}
-
-body.scroll-cinematic .scroll-progress {
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
-    animation: gradient-shift 2.5s ease-in-out infinite, trailing-glow 1.6s ease-in-out infinite;
 }
 
 img,

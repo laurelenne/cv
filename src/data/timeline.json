@@ -1,9 +1,18 @@
 [
     {
-        "icon": "fa fa-laptop",
+        "icon": "fa fa-graduation-cap",
         "tag": "Formation",
         "tagType": "formation",
-        "date": "En cours",
+        "date": "2020",
+        "title": "Concepteur Développeur d'Applications",
+        "desc": "Formation de 9 mois préparant au titre professionnel de niveau II (Bac +3/4) : Concepteur·rice Développeur·se d'Applications, avec un projet de développement d'une application de gestion de tâches en équipe.",
+        "chips": []
+    },
+    {
+        "icon": "fa fa-graduation-cap",
+        "tag": "Diplôme",
+        "tagType": "diplome",
+        "date": "2020",
         "title": "Développeuse Web Java",
         "desc": "Titre professionnel de niveau III (Bac +2) : Développeur·se Web et Web Mobile.",
         "chips": []
@@ -12,7 +21,7 @@
         "icon": "fa fa-code",
         "tag": "Formation",
         "tagType": "formation",
-        "date": "Juillet 2019",
+        "date": "2019",
         "title": "Formation Développeur Web Java",
         "desc": "Formation complète préparant au TP Développeur Web et Web Mobile : maquettage, interfaces statiques et dynamiques, bases de données, composants back-end et projet n-tiers.",
         "chips": ["Frontend", "Backend", "Base de données", "Projet n-tiers"]
@@ -43,5 +52,14 @@
         "title": "CAP Agent de Prévention et de Médiation",
         "desc": "Diplôme de médiation en espaces publics et privés, en lien avec les partenaires locaux pour le maintien du lien social et la sécurité des personnes.",
         "chips": []
+    },
+    {
+        "icon": "fa fa-briefcase",
+        "tag": "Expérience",
+        "tagType": "experience",
+        "date": "2020",
+        "title": "Stage chez SIDY",
+        "desc": "Stage de 3 mois au sein de l'entreprise SIDY, une entreprise d'édition de logiciels applicatifs durant lequel j'ai développer un module de chat en temps réel pour leur application de gestion de prestataires à destination des propriétaires de logements.",
+        "chips": ["GraphQL", "Vue.js", "Node.js", "MongoDB", "Bootstrap", "Stylus"]
     }
 ]
