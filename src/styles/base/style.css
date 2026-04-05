@@ -423,6 +423,11 @@ h5 {
         display: block;
         flex: 0 0 100%;
         padding: 0 0.75rem 0.8rem;
+        pointer-events: none;
+    }
+
+    .menu.is-open {
+        pointer-events: auto;
     }
 
     .primary-nav ul {

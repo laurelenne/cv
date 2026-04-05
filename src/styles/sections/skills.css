@@ -379,6 +379,7 @@
     font-weight: 500;
     letter-spacing: 0.04em;
     cursor: pointer;
+    touch-action: manipulation;
     transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
@@ -1187,6 +1188,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    touch-action: manipulation;
     transform: rotate(0deg) scale(1);
     transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
@@ -1585,11 +1587,21 @@
     }
 
     .skills-section--cohesive .skills-col-right-header {
-        position: static;
+        position: relative;
+        top: auto;
+        z-index: 1;
     }
 
     .skills-section--cohesive .skills-col-right-scroll {
         overflow: visible;
+    }
+
+    .skills-section--cohesive .skills-col-right-header,
+    .skills-section--cohesive .skills-filter,
+    .skills-section--cohesive .skills-filter-btn,
+    .skills-section--cohesive .skills-category-toggle,
+    .skills-section--cohesive .skills-category-more {
+        pointer-events: auto;
     }
 }
 
