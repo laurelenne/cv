@@ -4,6 +4,9 @@ html {
 }
 
 :root {
+    --accent-cyan: #38bdf8;
+    --accent-violet: #818cf8;
+    --accent-green: #34d399;
     --section-pad-top: 6rem;
     --section-pad-bottom: 7rem;
     --section-pad-top-mobile: 4rem;

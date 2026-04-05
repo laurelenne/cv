@@ -4,6 +4,7 @@
     width: 100%;
     background: linear-gradient(160deg, rgba(4, 12, 22, 0.98), rgba(7, 18, 32, 0.98));
     border-top: 1px solid rgba(125, 211, 252, 0.18);
+    box-shadow: inset 0 1px 0 rgba(125, 211, 252, 0.08);
     position: relative;
     overflow: hidden;
     padding: 2.4rem 1.25rem 1.6rem;
