@@ -2,6 +2,13 @@
     "use strict";
 
     var DATA_URL = "src/data/skills.json";
+    var MOBILE_BREAKPOINT = 767;
+    var MOBILE_VISIBLE_SKILLS = 8;
+    var hasBoundMobileControls = false;
+
+    function prefersReducedMotion() {
+        return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
 
     // Schema minimal de src/data/skills.json :
     // [
@@ -70,16 +77,25 @@
         var wrapper = document.createElement("div");
         wrapper.className = "skills-category";
         wrapper.setAttribute("data-domain", category.domain);
+        wrapper.setAttribute("data-show-all", "false");
 
         var proofHtml = (category.proof || []).map(function (item) {
             return "<li>" + escapeHtml(item) + "</li>";
         }).join("");
 
         wrapper.innerHTML =
-            '<h5 class="skills-category-title"><i class="' + escapeHtml(category.icon) + '" aria-hidden="true"></i> ' + escapeHtml(category.title) + '</h5>' +
+            '<div class="skills-category-head">' +
+            '<h5 class="skills-category-title"><i class="' + escapeHtml(category.icon) + '" aria-hidden="true"></i><span class="skills-category-title-text">' + escapeHtml(category.title) + '</span></h5>' +
+            '<button type="button" class="skills-category-toggle" aria-expanded="true" aria-label="Replier la categorie">' +
+            '<i class="fa fa-minus" aria-hidden="true"></i>' +
+            '</button>' +
+            '</div>' +
+            '<div class="skills-category-body">' +
             '<p class="skills-category-description">' + escapeHtml(category.description) + '</p>' +
             '<ul class="skills-proof-list">' + proofHtml + '</ul>' +
-            '<div class="skills-grid"></div>';
+            '<div class="skills-grid"></div>' +
+            '<button type="button" class="skills-category-more" hidden>Voir plus</button>' +
+            '</div>';
 
         var grid = wrapper.querySelector(".skills-grid");
         (category.skills || []).forEach(function (skill) {
@@ -143,6 +159,8 @@
             }
         });
 
+        updateMobileSkillsLayout();
+
         updateFilterFeedback(filter, visibleSkillsCount, visibleCategoriesCount);
 
         if (panel) {
@@ -166,6 +184,191 @@
                 panel.classList.remove("is-filtering");
             });
         }
+    }
+
+    function isMobileSkillsViewport() {
+        return window.innerWidth <= MOBILE_BREAKPOINT;
+    }
+
+    function setCategoryCollapsed(category, shouldCollapse) {
+        var toggle = category.querySelector(".skills-category-toggle");
+        var body = category.querySelector(".skills-category-body");
+        category.classList.toggle("is-collapsed", shouldCollapse);
+
+        if (body) {
+            if (!isMobileSkillsViewport()) {
+                body.style.maxHeight = "";
+            } else if (prefersReducedMotion()) {
+                body.style.maxHeight = shouldCollapse ? "0px" : "none";
+            } else if (shouldCollapse) {
+                body.style.maxHeight = body.scrollHeight + "px";
+                body.offsetHeight;
+                body.style.maxHeight = "0px";
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+                body.addEventListener("transitionend", function onEnd(event) {
+                    if (event.propertyName !== "max-height") return;
+                    body.style.maxHeight = "none";
+                    body.removeEventListener("transitionend", onEnd);
+                });
+            }
+        }
+
+        if (!toggle) return;
+
+        toggle.setAttribute("aria-expanded", shouldCollapse ? "false" : "true");
+        toggle.setAttribute("aria-label", shouldCollapse ? "Developper la categorie" : "Replier la categorie");
+        toggle.innerHTML = shouldCollapse
+            ? '<i class="fa fa-plus" aria-hidden="true"></i>'
+            : '<i class="fa fa-minus" aria-hidden="true"></i>';
+    }
+
+    function scrollCategoryIntoView(category) {
+        if (!category || !isMobileSkillsViewport()) return;
+
+        requestAnimationFrame(function () {
+            category.scrollIntoView({
+                behavior: prefersReducedMotion() ? "auto" : "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        });
+    }
+
+    function resetMobileBadgeClipping(category) {
+        var badges = category.querySelectorAll(".skill-badge");
+        badges.forEach(function (badge) {
+            badge.classList.remove("is-mobile-extra-hidden");
+        });
+    }
+
+    function updateMobileCategoryBadgeLimit(category, isMobile) {
+        var moreBtn = category.querySelector(".skills-category-more");
+        if (!moreBtn) return;
+
+        var isCollapsed = category.classList.contains("is-collapsed");
+        var visibleBadges = Array.prototype.slice.call(category.querySelectorAll(".skill-badge:not(.is-hidden)"));
+        var showAll = category.getAttribute("data-show-all") === "true";
+
+        resetMobileBadgeClipping(category);
+
+        if (!isMobile || isCollapsed) {
+            moreBtn.hidden = true;
+            return;
+        }
+
+        var requiresToggle = visibleBadges.length > MOBILE_VISIBLE_SKILLS;
+        if (requiresToggle && !showAll) {
+            visibleBadges.forEach(function (badge, index) {
+                badge.classList.toggle("is-mobile-extra-hidden", index >= MOBILE_VISIBLE_SKILLS);
+            });
+        }
+
+        moreBtn.hidden = !requiresToggle;
+        if (requiresToggle) {
+            moreBtn.textContent = showAll ? "Voir moins" : "Voir plus";
+            moreBtn.setAttribute("aria-expanded", showAll ? "true" : "false");
+        }
+    }
+
+    function updateMobileSkillsLayout() {
+        var categories = Array.prototype.slice.call(document.querySelectorAll(".skills-category"));
+        var isMobile = isMobileSkillsViewport();
+
+        categories.forEach(function (category) {
+            if (!isMobile) {
+                setCategoryCollapsed(category, false);
+                category.setAttribute("data-show-all", "false");
+            } else if (!category.hasAttribute("data-mobile-ready")) {
+                category.setAttribute("data-mobile-ready", "true");
+                setCategoryCollapsed(category, true);
+                category.setAttribute("data-show-all", "false");
+            }
+
+            updateMobileCategoryBadgeLimit(category, isMobile);
+        });
+
+        if (!isMobile) {
+            return;
+        }
+
+        var visibleCategories = categories.filter(function (category) {
+            return !category.classList.contains("is-hidden");
+        });
+
+        if (!visibleCategories.length) return;
+
+        var opened = visibleCategories.filter(function (category) {
+            return !category.classList.contains("is-collapsed");
+        });
+
+        if (!opened.length) {
+            setCategoryCollapsed(visibleCategories[0], false);
+        } else if (opened.length > 1) {
+            opened.slice(1).forEach(function (category) {
+                setCategoryCollapsed(category, true);
+                category.setAttribute("data-show-all", "false");
+            });
+        }
+
+        visibleCategories.forEach(function (category) {
+            updateMobileCategoryBadgeLimit(category, true);
+        });
+    }
+
+    function initMobileControls() {
+        if (hasBoundMobileControls) return;
+
+        var container = document.getElementById("skills-categories-scroll");
+        if (!container) return;
+
+        hasBoundMobileControls = true;
+
+        container.addEventListener("click", function (event) {
+            var toggleButton = event.target.closest(".skills-category-toggle");
+            if (toggleButton) {
+                if (!isMobileSkillsViewport()) return;
+
+                var category = toggleButton.closest(".skills-category");
+                if (!category) return;
+
+                var isCollapsed = category.classList.contains("is-collapsed");
+                if (isCollapsed) {
+                    var visibleCategories = document.querySelectorAll(".skills-category:not(.is-hidden)");
+                    visibleCategories.forEach(function (item) {
+                        if (item !== category) {
+                            setCategoryCollapsed(item, true);
+                            item.setAttribute("data-show-all", "false");
+                        }
+                    });
+                    setCategoryCollapsed(category, false);
+                } else {
+                    setCategoryCollapsed(category, true);
+                }
+
+                category.setAttribute("data-show-all", "false");
+                updateMobileSkillsLayout();
+
+                if (isCollapsed) {
+                    scrollCategoryIntoView(category);
+                }
+                return;
+            }
+
+            var moreButton = event.target.closest(".skills-category-more");
+            if (moreButton) {
+                var targetCategory = moreButton.closest(".skills-category");
+                if (!targetCategory || !isMobileSkillsViewport()) return;
+
+                var showAll = targetCategory.getAttribute("data-show-all") === "true";
+                targetCategory.setAttribute("data-show-all", showAll ? "false" : "true");
+                updateMobileCategoryBadgeLimit(targetCategory, true);
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            updateMobileSkillsLayout();
+        });
     }
 
     function getFilterLabel(filter) {
@@ -253,6 +456,7 @@
                 ensureFilterFeedback();
                 initFilters();
                 initPanelResizeBehavior();
+                initMobileControls();
                 setActiveFilterButton("all");
                 applyFilter("all");
             })
