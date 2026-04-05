@@ -51,6 +51,22 @@
     color: #ffffff;
     margin: 0;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.7rem;
+}
+
+.contact-heading::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent-cyan), rgba(129, 140, 248, 0.7));
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 .contact-subtitle {

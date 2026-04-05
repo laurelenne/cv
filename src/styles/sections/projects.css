@@ -52,8 +52,8 @@
 .projects-heading::after {
     content: "";
     position: absolute;
-    left: 0;
-    transform: translateX(0);
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     width: 50px;
     height: 3px;
@@ -63,7 +63,7 @@
 }
 
 .projects-intro {
-    margin: 1rem 0 0;
+    margin: 1rem auto 0;
     max-width: 70ch;
     font-size: 0.95rem;
     line-height: 1.65;
