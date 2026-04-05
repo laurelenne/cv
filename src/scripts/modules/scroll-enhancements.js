@@ -262,11 +262,56 @@
         update();
     }
 
+    function initUnderlineAnimations() {
+        var pairs = [
+            { parentSel: ".projects-header",         headingSel: ".projects-heading" },
+            { parentSel: ".timeline-section-header", headingSel: ".timeline-heading" },
+            { parentSel: ".contact-header",          headingSel: ".contact-heading" },
+            { parentSel: ".positioning-header",      headingSel: ".positioning-heading" },
+            { parentSel: ".skills-col-left",         headingSel: ".skills-hero h3" },
+            { parentSel: ".about-heading",           headingSel: ".about-section-title" }
+        ];
+
+        function triggerHeading(h) {
+            h.classList.remove("ul-animate");
+            void h.offsetWidth;
+            h.classList.add("ul-animate");
+        }
+
+        if (!("IntersectionObserver" in window)) {
+            pairs.forEach(function (p) {
+                document.querySelectorAll(p.headingSel).forEach(function (h) {
+                    h.classList.add("ul-animate");
+                });
+            });
+            return;
+        }
+
+        var ulObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var parent = entry.target;
+                pairs.forEach(function (p) {
+                    if (parent.matches(p.parentSel)) {
+                        parent.querySelectorAll(p.headingSel).forEach(triggerHeading);
+                    }
+                });
+            });
+        }, { threshold: 0.3 });
+
+        pairs.forEach(function (p) {
+            document.querySelectorAll(p.parentSel).forEach(function (el) {
+                ulObserver.observe(el);
+            });
+        });
+    }
+
     function init() {
         initScrollProgress();
         initCinematicWheelScroll();
         initRevealOnScroll();
         initBackToTopFab();
+        initUnderlineAnimations();
     }
 
     if (document.readyState === "loading") {

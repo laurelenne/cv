@@ -7,6 +7,19 @@ html {
     --accent-cyan: #38bdf8;
     --accent-violet: #818cf8;
     --accent-green: #34d399;
+    --color-action: var(--accent-cyan);
+    --color-info: var(--accent-violet);
+    --color-success: var(--accent-green);
+    --color-text-primary: #f8fdff;
+    --color-text-secondary: rgba(186, 230, 253, 0.86);
+    --color-text-muted: rgba(186, 230, 253, 0.78);
+    --color-border-soft: rgba(125, 211, 252, 0.18);
+    --color-border-strong: rgba(125, 211, 252, 0.28);
+    --section-eyebrow-color: var(--accent-cyan);
+    --section-eyebrow-glow: rgba(56, 189, 248, 0.45);
+    --section-underline-start: var(--accent-cyan);
+    --section-underline-end: rgba(34, 211, 238, 0.95);
+    --section-underline-glow: rgba(56, 189, 248, 0.5);
     --section-pad-top: 6rem;
     --section-pad-bottom: 7rem;
     --section-pad-top-mobile: 4rem;
@@ -70,6 +83,18 @@ body::-webkit-scrollbar-thumb {
     100% {
         box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
     }
+}
+
+/* === Underline spotlight sweep === */
+@keyframes ul-bar-reveal {
+    from { opacity: 0.22; }
+    to   { opacity: 1; }
+}
+
+@keyframes ul-sweep-loop {
+    0%   { background-position: -40px 0; opacity: 1; }
+    11%  { background-position: calc(100% + 40px) 0; opacity: 0; }
+    100% { background-position: -40px 0; opacity: 0; }
 }
 
 body {

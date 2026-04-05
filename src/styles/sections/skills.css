@@ -203,17 +203,42 @@
     margin-bottom: 0.2rem !important;
 }
 
+.skills-hero h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.88) 60%, transparent 100%);
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: -40px 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
 .skills-hero h3::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     bottom: 0;
-    width: 54px;
+    width: 100%;
     height: 3px;
     border-radius: 99px;
-    background: linear-gradient(90deg, #38bdf8, #22d3ee);
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.55);
+    background: linear-gradient(90deg, var(--section-underline-start), var(--section-underline-end));
+    box-shadow: 0 0 12px var(--section-underline-glow);
+    opacity: 0.22;
+}
+
+.skills-hero h3.ul-animate::before {
+    animation: ul-sweep-loop 6s ease-out 0.4s infinite;
+}
+
+.skills-hero h3.ul-animate::after {
+    animation: ul-bar-reveal 0.55s ease-out 0.4s forwards;
 }
 
 /* Bloc positionnement gauche */
@@ -226,11 +251,13 @@
 }
 
 .skills-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 0.2em;
-    font-size: 0.7rem;
-    color: #67e8f9;
-    margin-bottom: 0.4rem !important;
-    text-shadow: 0 0 14px rgba(103, 232, 249, 0.4);
+    text-transform: uppercase;
+    color: var(--section-eyebrow-color);
+    margin: 0 0 0.6rem;
+    text-shadow: 0 0 18px var(--section-eyebrow-glow);
 }
 
 .skills-intro {
@@ -1666,9 +1693,10 @@
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.2em;
-    color: #38bdf8;
+    text-transform: uppercase;
+    color: var(--section-eyebrow-color);
     margin: 0 0 0.6rem;
-    text-shadow: 0 0 18px rgba(56, 189, 248, 0.5);
+    text-shadow: 0 0 18px var(--section-eyebrow-glow);
 }
 
 .positioning-heading {
@@ -1683,17 +1711,42 @@
     padding-bottom: 0.7rem;
 }
 
+.positioning-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.88) 60%, transparent 100%);
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: -40px 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
 .positioning-heading::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     bottom: 0;
-    width: 50px;
+    width: 100%;
     height: 3px;
     border-radius: 99px;
-    background: linear-gradient(90deg, #38bdf8, #22d3ee);
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+    background: linear-gradient(90deg, var(--section-underline-start), var(--section-underline-end));
+    box-shadow: 0 0 12px var(--section-underline-glow);
+    opacity: 0.22;
+}
+
+.positioning-heading.ul-animate::before {
+    animation: ul-sweep-loop 6s ease-out 0.4s infinite;
+}
+
+.positioning-heading.ul-animate::after {
+    animation: ul-bar-reveal 0.55s ease-out 0.4s forwards;
 }
 
 .positioning-subtitle {

@@ -3,9 +3,9 @@
 .contact-section {
     width: 100%;
     padding: var(--section-pad-top) 0 var(--section-pad-bottom);
-    background: linear-gradient(150deg, rgba(6, 17, 30, 0.98), rgba(9, 24, 41, 0.96));
+    background: linear-gradient(145deg, rgba(5, 16, 29, 0.98), rgba(11, 28, 46, 0.97));
     border-bottom: 1px solid rgba(125, 211, 252, 0.18);
-    box-shadow: inset 0 -1px 0 rgba(56, 189, 248, 0.08);
+    box-shadow: inset 0 1px 0 rgba(125, 211, 252, 0.08), inset 0 -1px 0 rgba(56, 189, 248, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -39,9 +39,10 @@
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.2em;
-    color: var(--accent-cyan);
+    text-transform: uppercase;
+    color: var(--section-eyebrow-color);
     margin: 0 0 0.6rem;
-    text-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+    text-shadow: 0 0 18px var(--section-eyebrow-glow);
 }
 
 .contact-heading {
@@ -56,17 +57,42 @@
     padding-bottom: 0.7rem;
 }
 
+.contact-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.88) 40%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.88) 60%, transparent 100%);
+    background-size: 40px 100%;
+    background-repeat: no-repeat;
+    background-position: -40px 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
 .contact-heading::after {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     bottom: 0;
-    width: 50px;
+    width: 100%;
     height: 3px;
     border-radius: 99px;
-    background: linear-gradient(90deg, var(--accent-cyan), rgba(129, 140, 248, 0.7));
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    background: linear-gradient(90deg, var(--section-underline-start), var(--section-underline-end));
+    box-shadow: 0 0 12px var(--section-underline-glow);
+    opacity: 0.22;
+}
+
+.contact-heading.ul-animate::before {
+    animation: ul-sweep-loop 6s ease-out 0.4s infinite;
+}
+
+.contact-heading.ul-animate::after {
+    animation: ul-bar-reveal 0.55s ease-out 0.4s forwards;
 }
 
 .contact-subtitle {
@@ -78,11 +104,11 @@
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(125, 211, 252, 0.18);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(125, 211, 252, 0.24);
     border-radius: 14px;
     padding: 1.35rem;
-    box-shadow: inset 0 0 1px rgba(56, 189, 248, 0.08);
+    box-shadow: inset 0 0 1px rgba(56, 189, 248, 0.1), 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 .contact-grid {
@@ -106,7 +132,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(186, 230, 253, 0.85);
+    color: rgba(186, 230, 253, 0.9);
 }
 
 .contact-input,
@@ -171,7 +197,7 @@
 .contact-status {
     min-height: 1.25rem;
     font-size: 0.84rem;
-    color: rgba(186, 230, 253, 0.82);
+    color: rgba(186, 230, 253, 0.88);
 }
 
 .contact-status.is-success {
