@@ -1,22 +1,22 @@
 [
     {
         "id": "evolution",
-        "title": "Evolution",
+        "title": "Évolution Clicker",
         "year": 2019,
         "type": "Jeu",
         "eyebrow": "Etude de cas",
         "lead": "Projet de jeu clicker realise en groupe avec logique de progression, gestion de ressources et organisation collaborative.",
         "objectif": "Concevoir un jeu de type clicker avec une boucle de progression claire, une difficulte croissante et une experience fluide pour le joueur.",
-        "tech": ["Java", "POO", "Travail en equipe"],
+        "tech": ["JS", "HTML", "Travail en equipe"],
         "travailRealise": [
             "Participation a l'architecture des classes et a la logique metier.",
             "Mise en place de mecaniques d'evolution et de progression.",
             "Coordination en equipe sur le decoupage et l'integration."
         ],
-        "apercu": "public/assets/images/lp-logo.png",
+        "apercu": "public/assets/images/evolution-screenshot.png",
         "apercu_alt": "Apercu du projet Evolution",
         "demo": null,
-        "github": null
+        "github": "https://github.com/laurelenne/evolution"
     },
     {
         "id": "risk-jules-verne",
