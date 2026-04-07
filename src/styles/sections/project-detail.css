@@ -130,6 +130,11 @@ body.project-detail-page {
     display: block;
 }
 
+.project-demo-media {
+    width: 100%;
+    display: block;
+}
+
 .project-media-card--video {
     min-height: 220px;
     display: grid;

@@ -22,6 +22,45 @@
         if (el) el.textContent = text;
     }
 
+    function isVideoUrl(url) {
+        return /\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(url);
+    }
+
+    function isImageUrl(url) {
+        return /\.(gif|png|jpe?g|webp|avif|svg)(?:[?#].*)?$/i.test(url);
+    }
+
+    function renderDemo(project) {
+        var demoEl = document.getElementById("proj-demo");
+        if (!demoEl) return;
+
+        var demo = project.demo;
+        if (!demo) {
+            demoEl.innerHTML = "<p>Aucune demo disponible.</p>";
+            return;
+        }
+
+        if (isVideoUrl(demo)) {
+            demoEl.innerHTML =
+                '<video class="project-demo-media" controls preload="metadata" playsinline>' +
+                    '<source src="' + escapeHtml(demo) + '">' +
+                    'Votre navigateur ne supporte pas la lecture video.' +
+                '</video>';
+            return;
+        }
+
+        if (isImageUrl(demo)) {
+            demoEl.innerHTML =
+                '<img class="project-demo-media" src="' + escapeHtml(demo) + '" alt="Demo du projet ' + escapeHtml(project.title) + '">';
+            return;
+        }
+
+        demoEl.innerHTML =
+            '<a class="project-code-link" href="' + escapeHtml(demo) + '" target="_blank" rel="noopener noreferrer">' +
+                '<i class="fa fa-external-link" aria-hidden="true"></i> Ouvrir la demo' +
+            '</a>';
+    }
+
     function renderProject(project) {
         document.title = "Projet - " + project.title;
 
@@ -52,6 +91,8 @@
             aprecu.src = project.apercu || "";
             aprecu.alt = project.apercu_alt || "";
         }
+
+        renderDemo(project);
 
         var codeEl = document.getElementById("proj-code");
         if (codeEl) {

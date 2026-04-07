@@ -59,20 +59,20 @@
     {
         "id": "portail-integrations",
         "title": "Portail Intégrations",
-        "year": 2024,
+        "year": 2019,
         "type": "Frontend",
         "eyebrow": "Etude de cas",
-        "lead": "Recueil de projets d'intégration web réalisés en formation : mises en page responsives et composants UI variés.",
+        "lead": "Recueil de projets d'intégration web réalisés en formation. Présentation des compétences acquises en HTML/CSS.",
         "objectif": "Regrouper et présenter les exercices d'intégration HTML/CSS réalisés pendant la formation, accessibles en ligne.",
-        "tech": ["HTML", "CSS", "Bootstrap", "Responsive"],
+        "tech": ["HTML", "CSS", "Bootstrap"],
         "travailRealise": [
             "Intégration de plusieurs mises en page desktop et mobile.",
             "Création de composants UI réutilisables en Bootstrap.",
             "Publication sur GitHub Pages."
         ],
-        "apercu": "public/assets/images/integrations-bg.png",
+        "apercu": "public/assets/images/portail-integrations.png",
         "apercu_alt": "Apercu du Portail Intégrations",
-        "demo": null,
+        "demo": "public/assets/gif/portail-integration-demo.gif",
         "github": "https://github.com/laurelenne/integrations"
     },
     {
