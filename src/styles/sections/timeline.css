@@ -143,6 +143,15 @@
     box-shadow: 0 0 0 4px rgba(7, 19, 33, 0.95);
 }
 
+.tl-dot i,
+.tl-dot img {
+    max-width: 24px;
+    max-height: 24px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .tl-item:hover .tl-dot {
     border-color: #67e8f9;
     box-shadow: 0 0 18px rgba(56,189,248,0.4), 0 0 0 4px rgba(7, 19, 33, 0.95);
@@ -195,6 +204,12 @@
     background: rgba(52,211,153,0.15);
     color: #6ee7b7;
     border: 1px solid rgba(52,211,153,0.3);
+}
+
+.tl-tag--experience {
+    background: rgba(245,158,11,0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245,158,11,0.3);
 }
 
 .tl-date {

@@ -10,20 +10,22 @@
             "Composants dynamiques en JavaScript et React."
         ],
         "skills": [
-            { "key": "html", "name": "HTML", "icon": "fab fa-html5", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "css", "name": "CSS", "icon": "fab fa-css3-alt", "level": "mastery", "featured": false, "methodo": false },
-            { "key": "bootstrap", "name": "Bootstrap", "icon": "fab fa-bootstrap", "level": "mastery", "featured": false, "methodo": false },
-            { "key": "javascript", "name": "JavaScript", "icon": "fab fa-js-square", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "react", "name": "React", "icon": "fab fa-react", "level": "notions", "featured": false, "methodo": false },
-            { "key": "vue", "name": "Vue.js", "icon": "fab fa-vuejs", "level": "intermediate", "featured": true, "methodo": false },
-            { "key": "sass", "name": "SCSS / Sass", "icon": "fab fa-sass", "level": "notions", "featured": false, "methodo": false },
-            { "key": "stylus", "name": "Stylus", "icon": "fas fa-pencil-ruler", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "typescript", "name": "TypeScript", "icon": "fas fa-code", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "jquery", "name": "jQuery", "icon": "fas fa-code", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "html", "name": "HTML", "icon": "fa-brands fa-html5", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "javascript", "name": "JavaScript", "icon": "fa-brands fa-js", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "wordpress", "name": "Wordpress", "icon": "icon:wordpress.png", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "vue", "name": "Vue.js", "icon": "fa-brands fa-vuejs", "level": "intermediate", "featured": true, "methodo": false },
             { "key": "accessibilite", "name": "Accessibilite web", "icon": "fas fa-universal-access", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "css", "name": "CSS", "icon": "fa-brands fa-css3-alt", "level": "mastery", "featured": false, "methodo": false },
+            { "key": "bootstrap", "name": "Bootstrap", "icon": "fa-brands fa-bootstrap", "level": "mastery", "featured": false, "methodo": false },
+            { "key": "stylus", "name": "Stylus", "icon": "icon:stylus.svg", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "typescript", "name": "TypeScript", "icon": "icon:typescript.webp", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "jquery", "name": "jQuery", "icon": "icon:jquery.png", "level": "intermediate", "featured": false, "methodo": false },
             { "key": "responsive", "name": "Responsive design", "icon": "fas fa-mobile-alt", "level": "intermediate", "featured": false, "methodo": false },
             { "key": "form-validation", "name": "Validation de formulaires", "icon": "fas fa-check-circle", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "json", "name": "JSON", "icon": "fas fa-file-code", "level": "intermediate", "featured": false, "methodo": false }
+            { "key": "json", "name": "JSON", "icon": "fas fa-file-code", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "pug", "name": "PUG", "icon": "icon:pugjs.png", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "react", "name": "React", "icon": "fa-brands fa-react", "level": "notions", "featured": false, "methodo": false },
+            { "key": "sass", "name": "SCSS / Sass", "icon": "fab fa-sass", "level": "notions", "featured": false, "methodo": false }
         ]
     },
     {
@@ -37,17 +39,17 @@
             "Gestion d'erreurs et structuration MVC cote serveur."
         ],
         "skills": [
-            { "key": "java", "name": "Java", "icon": "fab fa-java", "level": "intermediate", "featured": true, "methodo": false },
-            { "key": "spring", "name": "Spring Boot", "icon": "fas fa-leaf", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "java", "name": "Java", "icon": "fa-brands fa-java", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "spring", "name": "Spring Boot", "icon": "fa-solid fa-leaf", "level": "intermediate", "featured": true, "methodo": false },
             { "key": "rest", "name": "REST API", "icon": "fas fa-plug", "level": "intermediate", "featured": true, "methodo": false },
-            { "key": "hibernate", "name": "Hibernate / JPA", "icon": "fas fa-layer-group", "level": "notions", "featured": false, "methodo": false },
-            { "key": "junit", "name": "JUnit", "icon": "fas fa-vial", "level": "notions", "featured": false, "methodo": false },
-            { "key": "spring-security", "name": "Spring Security", "icon": "fas fa-shield-alt", "level": "notions", "featured": false, "methodo": false },
-            { "key": "spring-mvc", "name": "Spring MVC", "icon": "fas fa-sitemap", "level": "notions", "featured": false, "methodo": false },
+            { "key": "poo", "name": "POO", "icon": "fas fa-cubes", "level": "intermediate", "featured": true, "methodo": false },
             { "key": "mvc", "name": "MVC", "icon": "fas fa-layer-group", "level": "intermediate", "featured": false, "methodo": false },
             { "key": "http", "name": "Methodes HTTP", "icon": "fas fa-exchange-alt", "level": "intermediate", "featured": false, "methodo": false },
             { "key": "error-handling", "name": "Gestion des erreurs", "icon": "fas fa-bug", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "poo", "name": "POO", "icon": "fas fa-cubes", "level": "intermediate", "featured": true, "methodo": false }
+            { "key": "hibernate", "name": "Hibernate / JPA", "icon": "fas fa-layer-group", "level": "notions", "featured": false, "methodo": false },
+            { "key": "junit", "name": "JUnit", "icon": "fas fa-vial", "level": "notions", "featured": false, "methodo": false },
+            { "key": "spring-security", "name": "Spring Security", "icon": "fas fa-shield-alt", "level": "notions", "featured": false, "methodo": false },
+            { "key": "spring-mvc", "name": "Spring MVC", "icon": "fas fa-sitemap", "level": "notions", "featured": false, "methodo": false }
         ]
     },
     {
@@ -61,13 +63,13 @@
             "Administration et verification de jeux de donnees en environnement projet."
         ],
         "skills": [
-            { "key": "postgresql", "name": "PostgreSQL", "icon": "fas fa-database", "level": "intermediate", "featured": true, "methodo": false },
-            { "key": "mysql", "name": "MySQL", "icon": "fas fa-server", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "sql", "name": "SQL", "icon": "fas fa-table", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "merise", "name": "Merise / MCD", "icon": "fas fa-project-diagram", "level": "notions", "featured": false, "methodo": true },
+            { "key": "sql", "name": "SQL", "icon": "fa-solid fa-database", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "postgresql", "name": "PostgreSQL", "icon": "icon:postgresql.png", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "mysql", "name": "MySQL", "icon": "icon:mysql.svg", "level": "intermediate", "featured": false, "methodo": false },
             { "key": "phpmyadmin", "name": "phpMyAdmin", "icon": "fab fa-php", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "uml", "name": "UML", "icon": "fas fa-sitemap", "level": "notions", "featured": false, "methodo": true },
-            { "key": "drawio", "name": "Draw.io / Diagrams", "icon": "fas fa-draw-polygon", "level": "intermediate", "featured": false, "methodo": true }
+            { "key": "drawio", "name": "Draw.io / Diagrams", "icon": "fas fa-draw-polygon", "level": "intermediate", "featured": false, "methodo": true },
+            { "key": "merise", "name": "Merise / MCD", "icon": "fas fa-project-diagram", "level": "notions", "featured": false, "methodo": true },
+            { "key": "uml", "name": "UML", "icon": "fas fa-sitemap", "level": "notions", "featured": false, "methodo": true }
         ]
     },
     {
@@ -81,25 +83,26 @@
             "Tests et debogage avec Postman et Chrome DevTools."
         ],
         "skills": [
-            { "key": "eclipse", "name": "Eclipse", "icon": "fas fa-code", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "vscode", "name": "VS Code", "icon": "fas fa-terminal", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "brackets", "name": "Brackets", "icon": "fa fa-code", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "git", "name": "Git", "icon": "fab fa-git-alt", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "trello", "name": "Trello", "icon": "fab fa-trello", "level": "mastery", "featured": false, "methodo": true },
-            { "key": "agile", "name": "Agile", "icon": "fa fa-users", "level": "intermediate", "featured": false, "methodo": true },
-            { "key": "github", "name": "GitHub", "icon": "fab fa-github", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "vscode", "name": "VS Code", "icon": "icon:vscode.png", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "git", "name": "Git", "icon": "icon:git.svg", "level": "mastery", "featured": true, "methodo": false },
             { "key": "figma", "name": "Figma", "icon": "fab fa-figma", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "postman", "name": "Postman", "icon": "fas fa-paper-plane", "level": "intermediate", "featured": false, "methodo": false },
-            { "key": "npm", "name": "npm / Node.js", "icon": "fab fa-node-js", "level": "intermediate", "featured": true, "methodo": false },
-            { "key": "jira", "name": "Jira", "icon": "fab fa-jira", "level": "intermediate", "featured": true, "methodo": true },
             { "key": "markdown", "name": "Markdown", "icon": "fab fa-markdown", "level": "mastery", "featured": true, "methodo": true },
             { "key": "notion", "name": "Notion", "icon": "fas fa-book", "level": "mastery", "featured": true, "methodo": true },
-            { "key": "slack", "name": "Slack", "icon": "fab fa-slack", "level": "mastery", "featured": false, "methodo": false },
-            { "key": "adobe-xd", "name": "Adobe XD", "icon": "fa fa-pencil-square-o", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "canva", "name": "Canva", "icon": "fas fa-palette", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "adobe-xd", "name": "Adobe XD", "icon": "icon:adobe-xd.svg", "level": "mastery", "featured": true, "methodo": false },
+            { "key": "canva", "name": "Canva", "icon": "icon:canvas.png", "level": "mastery", "featured": true, "methodo": false },
             { "key": "ia", "name": "IA", "icon": "fa fa-lightbulb-o", "level": "mastery", "featured": true, "methodo": false },
-            { "key": "scrum", "name": "Scrum", "icon": "fas fa-sync-alt", "level": "notions", "featured": false, "methodo": true },
-            { "key": "devtools", "name": "Chrome DevTools", "icon": "fab fa-chrome", "level": "intermediate", "featured": false, "methodo": false }
+            { "key": "github", "name": "GitHub", "icon": "fab fa-github", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "npm", "name": "npm / Node.js", "icon": "fab fa-node-js", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "jira", "name": "Jira", "icon": "fab fa-jira", "level": "intermediate", "featured": true, "methodo": true },
+            { "key": "expo", "name": "Expo", "icon": "fas fa-rocket", "level": "intermediate", "featured": true, "methodo": false },
+            { "key": "trello", "name": "Trello", "icon": "icon:trello.svg", "level": "mastery", "featured": false, "methodo": true },
+            { "key": "slack", "name": "Slack", "icon": "fab fa-slack", "level": "mastery", "featured": false, "methodo": false },
+            { "key": "eclipse", "name": "Eclipse", "icon": "icon:eclipse.svg", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "agile", "name": "Agile", "icon": "icon:agile.svg", "level": "intermediate", "featured": false, "methodo": true },
+            { "key": "postman", "name": "Postman", "icon": "fas fa-paper-plane", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "devtools", "name": "Chrome DevTools", "icon": "fab fa-chrome", "level": "intermediate", "featured": false, "methodo": false },
+            { "key": "android-studio", "name": "Android Studio", "icon": "fab fa-android", "level": "notions", "featured": false, "methodo": false },
+            { "key": "scrum", "name": "Scrum", "icon": "fas fa-sync-alt", "level": "notions", "featured": false, "methodo": true }
         ]
     }
 ]

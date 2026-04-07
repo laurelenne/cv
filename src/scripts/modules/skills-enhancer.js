@@ -40,6 +40,26 @@
             .replace(/'/g, "&#039;");
     }
 
+    /**
+     * Renders icon HTML supporting both local assets and Font Awesome formats:
+     * - "icon:filename.ext" → <img src="public/assets/icons-skills/filename.ext">
+     * - "fa:fab fa-icon" or "fab fa-icon" (legacy) → <i class="fab fa-icon">
+     */
+    function renderIconHtml(iconString) {
+        if (!iconString) return "";
+        
+        // Local icon format (SVG, PNG, WebP, etc.)
+        if (iconString.startsWith("icon:")) {
+            var filename = iconString.substring(5); // Remove "icon:" prefix
+            var iconPath = "public/assets/icons-skills/" + escapeHtml(filename);
+            return '<img src="' + iconPath + '" alt="" class="icon-svg" loading="lazy" />';
+        }
+        
+        // Font Awesome format (with or without "fa:" prefix)
+        var iconClass = iconString.startsWith("fa:") ? iconString.substring(3) : iconString;
+        return '<i class="' + escapeHtml(iconClass) + '" aria-hidden="true"></i>';
+    }
+
     function getLevel(level) {
         if (level === "mastery") return { css: "level-1", label: "Bonne maitrise" };
         if (level === "intermediate") return { css: "level-2", label: "Intermediaire" };
@@ -66,7 +86,7 @@
 
         badge.innerHTML =
             favoriteHtml +
-            '<div class="skill-icon"><i class="' + escapeHtml(skill.icon) + '" aria-hidden="true"></i></div>' +
+            '<div class="skill-icon">' + renderIconHtml(skill.icon) + '</div>' +
             '<div class="skill-name">' + escapeHtml(skill.name) + '</div>' +
             '<span class="skills-level-chip ' + level.css + '">' + level.label + '</span>';
 
@@ -85,7 +105,7 @@
 
         wrapper.innerHTML =
             '<div class="skills-category-head">' +
-            '<h5 class="skills-category-title"><i class="' + escapeHtml(category.icon) + '" aria-hidden="true"></i><span class="skills-category-title-text">' + escapeHtml(category.title) + '</span></h5>' +
+            '<h5 class="skills-category-title">' + renderIconHtml(category.icon) + '<span class="skills-category-title-text">' + escapeHtml(category.title) + '</span></h5>' +
             '<button type="button" class="skills-category-toggle" aria-expanded="true" aria-label="Replier la categorie">' +
             '<i class="fa fa-minus" aria-hidden="true"></i>' +
             '</button>' +

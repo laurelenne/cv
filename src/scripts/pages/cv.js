@@ -13,6 +13,26 @@
             .replace(/'/g, "&#039;");
     }
 
+    /**
+     * Renders icon HTML supporting both local assets and Font Awesome formats:
+     * - "icon:filename.ext" → <img src="public/assets/icons-skills/filename.ext">
+     * - "fa:fab fa-icon" or "fab fa-icon" (legacy) → <i class="fab fa-icon">
+     */
+    function renderIconHtml(iconString) {
+        if (!iconString) return "";
+        
+        // Local icon format (SVG, PNG, WebP, etc.)
+        if (iconString.startsWith("icon:")) {
+            var filename = iconString.substring(5); // Remove "icon:" prefix
+            var iconPath = "public/assets/icons-skills/" + escapeHtml(filename);
+            return '<img src="' + iconPath + '" alt="" class="icon-svg" loading="lazy" />';
+        }
+        
+        // Font Awesome format (with or without "fa:" prefix)
+        var iconClass = iconString.startsWith("fa:") ? iconString.substring(3) : iconString;
+        return '<i class="' + escapeHtml(iconClass) + '" aria-hidden="true"></i>';
+    }
+
     function fetchJSON(url) {
         return fetch(url).then(function (response) {
             if (!response.ok) throw new Error("HTTP " + response.status + " — " + url);
@@ -63,7 +83,7 @@
                     : "cv-skill-chip--intermediate";
 
                 html += '<span class="cv-skill-chip ' + lvlClass + '">';
-                html += '<i class="' + escapeHtml(skill.icon) + '" aria-hidden="true"></i>';
+                html += renderIconHtml(skill.icon);
                 html += escapeHtml(skill.name);
                 html += '</span>';
             });
@@ -80,14 +100,24 @@
         return html || '<p class="cv-loading">Aucune compétence trouvée.</p>';
     }
 
-    /* ─── Parcours (timeline.json) ────────────────────────── */
+    /* ─── Parcours (timeline.json) ───────────────────────── */
+
+    function extractYear(dateStr) {
+        var match = String(dateStr).match(/\d{4}/);
+        return match ? parseInt(match[0], 10) : 9999;
+    }
 
     function buildTimelineHtml(data) {
         if (!data || !data.length) {
             return '<p class="cv-loading">Aucune entrée trouvée.</p>';
         }
 
-        return data.map(function (item) {
+        // Tri par date croissante
+        var sortedData = data.slice().sort(function (a, b) {
+            return extractYear(a.date) - extractYear(b.date);
+        });
+
+        return sortedData.map(function (item) {
             var tagType  = escapeHtml(item.tagType || "projet");
             var chipsHtml = "";
 
@@ -138,7 +168,6 @@
                            + 'target="_blank" rel="noopener noreferrer">Démo</a>';
             }
 
-            return '<div class="cv-proj">'
                 + '<div class="cv-proj-meta">'
                 +   '<span class="cv-proj-year">' + escapeHtml(String(p.year || "")) + '</span>'
                 +   '<span class="cv-proj-type">' + escapeHtml(p.type || "") + '</span>'

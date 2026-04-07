@@ -12,6 +12,26 @@
             .replace(/'/g, "&#039;");
     }
 
+    /**
+     * Renders icon HTML supporting both local assets and Font Awesome formats:
+     * - "icon:filename.ext" → <img src="public/assets/icons-skills/filename.ext">
+     * - "fa:fab fa-icon" or "fab fa-icon" (legacy) → <i class="fab fa-icon">
+     */
+    function renderIconHtml(iconString) {
+        if (!iconString) return "";
+        
+        // Local icon format (SVG, PNG, WebP, etc.)
+        if (iconString.startsWith("icon:")) {
+            var filename = iconString.substring(5); // Remove "icon:" prefix
+            var iconPath = "public/assets/icons-skills/" + escapeHtml(filename);
+            return '<img src="' + iconPath + '" alt="" class="icon-svg" loading="lazy" />';
+        }
+        
+        // Font Awesome format (with or without "fa:" prefix)
+        var iconClass = iconString.startsWith("fa:") ? iconString.substring(3) : iconString;
+        return '<i class="' + escapeHtml(iconClass) + '" aria-hidden="true"></i>';
+    }
+
     function buildItem(item) {
         var chipsHtml = "";
         if (Array.isArray(item.chips) && item.chips.length) {
@@ -28,7 +48,7 @@
         article.setAttribute("data-tl-animate", "");
 
         article.innerHTML =
-            '<div class="tl-dot"><i class="' + escapeHtml(item.icon) + '" aria-hidden="true"></i></div>' +
+            '<div class="tl-dot">' + renderIconHtml(item.icon) + '</div>' +
             '<div class="tl-card">' +
                 '<div class="tl-card-header">' +
                     '<span class="tl-tag tl-tag--' + escapeHtml(item.tagType) + '">' + escapeHtml(item.tag) + '</span>' +
@@ -40,6 +60,28 @@
             '</div>';
 
         return article;
+    }
+
+    function extractSortDate(item) {
+        // Utilise dateSort si disponible (format MM/YYYY), sinon extrait l'année de date
+        if (item.dateSort) {
+            var parts = String(item.dateSort).split("/");
+            if (parts.length === 2) {
+                var month = parseInt(parts[0], 10) || 1;
+                var year = parseInt(parts[1], 10) || 9999;
+                return year * 100 + month; // Format: YYYYMM pour tri
+            }
+        }
+        // Fallback sur l'année
+        var match = String(item.date).match(/\d{4}/);
+        var year = match ? parseInt(match[0], 10) : 9999;
+        return year * 100;
+    }
+
+    function sortByDateAscending(items) {
+        return items.sort(function (a, b) {
+            return extractSortDate(a) - extractSortDate(b);
+        });
     }
 
     function attachObserver(items) {
@@ -70,8 +112,9 @@
                 return res.json();
             })
             .then(function (items) {
+                var sortedItems = sortByDateAscending(items);
                 var fragment = document.createDocumentFragment();
-                items.forEach(function (item) {
+                sortedItems.forEach(function (item) {
                     fragment.appendChild(buildItem(item));
                 });
                 container.appendChild(fragment);

@@ -542,6 +542,14 @@
     line-height: 1;
 }
 
+.skill-icon img {
+    max-width: 42px;
+    max-height: 42px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .skill-badge:hover .skill-icon {
     transform: scale(1.2) rotate(5deg);
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
@@ -1276,6 +1284,13 @@
 .skills-category-title i {
     color: #38bdf8;
     font-size: 0.9rem;
+}
+
+.skills-category-title img {
+    width: 0.9rem;
+    height: 0.9rem;
+    object-fit: contain;
+    filter: brightness(1) saturate(1.1);
 }
 
 .skills-category-description {
