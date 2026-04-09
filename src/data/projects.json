@@ -109,12 +109,12 @@
     },
     {
         "id": "cv-portfolio",
-        "title": "CV Portfolio",
+        "title": "Refonte CV Portfolio",
         "year": 2026,
         "type": "Portfolio",
         "eyebrow": "Etude de cas",
         "lead": "Ce portfolio lui-même : site CV animé, responsive, sans framework JS, déployé sur GitHub Pages.",
-        "objectif": "Concevoir un CV en ligne moderne qui reflète mes compétences front-end et ma rigueur de développement.",
+        "objectif": "Refonte de mon CV en ligne, moderne qui reflète mes compétences front-end et ma rigueur de développement.",
         "tech": [
             "HTML",
             "CSS",
@@ -131,19 +131,20 @@
                 "type": "image",
                 "src": "public/assets/images/bg-site.png",
                 "alt": "Capture de la page d'accueil du CV Portfolio",
-                "caption": "Version desktop du portfolio"
+                "caption": "Header de la version précédente"
             },
             {
-                "type": "video",
-                "src": "public/assets/gif/cv-portfolio.gif",
-                "alt": "Animation du CV Portfolio",
-                "caption": "Aperçu animé des transitions"
+                "type": "image",
+                "src": "public/assets/images/capture-refonte-cv-portfolio.png",
+                "alt": "Capture de la page d'accueil du CV Portfolio refondu",
+                "caption": "Header de la nouvelle version"
             }
         ],
         "apercu": "public/assets/images/bg-site.png",
         "apercu_alt": "Apercu du CV Portfolio",
-        "apercuVideo": "https://laurelenne.github.io/cv/",
-        "github": "https://github.com/laurelenne/cv"
+        "apercuVideo": "public/assets/gif/cv-portfolio.gif",
+        "site": "https://laurelenne.github.io/cv-portfolio/",
+        "github": "https://github.com/laurelenne/cv-portfolio"
     },
     {
         "id": "concert-noel-cancon-2025",
@@ -183,7 +184,7 @@
         "medias": [
             {
                 "type": "image",
-                "src": "affiche-concert-noel-cancon-2025.jpg",
+                "src": "public/assets/image/affiche-concert-noel-cancon-2025.jpg",
                 "alt": "Visuel du projet Ensemble, chantons Noël sous la halle",
                 "caption": "Programme interactif du concert de Noël de Cancon"
             }
@@ -191,6 +192,7 @@
         "apercu": "public/assets/images/affiche-concert-noel-cancon-2025.jpg",
         "apercu_alt": "Aperçu du projet Ensemble, chantons Noël sous la halle",
         "apercuVideo": null,
+        "site": "https://laurelenne.github.io/concert-noel-cancon-2025/",
         "github": "https://github.com/laurelenne/concert-noel-cancon-2025"
     }
 ]

@@ -73,6 +73,12 @@ body.project-detail-page {
     gap: 1rem;
 }
 
+.project-links-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
 .project-block {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(125, 211, 252, 0.14);
@@ -228,6 +234,10 @@ body.project-detail-page {
     }
 
     .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-links-row {
         grid-template-columns: 1fr;
     }
 

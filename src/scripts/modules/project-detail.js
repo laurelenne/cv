@@ -231,6 +231,23 @@
         renderMediaGallery(project);
         renderVideoPreview(project);
 
+        var siteBlockEl = document.getElementById("proj-site-block");
+        var siteEl = document.getElementById("proj-site");
+        if (siteBlockEl && siteEl) {
+            var siteUrl = project.site || project.website || project.live || "";
+            if (typeof siteUrl === "string") siteUrl = siteUrl.trim();
+            if (siteUrl) {
+                siteBlockEl.hidden = false;
+                siteEl.innerHTML =
+                    '<a class="project-code-link" href="' + escapeHtml(siteUrl) + '" target="_blank" rel="noopener noreferrer">' +
+                        '<i class="fa fa-globe" aria-hidden="true"></i> Ouvrir le site' +
+                    '</a>';
+            } else {
+                siteBlockEl.hidden = true;
+                siteEl.innerHTML = "";
+            }
+        }
+
         var codeEl = document.getElementById("proj-code");
         if (codeEl) {
             if (project.github) {
