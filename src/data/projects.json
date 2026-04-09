@@ -7,7 +7,11 @@
         "eyebrow": "Etude de cas",
         "lead": "Projet de jeu clicker realise en groupe avec logique de progression, gestion de ressources et organisation collaborative.",
         "objectif": "Concevoir un jeu de type clicker avec une boucle de progression claire, une difficulte croissante et une experience fluide pour le joueur.",
-        "tech": ["JS", "HTML", "Travail en equipe"],
+        "tech": [
+            "JS",
+            "HTML",
+            "Travail en equipe"
+        ],
         "travailRealise": [
             "Participation a l'architecture des classes et a la logique metier.",
             "Mise en place de mecaniques d'evolution et de progression.",
@@ -15,46 +19,62 @@
         ],
         "apercu": "public/assets/images/evolution-screenshot.png",
         "apercu_alt": "Apercu du projet Evolution",
-        "demo": null,
+        "apercuVideo": null,
         "github": "https://github.com/laurelenne/evolution"
     },
     {
         "id": "risk-jules-verne",
         "title": "Risk Jules Verne",
         "year": 2019,
-        "type": "Jeu",
+        "type": "Jeu / Application web",
         "eyebrow": "Etude de cas",
-        "lead": "Adaptation du jeu Risk dans un univers Jules Verne, avec une logique de jeu tour par tour et une realisation collective.",
-        "objectif": "Adapter les regles de Risk dans un environnement thematique Jules Verne en proposant une experience ludique coherente.",
-        "tech": ["Java", "Swing", "Algorithmique", "Travail en equipe"],
-        "travailRealise": [
-            "Contribution aux regles de conquete et de resolution des combats.",
-            "Implementation de composants d'interface en Java Swing.",
-            "Synchronisation du travail d'equipe sur les fonctionnalites principales."
+        "lead": "Jeu strategique inspire de Risk dans un univers Jules Verne, construit avec un backend Spring Boot REST, un frontend web statique (RiskWeb) et une base PostgreSQL initialisee par scripts SQL.",
+        "objectif": "Concevoir une base jouable separant clairement API backend et ecrans frontend, avec gestion des joueurs, recuperation des territoires et structure technique evolutive pour completer la logique de partie.",
+        "tech": [
+            "Java",
+            "Spring Boot 2.1.9",
+            "Spring Web",
+            "Spring Data JPA",
+            "PostgreSQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Maven"
         ],
-        "apercu": "public/assets/images/lp-logo.png",
+        "travailRealise": [
+            "Developpement d'API REST pour la gestion des joueurs (ajout unitaire/multiple, listing, suppression globale) et l'acces aux territoires.",
+            "Mise en place de la structure frontend RiskWeb avec les ecrans init.html, game.html et mapgame.html relies au backend local.",
+            "Configuration de la persistance PostgreSQL avec scripts schema.sql et datas.sql pour preparer une base de depart.",
+            "Organisation du projet fullstack (backend Spring + frontend statique) avec execution via Maven Wrapper."
+        ],
+        "sectionsDetails": [
+            {
+                "title": "Architecture",
+                "content": [
+                    "Backend Java Spring Boot expose en API REST.",
+                    "Frontend statique dans le dossier RiskWeb (HTML, CSS, JavaScript).",
+                    "Base PostgreSQL initialisee via scripts SQL."
+                ]
+            }
+        ],
+        "medias": [
+            {
+                "type": "image",
+                "src": "public/assets/images/capture-ancienne-mapgame.png",
+                "alt": "Ancienne version de la carte Risk Jules Verne",
+                "caption": "Premier rendu de l'ecran mapgame"
+            },
+            {
+                "type": "image",
+                "src": "public/assets/images/capture-mapgame.png",
+                "alt": "Version recente de la carte Risk Jules Verne",
+                "caption": "Carte de jeu utilisee pendant la partie"
+            }
+        ],
+        "apercu": "public/assets/images/capture-mapgame.png",
         "apercu_alt": "Apercu du projet Risk Jules Verne",
-        "demo": null,
-        "github": null
-    },
-    {
-        "id": "restaurant-x",
-        "title": "Site vitrine - Restaurant X",
-        "year": 2025,
-        "type": "Site vitrine",
-        "eyebrow": "Etude de cas",
-        "lead": "Presentation detaillee du projet avec les objectifs, les technologies utilisees et les livrables realises.",
-        "objectif": "Creer un site vitrine moderne sous WordPress pour mettre en avant l'identite du restaurant, le menu et les informations pratiques.",
-        "tech": ["WordPress", "Elementor", "CSS personnalise"],
-        "travailRealise": [
-            "Integration complete des pages du site.",
-            "Personnalisation du theme selon la charte du client.",
-            "Optimisation mobile pour une navigation fluide."
-        ],
-        "apercu": "public/assets/images/integrations-bg.png",
-        "apercu_alt": "Apercu du projet Site vitrine Restaurant X",
-        "demo": null,
-        "github": "https://github.com/laurelenne"
+        "apercuVideo": "public/assets/videos/menu-demo.webp",
+        "github": "https://github.com/laurelenne/riskjulesverne"
     },
     {
         "id": "portail-integrations",
@@ -64,92 +84,28 @@
         "eyebrow": "Etude de cas",
         "lead": "Recueil de projets d'intégration web réalisés en formation. Présentation des compétences acquises en HTML/CSS.",
         "objectif": "Regrouper et présenter les exercices d'intégration HTML/CSS réalisés pendant la formation, accessibles en ligne.",
-        "tech": ["HTML", "CSS", "Bootstrap"],
+        "tech": [
+            "HTML",
+            "CSS",
+            "Bootstrap"
+        ],
         "travailRealise": [
             "Intégration de plusieurs mises en page desktop et mobile.",
             "Création de composants UI réutilisables en Bootstrap.",
             "Publication sur GitHub Pages."
         ],
+        "medias": [
+            {
+                "type": "image",
+                "src": "public/assets/images/portail-integrations.png",
+                "alt": "Capture du Portail Intégrations",
+                "caption": "Vue d'ensemble des intégrations publiées"
+            }
+        ],
         "apercu": "public/assets/images/portail-integrations.png",
         "apercu_alt": "Apercu du Portail Intégrations",
-        "demo": "public/assets/gif/portail-integration-demo.gif",
+        "apercuVideo": "public/assets/gif/portail-integration-demo.gif",
         "github": "https://github.com/laurelenne/integrations"
-    },
-    {
-        "id": "api-todo",
-        "title": "API REST – Gestion de tâches",
-        "year": 2025,
-        "type": "API",
-        "eyebrow": "Etude de cas",
-        "lead": "API REST CRUD complète pour gérer des tâches, avec authentification et gestion des rôles utilisateurs.",
-        "objectif": "Concevoir une API REST robuste avec Spring Boot permettant de créer, lire, modifier et supprimer des tâches.",
-        "tech": ["Java", "Spring Boot", "REST API", "PostgreSQL", "Spring Security"],
-        "travailRealise": [
-            "Mise en place des endpoints CRUD avec validation des données.",
-            "Authentification par token et gestion des rôles (admin/user).",
-            "Tests des routes via Postman."
-        ],
-        "apercu": "public/assets/images/lp-logo.png",
-        "apercu_alt": "Apercu de l'API REST Gestion de tâches",
-        "demo": null,
-        "github": null
-    },
-    {
-        "id": "blog-spring",
-        "title": "Application Blog",
-        "year": 2024,
-        "type": "Application web",
-        "eyebrow": "Etude de cas",
-        "lead": "Application web de blog avec interface d'administration, gestion des articles et des commentaires.",
-        "objectif": "Développer une application blog fullstack avec Spring MVC côté serveur et rendu HTML via Thymeleaf.",
-        "tech": ["Java", "Spring MVC", "Thymeleaf", "MySQL", "Hibernate"],
-        "travailRealise": [
-            "Modélisation de la base de données et des entités JPA.",
-            "Interface d'administration pour créer et gérer les articles.",
-            "Gestion des commentaires et pagination des résultats."
-        ],
-        "apercu": "public/assets/images/lp-logo.png",
-        "apercu_alt": "Apercu de l'application Blog",
-        "demo": null,
-        "github": null
-    },
-    {
-        "id": "dashboard-meteo",
-        "title": "Dashboard Météo",
-        "year": 2024,
-        "type": "Dashboard",
-        "eyebrow": "Etude de cas",
-        "lead": "Interface dynamique de visualisation météo consommant une API publique avec affichage responsive.",
-        "objectif": "Consommer une API météo tierce et afficher les données de façon claire et adaptée à tous les écrans.",
-        "tech": ["JavaScript", "Fetch API", "HTML", "CSS", "JSON"],
-        "travailRealise": [
-            "Appels asynchrones à une API publique (OpenWeatherMap).",
-            "Affichage dynamique des données sans rechargement de page.",
-            "Interface responsive adaptée mobile/desktop."
-        ],
-        "apercu": "public/assets/images/lp-logo.png",
-        "apercu_alt": "Apercu du Dashboard Météo",
-        "demo": null,
-        "github": null
-    },
-    {
-        "id": "mini-ecommerce",
-        "title": "Mini E-commerce",
-        "year": 2025,
-        "type": "Application web",
-        "eyebrow": "Etude de cas",
-        "lead": "Application e-commerce simplifiée avec catalogue produits, panier et gestion des commandes.",
-        "objectif": "Mettre en pratique les patterns Spring Boot, Hibernate/JPA et la gestion de sessions sur un cas concret.",
-        "tech": ["Java", "Spring Boot", "Hibernate / JPA", "SQL", "Bootstrap"],
-        "travailRealise": [
-            "Modélisation du catalogue produits et des commandes.",
-            "Gestion du panier en session avec calcul du total.",
-            "Interface utilisateur responsive avec Bootstrap."
-        ],
-        "apercu": "public/assets/images/lp-logo.png",
-        "apercu_alt": "Apercu du Mini E-commerce",
-        "demo": null,
-        "github": null
     },
     {
         "id": "cv-portfolio",
@@ -159,15 +115,82 @@
         "eyebrow": "Etude de cas",
         "lead": "Ce portfolio lui-même : site CV animé, responsive, sans framework JS, déployé sur GitHub Pages.",
         "objectif": "Concevoir un CV en ligne moderne qui reflète mes compétences front-end et ma rigueur de développement.",
-        "tech": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+        "tech": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GitHub Pages"
+        ],
         "travailRealise": [
             "Architecture modulaire CSS (base, sections, utilities).",
             "Animations JS (hero rotatif, canvas, timeline au scroll).",
             "Données externalisées en JSON pour projets et parcours."
         ],
+        "medias": [
+            {
+                "type": "image",
+                "src": "public/assets/images/bg-site.png",
+                "alt": "Capture de la page d'accueil du CV Portfolio",
+                "caption": "Version desktop du portfolio"
+            },
+            {
+                "type": "video",
+                "src": "public/assets/gif/cv-portfolio.gif",
+                "alt": "Animation du CV Portfolio",
+                "caption": "Aperçu animé des transitions"
+            }
+        ],
         "apercu": "public/assets/images/bg-site.png",
         "apercu_alt": "Apercu du CV Portfolio",
-        "demo": "https://laurelenne.github.io/cv/",
+        "apercuVideo": "https://laurelenne.github.io/cv/",
         "github": "https://github.com/laurelenne/cv"
+    },
+    {
+        "id": "concert-noel-cancon-2025",
+        "title": "Ensemble, chantons Noël sous la halle",
+        "year": 2025,
+        "type": "Site événementiel",
+        "eyebrow": "Etude de cas",
+        "lead": "Site web du concert de Noël participatif de Cancon (47), conçu comme un programme interactif permettant au public de suivre les paroles sur mobile et tablette.",
+        "objectif": "Mettre à disposition un support simple et accessible pendant le concert du 14 décembre 2025 à 14h30, avec une navigation fluide entre le programme et les 21 chansons.",
+        "tech": [
+            "HTML5",
+            "CSS3",
+            "SCSS",
+            "Bootstrap 5.3",
+            "JavaScript",
+            "JSON data-driven",
+            "GitHub Pages"
+        ],
+        "travailRealise": [
+            "Création de la page d'accueil index.html servant de programme du concert.",
+            "Mise en place de 21 pages de paroles (dossier chansons), une page par chanson.",
+            "Structuration des styles avec index.css (programme) et chansons.css (pages de chants).",
+            "Déploiement statique sur GitHub Pages sans dépendance back-end."
+        ],
+        "sectionsDetails": [
+            {
+                "title": "Architecture",
+                "content": [
+                    "index.html : programme du concert (page d'accueil).",
+                    "chansons/ : 21 pages de paroles, une par chanson.",
+                    "css/index.css : styles de la page programme.",
+                    "css/chansons.css : styles communs aux pages de chansons.",
+                    "images/ : ressources visuelles du site."
+                ]
+            }
+        ],
+        "medias": [
+            {
+                "type": "image",
+                "src": "affiche-concert-noel-cancon-2025.jpg",
+                "alt": "Visuel du projet Ensemble, chantons Noël sous la halle",
+                "caption": "Programme interactif du concert de Noël de Cancon"
+            }
+        ],
+        "apercu": "public/assets/images/affiche-concert-noel-cancon-2025.jpg",
+        "apercu_alt": "Aperçu du projet Ensemble, chantons Noël sous la halle",
+        "apercuVideo": null,
+        "github": "https://github.com/laurelenne/concert-noel-cancon-2025"
     }
 ]

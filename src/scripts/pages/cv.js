@@ -163,9 +163,10 @@
                 linksHtml += '<a href="' + escapeHtml(p.github) + '" class="cv-proj-link" '
                            + 'target="_blank" rel="noopener noreferrer">GitHub</a>';
             }
-            if (p.demo) {
-                linksHtml += '<a href="' + escapeHtml(p.demo) + '" class="cv-proj-link" '
-                           + 'target="_blank" rel="noopener noreferrer">Démo</a>';
+            var previewUrl = p.apercuVideo || p.demo;
+            if (previewUrl) {
+                linksHtml += '<a href="' + escapeHtml(previewUrl) + '" class="cv-proj-link" '
+                           + 'target="_blank" rel="noopener noreferrer">Aperçu vidéo</a>';
             }
 
                 + '<div class="cv-proj-meta">'

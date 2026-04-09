@@ -30,35 +30,176 @@
         return /\.(gif|png|jpe?g|webp|avif|svg)(?:[?#].*)?$/i.test(url);
     }
 
-    function renderDemo(project) {
-        var demoEl = document.getElementById("proj-demo");
-        if (!demoEl) return;
+    function detectMediaType(url) {
+        if (isVideoUrl(url)) return "video";
+        if (isImageUrl(url)) return "image";
+        return "link";
+    }
 
-        var demo = project.demo;
-        if (!demo) {
-            demoEl.innerHTML = "<p>Aucune demo disponible.</p>";
+    function normalizeMediaItem(rawItem, projectTitle, index) {
+        var item = null;
+        if (typeof rawItem === "string") {
+            item = { src: rawItem };
+        } else if (rawItem && typeof rawItem === "object") {
+            item = rawItem;
+        }
+
+        if (!item || !item.src) return null;
+
+        var type = item.type;
+        if (type !== "image" && type !== "video" && type !== "link") {
+            type = detectMediaType(item.src);
+        }
+
+        return {
+            src: String(item.src),
+            type: type,
+            alt: item.alt || ("Media " + (index + 1) + " du projet " + projectTitle),
+            caption: item.caption || "",
+            poster: item.poster || ""
+        };
+    }
+
+    function getProjectMedia(project) {
+        var media = [];
+
+        if (Array.isArray(project.medias)) {
+            for (var i = 0; i < project.medias.length; i++) {
+                var normalized = normalizeMediaItem(project.medias[i], project.title, media.length);
+                if (normalized) media.push(normalized);
+            }
+        }
+
+        if (project.apercu) {
+            media.push({
+                src: String(project.apercu),
+                type: "image",
+                alt: project.apercu_alt || ("Apercu du projet " + project.title),
+                caption: "",
+                poster: ""
+            });
+        }
+
+        var deduped = [];
+        var seen = Object.create(null);
+        for (var j = 0; j < media.length; j++) {
+            if (seen[media[j].src]) continue;
+            seen[media[j].src] = true;
+            deduped.push(media[j]);
+        }
+
+        return deduped;
+    }
+
+    function renderVideoPreview(project) {
+        var previewEl = document.getElementById("proj-apercu-video");
+        if (!previewEl) return;
+        var previewBlock = previewEl.closest(".project-block");
+
+        var previewUrl = project.apercuVideo || project.demo;
+        if (!previewUrl) {
+            previewEl.innerHTML = "";
+            if (previewBlock) previewBlock.hidden = true;
             return;
         }
 
-        if (isVideoUrl(demo)) {
-            demoEl.innerHTML =
-                '<video class="project-demo-media" controls preload="metadata" playsinline>' +
-                    '<source src="' + escapeHtml(demo) + '">' +
+        if (previewBlock) previewBlock.hidden = false;
+
+        if (isVideoUrl(previewUrl)) {
+            previewEl.innerHTML =
+                '<video class="project-video-preview-media" autoplay muted loop controls preload="metadata" playsinline>' +
+                    '<source src="' + escapeHtml(previewUrl) + '">' +
                     'Votre navigateur ne supporte pas la lecture video.' +
                 '</video>';
             return;
         }
 
-        if (isImageUrl(demo)) {
-            demoEl.innerHTML =
-                '<img class="project-demo-media" src="' + escapeHtml(demo) + '" alt="Demo du projet ' + escapeHtml(project.title) + '">';
+        if (isImageUrl(previewUrl)) {
+            previewEl.innerHTML =
+                '<img class="project-video-preview-media" src="' + escapeHtml(previewUrl) + '" alt="Apercu video du projet ' + escapeHtml(project.title) + '">';
             return;
         }
 
-        demoEl.innerHTML =
-            '<a class="project-code-link" href="' + escapeHtml(demo) + '" target="_blank" rel="noopener noreferrer">' +
-                '<i class="fa fa-external-link" aria-hidden="true"></i> Ouvrir la demo' +
+        previewEl.innerHTML =
+            '<a class="project-code-link" href="' + escapeHtml(previewUrl) + '" target="_blank" rel="noopener noreferrer">' +
+                '<i class="fa fa-external-link" aria-hidden="true"></i> Ouvrir l\'apercu video' +
             '</a>';
+    }
+
+    function buildMediaCard(item, index, projectTitle) {
+        var mediaHtml = "";
+
+        if (item.type === "video") {
+            mediaHtml =
+                '<video class="project-gallery-media" controls preload="metadata" playsinline ' +
+                (item.poster ? 'poster="' + escapeHtml(item.poster) + '" ' : "") +
+                'aria-label="Video ' + (index + 1) + ' du projet ' + escapeHtml(projectTitle) + '">' +
+                    '<source src="' + escapeHtml(item.src) + '">' +
+                    'Votre navigateur ne supporte pas la lecture video.' +
+                '</video>';
+        } else if (item.type === "link") {
+            mediaHtml =
+                '<a class="project-gallery-link" href="' + escapeHtml(item.src) + '" target="_blank" rel="noopener noreferrer">' +
+                    '<i class="fa fa-external-link" aria-hidden="true"></i> Ouvrir la demo' +
+                '</a>';
+        } else {
+            mediaHtml =
+                '<img class="project-gallery-media" src="' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '" loading="lazy">';
+        }
+
+        return (
+            '<figure class="project-media-card project-gallery-item">' +
+                mediaHtml +
+                (item.caption ? '<figcaption>' + escapeHtml(item.caption) + '</figcaption>' : "") +
+            '</figure>'
+        );
+    }
+
+    function renderMediaGallery(project) {
+        var galleryEl = document.getElementById("proj-gallery");
+        if (!galleryEl) return;
+
+        var media = getProjectMedia(project);
+        if (!media.length) {
+            galleryEl.innerHTML = '<p class="project-gallery-empty">Aucun media disponible pour ce projet.</p>';
+            return;
+        }
+
+        galleryEl.innerHTML = media.map(function (item, index) {
+            return buildMediaCard(item, index, project.title);
+        }).join("");
+    }
+
+    function renderExtraSections(project) {
+        var container = document.getElementById("proj-extra-sections");
+        if (!container) return;
+
+        var sections = Array.isArray(project.sectionsDetails) ? project.sectionsDetails : [];
+        if (!sections.length) {
+            container.innerHTML = "";
+            return;
+        }
+
+        container.innerHTML = sections.map(function (section) {
+            var title = section && section.title ? section.title : "Detail";
+            var content = section ? section.content : "";
+            var contentHtml = "";
+
+            if (Array.isArray(content)) {
+                contentHtml = '<ul class="project-list">' + content.map(function (item) {
+                    return "<li>" + escapeHtml(item) + "</li>";
+                }).join("") + "</ul>";
+            } else {
+                contentHtml = "<p>" + escapeHtml(content || "") + "</p>";
+            }
+
+            return (
+                '<article class="project-block">' +
+                    "<h2>" + escapeHtml(title) + "</h2>" +
+                    contentHtml +
+                "</article>"
+            );
+        }).join("");
     }
 
     function renderProject(project) {
@@ -86,13 +227,9 @@
             }).join("");
         }
 
-        var aprecu = document.getElementById("proj-apercu");
-        if (aprecu) {
-            aprecu.src = project.apercu || "";
-            aprecu.alt = project.apercu_alt || "";
-        }
-
-        renderDemo(project);
+        renderExtraSections(project);
+        renderMediaGallery(project);
+        renderVideoPreview(project);
 
         var codeEl = document.getElementById("proj-code");
         if (codeEl) {
