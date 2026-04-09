@@ -184,9 +184,9 @@
         "medias": [
             {
                 "type": "image",
-                "src": "public/assets/image/affiche-concert-noel-cancon-2025.jpg",
+                "src": "public/assets/images/affiche-concert-noel-cancon-2025.jpg",
                 "alt": "Visuel du projet Ensemble, chantons Noël sous la halle",
-                "caption": "Programme interactif du concert de Noël de Cancon"
+                "caption": "Affiche du concert de Noël à Cancon, support visuel du projet, réalisée par l'association organisatrice et utilisée pour la promotion de l'événement."
             }
         ],
         "apercu": "public/assets/images/affiche-concert-noel-cancon-2025.jpg",

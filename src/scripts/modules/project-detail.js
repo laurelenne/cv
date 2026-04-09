@@ -70,7 +70,7 @@
             }
         }
 
-        if (project.apercu) {
+        if (!media.length && project.apercu) {
             media.push({
                 src: String(project.apercu),
                 type: "image",
