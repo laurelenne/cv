@@ -7,10 +7,7 @@
         projects: [],
         visibleCount: INITIAL_VISIBLE,
         techFilter: "",
-        typeFilter: "",
-        lightboxImages: [],
-        lightboxIndex: 0,
-        lightboxEl: null
+        typeFilter: ""
     };
 
     function escapeHtml(str) {
@@ -22,7 +19,7 @@
             .replace(/'/g, "&#039;");
     }
 
-    function buildCard(project, visibleIndex) {
+    function buildCard(project) {
         var techHtml = (project.tech || []).map(function (t) {
             return "<span>" + escapeHtml(t) + "</span>";
         }).join("");
@@ -33,10 +30,9 @@
 
         article.innerHTML =
             '<div class="project-card-img-wrapper">' +
-                '<button type="button" class="project-image-zoom-trigger" data-project-image-index="' + visibleIndex + '" aria-label="Agrandir l\'image du projet ' + escapeHtml(project.title) + '">' +
+                '<a href="projet.html?id=' + escapeHtml(project.id) + '" aria-label="Voir la page projet ' + escapeHtml(project.title) + '">' +
                     '<img src="' + escapeHtml(project.apercu) + '" alt="' + escapeHtml(project.apercu_alt) + '" class="project-card-img">' +
-                    '<span class="project-image-zoom-hint"><i class="fa fa-search-plus" aria-hidden="true"></i> Agrandir</span>' +
-                '</button>' +
+                '</a>' +
             '</div>' +
             '<div class="project-card-body">' +
                 '<div class="project-card-meta">' +
@@ -54,148 +50,6 @@
             '</div>';
 
         return article;
-    }
-
-    function ensureLightbox() {
-        if (state.lightboxEl) return state.lightboxEl;
-
-        var lightbox = document.createElement("div");
-        lightbox.className = "media-lightbox";
-        lightbox.setAttribute("hidden", "");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightbox.innerHTML =
-            '<div class="media-lightbox-backdrop" data-lightbox-close="true"></div>' +
-            '<div class="media-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Visualisation image projet">' +
-                '<button type="button" class="media-lightbox-close" aria-label="Fermer la visionneuse">' +
-                    '<i class="fa fa-times" aria-hidden="true"></i>' +
-                '</button>' +
-                '<button type="button" class="media-lightbox-nav media-lightbox-nav--prev" aria-label="Image precedente">' +
-                    '<i class="fa fa-chevron-left" aria-hidden="true"></i>' +
-                '</button>' +
-                '<figure class="media-lightbox-figure">' +
-                    '<img class="media-lightbox-image" src="" alt="" loading="eager">' +
-                    '<figcaption class="media-lightbox-caption"></figcaption>' +
-                    '<p class="media-lightbox-counter" aria-live="polite"></p>' +
-                '</figure>' +
-                '<button type="button" class="media-lightbox-nav media-lightbox-nav--next" aria-label="Image suivante">' +
-                    '<i class="fa fa-chevron-right" aria-hidden="true"></i>' +
-                '</button>' +
-            '</div>';
-
-        document.body.appendChild(lightbox);
-        state.lightboxEl = lightbox;
-
-        lightbox.addEventListener("click", function (event) {
-            if (event.target.hasAttribute("data-lightbox-close") || event.target.classList.contains("media-lightbox")) {
-                closeLightbox();
-            }
-        });
-
-        var closeBtn = lightbox.querySelector(".media-lightbox-close");
-        var prevBtn = lightbox.querySelector(".media-lightbox-nav--prev");
-        var nextBtn = lightbox.querySelector(".media-lightbox-nav--next");
-
-        if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
-        if (prevBtn) prevBtn.addEventListener("click", function () { stepLightbox(-1); });
-        if (nextBtn) nextBtn.addEventListener("click", function () { stepLightbox(1); });
-
-        document.addEventListener("keydown", function (event) {
-            if (!isLightboxOpen()) return;
-            if (event.key === "Escape") {
-                closeLightbox();
-                return;
-            }
-            if (event.key === "ArrowLeft") {
-                stepLightbox(-1);
-                return;
-            }
-            if (event.key === "ArrowRight") {
-                stepLightbox(1);
-            }
-        });
-
-        return lightbox;
-    }
-
-    function isLightboxOpen() {
-        return !!(state.lightboxEl && !state.lightboxEl.hasAttribute("hidden"));
-    }
-
-    function updateLightboxImage() {
-        var lightbox = ensureLightbox();
-        var images = state.lightboxImages;
-        var total = images.length;
-        if (!total) return;
-
-        if (state.lightboxIndex < 0) state.lightboxIndex = total - 1;
-        if (state.lightboxIndex >= total) state.lightboxIndex = 0;
-
-        var current = images[state.lightboxIndex];
-        var imageEl = lightbox.querySelector(".media-lightbox-image");
-        var captionEl = lightbox.querySelector(".media-lightbox-caption");
-        var counterEl = lightbox.querySelector(".media-lightbox-counter");
-        var prevBtn = lightbox.querySelector(".media-lightbox-nav--prev");
-        var nextBtn = lightbox.querySelector(".media-lightbox-nav--next");
-
-        if (imageEl) {
-            imageEl.src = current.src;
-            imageEl.alt = current.alt;
-        }
-
-        if (captionEl) {
-            captionEl.textContent = current.caption;
-            captionEl.hidden = !current.caption;
-        }
-
-        if (counterEl) {
-            counterEl.textContent = (state.lightboxIndex + 1) + " / " + total;
-        }
-
-        if (prevBtn) prevBtn.disabled = total < 2;
-        if (nextBtn) nextBtn.disabled = total < 2;
-    }
-
-    function openLightbox(index) {
-        if (!state.lightboxImages.length) return;
-
-        state.lightboxIndex = Number(index) || 0;
-        updateLightboxImage();
-
-        var lightbox = ensureLightbox();
-        lightbox.removeAttribute("hidden");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("lightbox-open");
-
-        var closeBtn = lightbox.querySelector(".media-lightbox-close");
-        if (closeBtn) closeBtn.focus();
-    }
-
-    function closeLightbox() {
-        if (!state.lightboxEl) return;
-        state.lightboxEl.setAttribute("hidden", "");
-        state.lightboxEl.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("lightbox-open");
-    }
-
-    function stepLightbox(delta) {
-        if (!state.lightboxImages.length) return;
-        state.lightboxIndex += delta;
-        updateLightboxImage();
-    }
-
-    function bindGridInteractions(grid) {
-        if (!grid) return;
-
-        grid.addEventListener("click", function (event) {
-            var trigger = event.target.closest(".project-image-zoom-trigger");
-            if (!trigger || !grid.contains(trigger)) return;
-
-            var index = Number(trigger.getAttribute("data-project-image-index"));
-            if (Number.isNaN(index)) return;
-
-            event.preventDefault();
-            openLightbox(index);
-        });
     }
 
     function attachObserver(cards) {
@@ -265,23 +119,14 @@
 
     function renderProjects(grid, seeMoreBtn) {
         if (!grid) return;
-        if (isLightboxOpen()) closeLightbox();
         grid.innerHTML = "";
 
         var filtered = getFilteredProjects();
         var visible = filtered.slice(0, state.visibleCount);
         var fragment = document.createDocumentFragment();
 
-        state.lightboxImages = visible.map(function (project) {
-            return {
-                src: project.apercu,
-                alt: project.apercu_alt || ("Apercu du projet " + project.title),
-                caption: project.title
-            };
-        });
-
-        visible.forEach(function (project, index) {
-            fragment.appendChild(buildCard(project, index));
+        visible.forEach(function (project) {
+            fragment.appendChild(buildCard(project));
         });
 
         if (!visible.length) {
@@ -305,9 +150,6 @@
         var typeSelect = document.getElementById("projects-type-filter");
         var seeMoreBtn = document.getElementById("projects-see-more");
         if (!grid || !techSelect || !typeSelect || !seeMoreBtn) return;
-
-        ensureLightbox();
-        bindGridInteractions(grid);
 
         fetch(DATA_URL)
             .then(function (res) {
