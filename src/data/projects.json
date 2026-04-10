@@ -194,5 +194,52 @@
         "apercuVideo": null,
         "site": "https://laurelenne.github.io/concert-noel-cancon-2025/",
         "github": "https://github.com/laurelenne/concert-noel-cancon-2025"
+    },
+    {
+        "id": "clicly.fr",
+        "title": "Clicly.fr",
+        "year": 2025,
+        "type": "Site vitrine WordPress",
+        "eyebrow": "Etude de cas",
+        "lead": "Site vitrine realise pendant mon passage en incubateur pour promouvoir mes services de creation de sites WordPress et de creation de logos.",
+        "objectif": "Promouvoir mes prestations web et faciliter la prise de contact client avec une presentation claire des offres.",
+        "tech": [
+            "WordPress",
+            "CSS personnalise",
+            "SEO on-page",
+            "Google Analytics",
+            "Plugin de formulaire",
+            "Plugin de reservation d'appel"
+        ],
+        "travailRealise": [
+            "Creation de la direction artistique du site.",
+            "Conception du logo principal et des assets visuels.",
+            "Structuration des pages services et des offres.",
+            "Configuration SEO de base et suivi analytics.",
+            "Mise en place de formulaires et d'un systeme de reservation d'appel."
+        ],
+        "sectionsDetails": [
+            {
+                "title": "Cible et usage",
+                "content": [
+                    "Site destine a des independants et petites structures recherchant un site vitrine WordPress.",
+                    "Parcours concu pour orienter rapidement vers les offres et la prise de rendez-vous.",
+                    "Le projet est actuellement en pause suite a l'arret de l'hebergement Hostinger."
+                ]
+            }
+        ],
+        "medias": [
+            {
+                "type": "image",
+                "src": "public/assets/icons-skills/wordpress.png",
+                "alt": "Visuel temporaire du projet Clicly.fr",
+                "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
+            }
+        ],
+        "apercu": "public/assets/icons-skills/wordpress.png",
+        "apercu_alt": "Apercu temporaire du projet Clicly.fr",
+        "apercuVideo": null,
+        "site": "",
+        "github": ""
     }
 ]
