@@ -205,10 +205,49 @@
     flex-shrink: 0;
 }
 
-/* Overlay lien */
-.project-card-img-wrapper a {
+/* Overlay zoom */
+.project-image-zoom-trigger {
     display: block;
+    width: 100%;
     height: 175px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    cursor: zoom-in;
+    position: relative;
+}
+
+.project-image-zoom-hint {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 211, 252, 0.28);
+    background: rgba(3, 11, 20, 0.72);
+    color: #d9f7ff;
+    font-size: 0.67rem;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.project-card:hover .project-image-zoom-hint,
+.project-image-zoom-trigger:focus-visible .project-image-zoom-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image-zoom-trigger:focus-visible {
+    outline: 2px solid rgba(56, 189, 248, 0.6);
+    outline-offset: -2px;
 }
 
 /* Corps */
@@ -344,7 +383,7 @@
 }
 
 .project-card:first-child .project-card-img,
-.project-card:first-child .project-card-img-wrapper a {
+.project-card:first-child .project-image-zoom-trigger {
     height: 220px;
 }
 
@@ -408,5 +447,6 @@
     .projects-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: 1.2rem; }
     .projects-actions { padding: 0 1rem 1rem; }
     .project-card-img,
-    .project-card-img-wrapper a { height: 145px; }
+    .project-image-zoom-trigger { height: 145px; }
+    .project-image-zoom-hint { opacity: 1; transform: none; }
 }

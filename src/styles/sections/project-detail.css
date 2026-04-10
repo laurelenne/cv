@@ -167,6 +167,46 @@ body.project-detail-page {
     object-fit: cover;
 }
 
+.project-gallery-zoom-trigger {
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.project-gallery-zoom-hint {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.58rem;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    background: rgba(4, 12, 23, 0.72);
+    color: #d9f7ff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.project-gallery-zoom-trigger:hover .project-gallery-zoom-hint,
+.project-gallery-zoom-trigger:focus-visible .project-gallery-zoom-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-gallery-zoom-trigger:focus-visible {
+    outline: 2px solid rgba(56, 189, 248, 0.56);
+    outline-offset: -2px;
+}
+
 .project-gallery-item figcaption {
     padding: 0.65rem 0.75rem 0.75rem;
     border-top: 1px solid rgba(125, 211, 252, 0.14);
@@ -235,6 +275,11 @@ body.project-detail-page {
 
     .project-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .project-gallery-zoom-hint {
+        opacity: 1;
+        transform: none;
     }
 
     .project-links-row {

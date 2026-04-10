@@ -129,7 +129,7 @@
         "medias": [
             {
                 "type": "image",
-                "src": "public/assets/images/bg-site.png",
+                "src": "public/assets/images/capture-ancienne-version-cv.png",
                 "alt": "Capture de la page d'accueil du CV Portfolio",
                 "caption": "Header de la version précédente"
             },
@@ -140,7 +140,7 @@
                 "caption": "Header de la nouvelle version"
             }
         ],
-        "apercu": "public/assets/images/bg-site.png",
+        "apercu": "public/assets/images/capture-ancienne-version-cv.png",
         "apercu_alt": "Apercu du CV Portfolio",
         "apercuVideo": "public/assets/gif/cv-portfolio.gif",
         "site": "https://laurelenne.github.io/cv-portfolio/",
@@ -231,15 +231,33 @@
         "medias": [
             {
                 "type": "image",
-                "src": "public/assets/icons-skills/wordpress.png",
+                "src": "public/assets/images/clicly-capture-1.jpg",
+                "alt": "Visuel temporaire du projet Clicly.fr",
+                "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
+            },
+                        {
+                "type": "image",
+                "src": "public/assets/images/clicly-capture-2.jpg",
+                "alt": "Visuel temporaire du projet Clicly.fr",
+                "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
+            },
+                        {
+                "type": "image",
+                "src": "public/assets/images/clicly-capture-3.jpg",
+                "alt": "Visuel temporaire du projet Clicly.fr",
+                "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
+            },
+                        {
+                "type": "image",
+                "src": "public/assets/images/clicly-capture-4.jpg",
                 "alt": "Visuel temporaire du projet Clicly.fr",
                 "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
             }
         ],
-        "apercu": "public/assets/icons-skills/wordpress.png",
+        "apercu": "public/assets/images/clicly.png",
         "apercu_alt": "Apercu temporaire du projet Clicly.fr",
         "apercuVideo": null,
-        "site": "",
-        "github": ""
+        "site":  null,
+        "github": null
     }
 ]

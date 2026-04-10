@@ -643,6 +643,168 @@ h5 {
 
 }
 
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.media-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: grid;
+    place-items: center;
+    padding: 1.2rem;
+}
+
+.media-lightbox[hidden] {
+    display: none;
+}
+
+.media-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 8, 17, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+.media-lightbox-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1060px, 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    background: linear-gradient(180deg, rgba(7, 20, 34, 0.96), rgba(4, 13, 23, 0.96));
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+    padding: 1rem 3.5rem;
+}
+
+.media-lightbox-close,
+.media-lightbox-nav {
+    border: 1px solid rgba(125, 211, 252, 0.26);
+    background: rgba(5, 16, 28, 0.75);
+    color: #d9f7ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.media-lightbox-close:hover,
+.media-lightbox-close:focus-visible,
+.media-lightbox-nav:hover,
+.media-lightbox-nav:focus-visible {
+    background: rgba(56, 189, 248, 0.2);
+    color: #ffffff;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.media-lightbox-close {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+}
+
+.media-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.media-lightbox-nav:hover,
+.media-lightbox-nav:focus-visible {
+    transform: translateY(-50%);
+}
+
+.media-lightbox-nav--prev {
+    left: 0.7rem;
+}
+
+.media-lightbox-nav--next {
+    right: 0.7rem;
+}
+
+.media-lightbox-nav:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+}
+
+.media-lightbox-figure {
+    margin: 0;
+}
+
+.media-lightbox-image {
+    width: 100%;
+    max-height: min(74vh, 760px);
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(2, 8, 15, 0.7);
+}
+
+.media-lightbox-caption {
+    margin: 0.7rem 0 0;
+    color: rgba(186, 230, 253, 0.9);
+    line-height: 1.55;
+}
+
+.media-lightbox-counter {
+    margin: 0.35rem 0 0;
+    font-size: 0.78rem;
+    color: rgba(186, 230, 253, 0.72);
+}
+
+@media (max-width: 768px) {
+    .media-lightbox {
+        padding: 0.6rem;
+    }
+
+    .media-lightbox-dialog {
+        padding: 0.9rem;
+    }
+
+    .media-lightbox-close,
+    .media-lightbox-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .media-lightbox-close {
+        top: 0.45rem;
+        right: 0.45rem;
+    }
+
+    .media-lightbox-nav {
+        top: auto;
+        bottom: 0.6rem;
+        transform: none;
+    }
+
+    .media-lightbox-nav:hover,
+    .media-lightbox-nav:focus-visible {
+        transform: none;
+    }
+
+    .media-lightbox-nav--prev {
+        left: 0.6rem;
+    }
+
+    .media-lightbox-nav--next {
+        right: 0.6rem;
+    }
+
+    .media-lightbox-image {
+        max-height: 68vh;
+    }
+
+    .media-lightbox-caption,
+    .media-lightbox-counter {
+        padding-right: 5rem;
+    }
+}
+
 /* Suppression des liseres clairs entre sections et au-dessus du footer */
 .about-section--cohesive,
 .skills-section--cohesive,

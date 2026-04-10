@@ -2,6 +2,11 @@
     "use strict";
 
     var DATA_URL = "src/data/projects.json";
+    var lightboxState = {
+        images: [],
+        index: 0,
+        root: null
+    };
 
     function getProjectId() {
         var params = new URLSearchParams(window.location.search);
@@ -126,7 +131,7 @@
             '</a>';
     }
 
-    function buildMediaCard(item, index, projectTitle) {
+    function buildMediaCard(item, index, projectTitle, imageIndex) {
         var mediaHtml = "";
 
         if (item.type === "video") {
@@ -144,7 +149,10 @@
                 '</a>';
         } else {
             mediaHtml =
-                '<img class="project-gallery-media" src="' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '" loading="lazy">';
+                '<button type="button" class="project-gallery-zoom-trigger" data-gallery-image-index="' + imageIndex + '" aria-label="Agrandir l\'image ' + (imageIndex + 1) + ' du projet ' + escapeHtml(projectTitle) + '">' +
+                    '<img class="project-gallery-media" src="' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt) + '" loading="lazy">' +
+                    '<span class="project-gallery-zoom-hint"><i class="fa fa-search-plus" aria-hidden="true"></i> Agrandir</span>' +
+                '</button>';
         }
 
         return (
@@ -155,19 +163,172 @@
         );
     }
 
+    function ensureLightbox() {
+        if (lightboxState.root) return lightboxState.root;
+
+        var root = document.createElement("div");
+        root.className = "media-lightbox";
+        root.setAttribute("hidden", "");
+        root.setAttribute("aria-hidden", "true");
+        root.innerHTML =
+            '<div class="media-lightbox-backdrop" data-lightbox-close="true"></div>' +
+            '<div class="media-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Visualisation image projet">' +
+                '<button type="button" class="media-lightbox-close" aria-label="Fermer la visionneuse">' +
+                    '<i class="fa fa-times" aria-hidden="true"></i>' +
+                '</button>' +
+                '<button type="button" class="media-lightbox-nav media-lightbox-nav--prev" aria-label="Image precedente">' +
+                    '<i class="fa fa-chevron-left" aria-hidden="true"></i>' +
+                '</button>' +
+                '<figure class="media-lightbox-figure">' +
+                    '<img class="media-lightbox-image" src="" alt="" loading="eager">' +
+                    '<figcaption class="media-lightbox-caption"></figcaption>' +
+                    '<p class="media-lightbox-counter" aria-live="polite"></p>' +
+                '</figure>' +
+                '<button type="button" class="media-lightbox-nav media-lightbox-nav--next" aria-label="Image suivante">' +
+                    '<i class="fa fa-chevron-right" aria-hidden="true"></i>' +
+                '</button>' +
+            '</div>';
+
+        document.body.appendChild(root);
+        lightboxState.root = root;
+
+        root.addEventListener("click", function (event) {
+            if (event.target.hasAttribute("data-lightbox-close") || event.target.classList.contains("media-lightbox")) {
+                closeLightbox();
+            }
+        });
+
+        var closeBtn = root.querySelector(".media-lightbox-close");
+        var prevBtn = root.querySelector(".media-lightbox-nav--prev");
+        var nextBtn = root.querySelector(".media-lightbox-nav--next");
+        if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+        if (prevBtn) prevBtn.addEventListener("click", function () { stepLightbox(-1); });
+        if (nextBtn) nextBtn.addEventListener("click", function () { stepLightbox(1); });
+
+        document.addEventListener("keydown", function (event) {
+            if (!isLightboxOpen()) return;
+            if (event.key === "Escape") {
+                closeLightbox();
+                return;
+            }
+            if (event.key === "ArrowLeft") {
+                stepLightbox(-1);
+                return;
+            }
+            if (event.key === "ArrowRight") {
+                stepLightbox(1);
+            }
+        });
+
+        return root;
+    }
+
+    function isLightboxOpen() {
+        return !!(lightboxState.root && !lightboxState.root.hasAttribute("hidden"));
+    }
+
+    function updateLightboxImage() {
+        var root = ensureLightbox();
+        var total = lightboxState.images.length;
+        if (!total) return;
+
+        if (lightboxState.index < 0) lightboxState.index = total - 1;
+        if (lightboxState.index >= total) lightboxState.index = 0;
+
+        var current = lightboxState.images[lightboxState.index];
+        var imageEl = root.querySelector(".media-lightbox-image");
+        var captionEl = root.querySelector(".media-lightbox-caption");
+        var counterEl = root.querySelector(".media-lightbox-counter");
+        var prevBtn = root.querySelector(".media-lightbox-nav--prev");
+        var nextBtn = root.querySelector(".media-lightbox-nav--next");
+
+        if (imageEl) {
+            imageEl.src = current.src;
+            imageEl.alt = current.alt;
+        }
+
+        if (captionEl) {
+            captionEl.textContent = current.caption;
+            captionEl.hidden = !current.caption;
+        }
+
+        if (counterEl) {
+            counterEl.textContent = (lightboxState.index + 1) + " / " + total;
+        }
+
+        if (prevBtn) prevBtn.disabled = total < 2;
+        if (nextBtn) nextBtn.disabled = total < 2;
+    }
+
+    function openLightbox(index) {
+        if (!lightboxState.images.length) return;
+        lightboxState.index = Number(index) || 0;
+        updateLightboxImage();
+
+        var root = ensureLightbox();
+        root.removeAttribute("hidden");
+        root.setAttribute("aria-hidden", "false");
+        document.body.classList.add("lightbox-open");
+
+        var closeBtn = root.querySelector(".media-lightbox-close");
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+        if (!lightboxState.root) return;
+        lightboxState.root.setAttribute("hidden", "");
+        lightboxState.root.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("lightbox-open");
+    }
+
+    function stepLightbox(delta) {
+        if (!lightboxState.images.length) return;
+        lightboxState.index += delta;
+        updateLightboxImage();
+    }
+
+    function bindGalleryZoom(galleryEl) {
+        if (!galleryEl) return;
+        galleryEl.addEventListener("click", function (event) {
+            var trigger = event.target.closest(".project-gallery-zoom-trigger");
+            if (!trigger || !galleryEl.contains(trigger)) return;
+
+            var index = Number(trigger.getAttribute("data-gallery-image-index"));
+            if (Number.isNaN(index)) return;
+
+            event.preventDefault();
+            openLightbox(index);
+        });
+    }
+
     function renderMediaGallery(project) {
         var galleryEl = document.getElementById("proj-gallery");
         if (!galleryEl) return;
 
         var media = getProjectMedia(project);
+        var imageItems = [];
         if (!media.length) {
             galleryEl.innerHTML = '<p class="project-gallery-empty">Aucun media disponible pour ce projet.</p>';
             return;
         }
 
         galleryEl.innerHTML = media.map(function (item, index) {
-            return buildMediaCard(item, index, project.title);
+            var imageIndex = -1;
+            if (item.type === "image") {
+                imageIndex = imageItems.length;
+                imageItems.push({
+                    src: item.src,
+                    alt: item.alt,
+                    caption: item.caption || project.title
+                });
+            }
+            return buildMediaCard(item, index, project.title, imageIndex);
         }).join("");
+
+        lightboxState.images = imageItems;
+        if (isLightboxOpen()) closeLightbox();
+        ensureLightbox();
+        bindGalleryZoom(galleryEl);
     }
 
     function renderExtraSections(project) {
