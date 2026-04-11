@@ -163,35 +163,53 @@
     margin-top: 0.85rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 .contact-submit {
-    border: 1px solid rgba(56, 189, 248, 0.45);
-    background: linear-gradient(90deg, rgba(56, 189, 248, 0.22), rgba(52, 211, 153, 0.18));
-    color: #bae6fd;
+    border: 2px solid var(--accent-cyan);
+    background: rgba(7, 19, 33, 0.92);
+    color: #fff;
     border-radius: 10px;
-    padding: 0.65rem 1.35rem;
-    font-size: 0.85rem;
+    padding: 0.48rem 1.25rem;
+    font-size: 0.92rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: none;
+    transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s;
+    cursor: pointer;
+    outline: none;
+    font-family: "Space Grotesk", "Lato", sans-serif;
+}
+}
+
+.contact-submit::before {
+    display: none;
+}
 }
 
 .contact-submit:hover,
 .contact-submit:focus-visible {
-    background: linear-gradient(90deg, rgba(56, 189, 248, 0.32), rgba(52, 211, 153, 0.26));
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.32);
-    transform: translateY(-2px);
+    background: rgba(7, 19, 33, 0.99);
+    border-color: var(--accent-green);
+    color: #bae6fd;
+    transform: translateY(-1px) scale(1.03);
+}
+
+.contact-submit:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+}
 }
 
 .contact-submit:disabled {
     opacity: 0.6;
     cursor: wait;
     transform: none;
+    filter: grayscale(0.2);
 }
 
 .contact-status {
