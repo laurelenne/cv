@@ -7,7 +7,8 @@
         projects: [],
         visibleCount: INITIAL_VISIBLE,
         techFilter: "",
-        typeFilter: ""
+        typeFilter: "",
+        statusFilter: ""
     };
 
     function escapeHtml(str) {
@@ -54,7 +55,7 @@
         article.innerHTML =
             '<div class="project-card-img-wrapper">' +
                 '<a href="projet.html?id=' + escapeHtml(project.id) + '" aria-label="Voir la page projet ' + escapeHtml(project.title) + '">' +
-                    '<img src="' + escapeHtml(project.apercu) + '" alt="' + escapeHtml(project.apercu_alt) + '" class="project-card-img">' +
+                    '<img src="' + escapeHtml(project.apercu) + '" alt="' + escapeHtml(project.apercu_alt) + '" class="project-card-img" loading="lazy" decoding="async">' +
                 '</a>' +
             '</div>' +
             '<div class="project-card-body">' +
@@ -109,6 +110,43 @@
         return Array.from(set).sort(function (a, b) { return a.localeCompare(b); });
     }
 
+    function normalizeStatusKey(value) {
+        return String(value || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+    }
+
+    function sortStatusValues(values) {
+        var statusOrder = {
+            "en cours": 1,
+            "en maintenance": 2,
+            "en pause": 3,
+            "prototype": 4,
+            "a relancer": 5,
+            "termine": 6,
+            "archive": 7
+        };
+
+        return values.slice().sort(function (a, b) {
+            var keyA = normalizeStatusKey(a);
+            var keyB = normalizeStatusKey(b);
+            var rankA = Object.prototype.hasOwnProperty.call(statusOrder, keyA) ? statusOrder[keyA] : 999;
+            var rankB = Object.prototype.hasOwnProperty.call(statusOrder, keyB) ? statusOrder[keyB] : 999;
+            if (rankA !== rankB) return rankA - rankB;
+            return String(a).localeCompare(String(b));
+        });
+    }
+
+    function formatProjectCount(count) {
+        return count + " " + (count > 1 ? "projets" : "projet");
+    }
+
+    function pluralize(count, singular, plural) {
+        return count > 1 ? plural : singular;
+    }
+
     function fillSelect(select, values, defaultLabel) {
         if (!select) return;
         select.innerHTML = "";
@@ -130,8 +168,22 @@
         return state.projects.filter(function (project) {
             var matchTech = !state.techFilter || (project.tech || []).indexOf(state.techFilter) !== -1;
             var matchType = !state.typeFilter || project.type === state.typeFilter;
-            return matchTech && matchType;
+            var matchStatus = !state.statusFilter || getStatusLabels(project).indexOf(state.statusFilter) !== -1;
+            return matchTech && matchType && matchStatus;
         });
+    }
+
+    function updateResultsSummary(summaryEl, visibleCount, totalCount) {
+        if (!summaryEl) return;
+        if (!totalCount) {
+            summaryEl.textContent = "Aucun projet ne correspond aux filtres actifs.";
+            return;
+        }
+        if (visibleCount < totalCount) {
+            summaryEl.textContent = formatProjectCount(visibleCount) + " " + pluralize(visibleCount, "affiché", "affichés") + " sur " + formatProjectCount(totalCount) + ".";
+            return;
+        }
+        summaryEl.textContent = formatProjectCount(totalCount) + " " + pluralize(totalCount, "trouvé", "trouvés") + ".";
     }
 
     function setSeeMoreState(btn, totalCount) {
@@ -141,7 +193,7 @@
         btn.setAttribute("aria-hidden", hasMore ? "false" : "true");
     }
 
-    function renderProjects(grid, seeMoreBtn) {
+    function renderProjects(grid, seeMoreBtn, summaryEl) {
         if (!grid) return;
         grid.innerHTML = "";
 
@@ -156,7 +208,7 @@
         if (!visible.length) {
             var empty = document.createElement("p");
             empty.className = "projects-empty";
-            empty.textContent = "Aucun projet ne correspond aux filtres.";
+            empty.textContent = "Aucun projet ne correspond aux filtres actifs.";
             grid.appendChild(empty);
         } else {
             grid.appendChild(fragment);
@@ -166,14 +218,17 @@
         }
 
         setSeeMoreState(seeMoreBtn, filtered.length);
+        updateResultsSummary(summaryEl, visible.length, filtered.length);
     }
 
     function initProjects() {
         var grid = document.querySelector(".projects-grid");
         var techSelect = document.getElementById("projects-tech-filter");
         var typeSelect = document.getElementById("projects-type-filter");
+        var statusSelect = document.getElementById("projects-status-filter");
         var seeMoreBtn = document.getElementById("projects-see-more");
-        if (!grid || !techSelect || !typeSelect || !seeMoreBtn) return;
+        var resultsSummary = document.getElementById("projects-results-summary");
+        if (!grid || !techSelect || !typeSelect || !statusSelect || !seeMoreBtn) return;
 
         fetch(DATA_URL)
             .then(function (res) {
@@ -189,28 +244,38 @@
                 var typeValues = uniqueValues(state.projects, function (item) {
                     return item.type ? [item.type] : [];
                 });
+                var statusValues = uniqueValues(state.projects, function (item) {
+                    return getStatusLabels(item);
+                });
 
                 fillSelect(techSelect, techValues, "Toutes les technos");
                 fillSelect(typeSelect, typeValues, "Tous les types");
+                fillSelect(statusSelect, sortStatusValues(statusValues), "Tous les statuts");
 
                 techSelect.addEventListener("change", function () {
                     state.techFilter = techSelect.value;
                     state.visibleCount = INITIAL_VISIBLE;
-                    renderProjects(grid, seeMoreBtn);
+                    renderProjects(grid, seeMoreBtn, resultsSummary);
                 });
 
                 typeSelect.addEventListener("change", function () {
                     state.typeFilter = typeSelect.value;
                     state.visibleCount = INITIAL_VISIBLE;
-                    renderProjects(grid, seeMoreBtn);
+                    renderProjects(grid, seeMoreBtn, resultsSummary);
+                });
+
+                statusSelect.addEventListener("change", function () {
+                    state.statusFilter = statusSelect.value;
+                    state.visibleCount = INITIAL_VISIBLE;
+                    renderProjects(grid, seeMoreBtn, resultsSummary);
                 });
 
                 seeMoreBtn.addEventListener("click", function () {
                     state.visibleCount += INITIAL_VISIBLE;
-                    renderProjects(grid, seeMoreBtn);
+                    renderProjects(grid, seeMoreBtn, resultsSummary);
                 });
 
-                renderProjects(grid, seeMoreBtn);
+                renderProjects(grid, seeMoreBtn, resultsSummary);
                 document.dispatchEvent(new CustomEvent("portfolio:layout-stable"));
             })
             .catch(function (err) {

@@ -5,7 +5,7 @@
         "year": 2019,
         "type": "Jeu",
         "status": "Terminé",
-        "eyebrow": "Etude de cas",
+        "eyebrow": "Étude de cas",
         "lead": "Projet de jeu clicker realise en groupe avec logique de progression, gestion de ressources et organisation collaborative.",
         "objectif": "Concevoir un jeu de type clicker avec une boucle de progression claire, une difficulte croissante et une experience fluide pour le joueur.",
         "tech": [
@@ -19,7 +19,7 @@
             "Coordination en equipe sur le decoupage et l'integration."
         ],
         "apercu": "public/assets/images/evolution-screenshot.png",
-        "apercu_alt": "Apercu du projet Evolution",
+        "apercu_alt": "Aperçu du projet Evolution",
         "apercuVideo": null,
         "github": "https://github.com/laurelenne/evolution"
     },
@@ -29,7 +29,7 @@
         "year": 2019,
         "type": "Jeu / Application web",
         "status": "Terminé",
-        "eyebrow": "Etude de cas",
+        "eyebrow": "Étude de cas",
         "lead": "Jeu strategique inspire de Risk dans un univers Jules Verne, construit avec un backend Spring Boot REST, un frontend web statique (RiskWeb) et une base PostgreSQL initialisee par scripts SQL.",
         "objectif": "Concevoir une base jouable separant clairement API backend et ecrans frontend, avec gestion des joueurs, recuperation des territoires et structure technique evolutive pour completer la logique de partie.",
         "tech": [
@@ -74,7 +74,7 @@
             }
         ],
         "apercu": "public/assets/images/capture-mapgame.png",
-        "apercu_alt": "Apercu du projet Risk Jules Verne",
+        "apercu_alt": "Aperçu du projet Risk Jules Verne",
         "apercuVideo": "public/assets/videos/menu-demo.webp",
         "github": "https://github.com/laurelenne/riskjulesverne"
     },
@@ -84,7 +84,7 @@
         "year": 2019,
         "type": "Frontend",
         "status": "Terminé",
-        "eyebrow": "Etude de cas",
+        "eyebrow": "Étude de cas",
         "lead": "Recueil de projets d'intégration web réalisés en formation. Présentation des compétences acquises en HTML/CSS.",
         "objectif": "Regrouper et présenter les exercices d'intégration HTML/CSS réalisés pendant la formation, accessibles en ligne.",
         "tech": [
@@ -106,7 +106,7 @@
             }
         ],
         "apercu": "public/assets/images/portail-integrations.png",
-        "apercu_alt": "Apercu du Portail Intégrations",
+        "apercu_alt": "Aperçu du Portail Intégrations",
         "apercuVideo": "public/assets/gif/portail-integration-demo.gif",
         "github": "https://github.com/laurelenne/integrations"
     },
@@ -116,7 +116,7 @@
         "year": 2026,
         "type": "Portfolio",
         "status": "En cours",
-        "eyebrow": "Etude de cas",
+        "eyebrow": "Étude de cas",
         "lead": "Ce portfolio lui-même : site CV animé, responsive, sans framework JS, déployé sur GitHub Pages.",
         "objectif": "Refonte de mon CV en ligne, moderne qui reflète mes compétences front-end et ma rigueur de développement.",
         "tech": [
@@ -145,7 +145,7 @@
             }
         ],
         "apercu": "public/assets/images/capture-ancienne-version-cv.png",
-        "apercu_alt": "Apercu du CV Portfolio",
+        "apercu_alt": "Aperçu du CV Portfolio",
         "apercuVideo": "public/assets/gif/cv-portfolio.gif",
         "site": "https://laurelenne.github.io/cv-portfolio/",
         "github": "https://github.com/laurelenne/cv-portfolio"
@@ -156,7 +156,7 @@
         "year": 2025,
         "type": "Site événementiel",
         "status": "Terminé",
-        "eyebrow": "Etude de cas",
+        "eyebrow": "Étude de cas",
         "lead": "Site web du concert de Noël participatif de Cancon (47), conçu comme un programme interactif permettant au public de suivre les paroles sur mobile et tablette.",
         "objectif": "Mettre à disposition un support simple et accessible pendant le concert du 14 décembre 2025 à 14h30, avec une navigation fluide entre le programme et les 21 chansons.",
         "tech": [
@@ -206,8 +206,8 @@
         "year": 2025,
         "type": "Site vitrine WordPress",
         "status": "En pause",
-        "eyebrow": "Etude de cas",
-        "lead": "Site vitrine realise pendant mon passage en incubateur pour promouvoir mes services de creation de sites WordPress. ",
+        "eyebrow": "Étude de cas",
+        "lead": "Site vitrine realise pendant mon passage en incubateur pour promouvoir mes services de creation de sites WordPress.",
         "objectif": "Promouvoir mes prestations web et faciliter la prise de contact client avec une presentation claire des offres.",
         "tech": [
             "WordPress",
@@ -240,20 +240,20 @@
                 "src": "public/assets/images/clicly-capture-1.jpg",
                 "alt": "Visuel temporaire du projet Clicly.fr",
                 "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
-            },
-                        {
+                },
+                {
                 "type": "image",
                 "src": "public/assets/images/clicly-capture-2.jpg",
                 "alt": "Visuel temporaire du projet Clicly.fr",
                 "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
             },
-                        {
+                {
                 "type": "image",
                 "src": "public/assets/images/clicly-capture-3.jpg",
                 "alt": "Visuel temporaire du projet Clicly.fr",
                 "caption": "Visuel temporaire en attendant l'ajout des captures d'ecran du site"
             },
-                        {
+                {
                 "type": "image",
                 "src": "public/assets/images/clicly-capture-4.jpg",
                 "alt": "Visuel temporaire du projet Clicly.fr",
@@ -263,7 +263,7 @@
         "apercu": "public/assets/images/clicly.png",
         "apercu_alt": "Apercu temporaire du projet Clicly.fr",
         "apercuVideo": null,
-        "site":  null,
+        "site": null,
         "github": null
     }
 ]
