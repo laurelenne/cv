@@ -75,6 +75,11 @@
                   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
             }
 
+            function getHashTarget(hash) {
+                  if (!hash || hash.charAt(0) !== "#") return null;
+                  return document.querySelector(hash);
+            }
+
             function smoothScrollTo(targetY, duration) {
                   var startY = window.scrollY;
                   var distance = targetY - startY;
@@ -94,6 +99,28 @@
                   }
 
                   window.requestAnimationFrame(step);
+            }
+
+            function scrollToHash(hash, useSmoothScroll) {
+                  var target = getHashTarget(hash);
+                  if (!target) return;
+
+                  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                  var scrollOffset = nav.offsetHeight;
+                  var targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - scrollOffset);
+
+                  if (useSmoothScroll && !reducedMotion) {
+                        smoothScrollTo(targetY, 320);
+                  } else {
+                        window.scrollTo(0, targetY);
+                  }
+
+                  setActiveLink(hash);
+            }
+
+            function correctInitialHashScroll() {
+                  if (!window.location.hash) return;
+                  scrollToHash(window.location.hash, false);
             }
 
             menuButton.setAttribute("aria-haspopup", "menu");
@@ -150,15 +177,7 @@
                               var target = document.querySelector(href);
                               if (target) {
                                     event.preventDefault();
-                                    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                    var scrollOffset = nav.offsetHeight;
-                                    var targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - scrollOffset);
-
-                                    if (reducedMotion) {
-                                          window.scrollTo(0, targetY);
-                                    } else {
-                                          smoothScrollTo(targetY, 300);
-                                    }
+                                    scrollToHash(href, true);
 
                                     if (history.pushState) {
                                           history.pushState(null, "", href);
@@ -182,9 +201,16 @@
             });
 
             window.addEventListener("scroll", requestNavUpdate, { passive: true });
-            window.addEventListener("hashchange", requestNavUpdate);
+            window.addEventListener("hashchange", function () {
+                  requestNavUpdate();
+                  correctInitialHashScroll();
+            });
+            window.addEventListener("load", correctInitialHashScroll);
+            window.addEventListener("pageshow", correctInitialHashScroll);
+            document.addEventListener("portfolio:layout-stable", correctInitialHashScroll);
             closeMenu();
             requestNavUpdate();
+            requestAnimationFrame(correctInitialHashScroll);
       }
 
       if (document.readyState === "loading") {

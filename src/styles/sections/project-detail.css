@@ -49,6 +49,19 @@ body.project-detail-page {
     line-height: 1.7;
 }
 
+.project-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0 0 1.2rem;
+}
+
+.project-hero-meta .project-status-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
 .project-back-link {
     display: inline-flex;
     align-items: center;

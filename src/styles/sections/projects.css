@@ -231,6 +231,7 @@
 .project-card-meta {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.45rem;
     margin-bottom: 0.7rem;
 }
@@ -254,6 +255,18 @@
 .project-card-type {
     background: rgba(34, 211, 238, 0.12);
     color: #67e8f9;
+}
+
+.project-card-meta .project-status-badge {
+    font-size: 0.64rem;
+    padding: 0.22rem 0.58rem;
+}
+
+.project-card-meta .project-status-list {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
 .project-card-desc {

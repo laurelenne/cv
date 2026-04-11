@@ -19,9 +19,32 @@
             .replace(/'/g, "&#039;");
     }
 
+    function getStatusLabels(project) {
+        if (Array.isArray(project.status) && project.status.length) {
+            return project.status;
+        }
+        if (typeof project.status === "string" && project.status.trim()) {
+            return [project.status.trim()];
+        }
+        return ["Terminé"];
+    }
+
+    function getStatusClassName(status) {
+        return String(status || "termine")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+    }
+
     function buildCard(project) {
         var techHtml = (project.tech || []).map(function (t) {
             return "<span>" + escapeHtml(t) + "</span>";
+        }).join("");
+        var statusBadgesHtml = getStatusLabels(project).map(function (statusLabel) {
+            var statusClassName = getStatusClassName(statusLabel);
+            return '<span class="project-status-badge project-status-badge--' + escapeHtml(statusClassName) + '">' + escapeHtml(statusLabel) + '</span>';
         }).join("");
 
         var article = document.createElement("article");
@@ -38,6 +61,7 @@
                 '<div class="project-card-meta">' +
                     '<span class="project-card-year">' + escapeHtml(project.year || "") + '</span>' +
                     '<span class="project-card-type">' + escapeHtml(project.type || "Projet") + '</span>' +
+                    '<span class="project-status-list">' + statusBadgesHtml + '</span>' +
                 '</div>' +
                 '<h4 class="project-card-title">' + escapeHtml(project.title) + '</h4>' +
                 '<p class="project-card-desc">' + escapeHtml(project.lead) + '</p>' +
@@ -187,6 +211,7 @@
                 });
 
                 renderProjects(grid, seeMoreBtn);
+                document.dispatchEvent(new CustomEvent("portfolio:layout-stable"));
             })
             .catch(function (err) {
                 console.warn("Projects:", err.message);

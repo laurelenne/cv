@@ -123,6 +123,73 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.project-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    min-height: 28px;
+    padding: 0.22rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 211, 252, 0.24);
+    background: rgba(56, 189, 248, 0.12);
+    color: #d9f7ff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.project-status-list {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.project-status-badge--en-cours {
+    background: rgba(251, 191, 36, 0.14);
+    border-color: rgba(251, 191, 36, 0.32);
+    color: #fde68a;
+}
+
+.project-status-badge--termine {
+    background: rgba(52, 211, 153, 0.12);
+    border-color: rgba(52, 211, 153, 0.32);
+    color: #86efac;
+}
+
+.project-status-badge--en-pause {
+    background: rgba(148, 163, 184, 0.16);
+    border-color: rgba(148, 163, 184, 0.28);
+    color: #cbd5e1;
+}
+
+.project-status-badge--prototype {
+    background: rgba(168, 85, 247, 0.16);
+    border-color: rgba(168, 85, 247, 0.28);
+    color: #e9d5ff;
+}
+
+.project-status-badge--archive {
+    background: rgba(100, 116, 139, 0.16);
+    border-color: rgba(100, 116, 139, 0.26);
+    color: #cbd5e1;
+}
+
+.project-status-badge--en-maintenance {
+    background: rgba(59, 130, 246, 0.14);
+    border-color: rgba(59, 130, 246, 0.28);
+    color: #bfdbfe;
+}
+
+.project-status-badge--a-relancer {
+    background: rgba(249, 115, 22, 0.14);
+    border-color: rgba(249, 115, 22, 0.3);
+    color: #fdba74;
+}
+
 .back-to-top-fab.is-visible {
     opacity: 1;
     transform: translateY(0) scale(1);

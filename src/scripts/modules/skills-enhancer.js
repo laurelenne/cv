@@ -499,6 +499,7 @@
                 initMobileControls();
                 setActiveFilterButton("all");
                 applyFilter("all");
+                document.dispatchEvent(new CustomEvent("portfolio:layout-stable"));
             })
             .catch(function (err) {
                 console.warn("Skills:", err.message);

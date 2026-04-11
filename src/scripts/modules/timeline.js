@@ -123,6 +123,7 @@
                     container.querySelectorAll(".tl-item[data-tl-animate]")
                 );
                 attachObserver(newItems);
+                document.dispatchEvent(new CustomEvent("portfolio:layout-stable"));
             })
             .catch(function (err) {
                 console.warn("Timeline:", err.message);

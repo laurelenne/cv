@@ -27,6 +27,25 @@
         if (el) el.textContent = text;
     }
 
+    function getStatusLabels(project) {
+        if (Array.isArray(project.status) && project.status.length) {
+            return project.status;
+        }
+        if (typeof project.status === "string" && project.status.trim()) {
+            return [project.status.trim()];
+        }
+        return ["Terminé"];
+    }
+
+    function getStatusClassName(status) {
+        return String(status || "termine")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+    }
+
     function isVideoUrl(url) {
         return /\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(url);
     }
@@ -365,6 +384,8 @@
 
     function renderProject(project) {
         document.title = "Projet - " + project.title;
+        var statusesEl = document.getElementById("proj-statuses");
+        var statusLabels = getStatusLabels(project);
 
         var metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute("content", "Etude de cas - " + project.title);
@@ -373,6 +394,12 @@
         setText("proj-title", project.title);
         setText("proj-lead", project.lead);
         setText("proj-objectif", project.objectif);
+
+        if (statusesEl) {
+            statusesEl.innerHTML = statusLabels.map(function (statusLabel) {
+                return '<span class="project-status-badge project-status-badge--' + escapeHtml(getStatusClassName(statusLabel)) + '">' + escapeHtml(statusLabel) + '</span>';
+            }).join("");
+        }
 
         var techEl = document.getElementById("proj-tech");
         if (techEl && Array.isArray(project.tech)) {
