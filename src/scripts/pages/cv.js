@@ -112,33 +112,58 @@
             return '<p class="cv-loading">Aucune entrée trouvée.</p>';
         }
 
-        // Tri par date croissante
-        var sortedData = data.slice().sort(function (a, b) {
-            return extractYear(a.date) - extractYear(b.date);
+        // Filtre : afficher si showInCV !== false OU onlyInCV === true
+        var filteredData = data.filter(function(item) {
+            return item.showInCV !== false || item.onlyInCV === true;
+        });
+        // Tri par date décroissante (CV)
+        var sortedData = filteredData.slice().sort(function (a, b) {
+            return extractYear(b.date) - extractYear(a.date);
         });
 
-        return sortedData.map(function (item) {
-            var tagType  = escapeHtml(item.tagType || "projet");
-            var chipsHtml = "";
+        // Regroupement par type
+        var groupes = {
+            experience: [],
+            formation: [],
+            diplome: []
+        };
+        sortedData.forEach(function(item) {
+            if (item.tagType === "experience") groupes.experience.push(item);
+            else if (item.tagType === "formation") groupes.formation.push(item);
+            else if (item.tagType === "diplome") groupes.diplome.push(item);
+        });
 
-            if (item.chips && item.chips.length) {
-                chipsHtml = '<div class="cv-tl-chips">'
-                    + item.chips.map(function (c) {
-                        return '<span class="cv-tl-chip">' + escapeHtml(c) + '</span>';
-                    }).join("")
-                    + '</div>';
-            }
-
-            return '<div class="cv-tl-item">'
-                + '<div class="cv-tl-date">' + escapeHtml(item.date) + '</div>'
-                + '<div class="cv-tl-body">'
-                +   '<span class="cv-tl-tag cv-tl-tag--' + tagType + '">' + escapeHtml(item.tag) + '</span>'
-                +   '<p class="cv-tl-title">' + escapeHtml(item.title) + '</p>'
-                +   '<p class="cv-tl-desc">' + escapeHtml(item.desc) + '</p>'
-                +   chipsHtml
-                + '</div>'
+        function renderSection(titre, items) {
+            if (!items.length) return "";
+            return '<div class="cv-tl-section">'
+                + '<h4 class="cv-tl-section-title">' + titre + '</h4>'
+                + items.map(function (item) {
+                    var tagType  = escapeHtml(item.tagType || "projet");
+                    var chipsHtml = "";
+                    if (item.chips && item.chips.length) {
+                        chipsHtml = '<div class="cv-tl-chips">'
+                            + item.chips.map(function (c) {
+                                return '<span class="cv-tl-chip">' + escapeHtml(c) + '</span>';
+                            }).join("")
+                            + '</div>';
+                    }
+                    return '<div class="cv-tl-item">'
+                        + '<div class="cv-tl-date">' + escapeHtml(item.date) + '</div>'
+                        + '<div class="cv-tl-body">'
+                        +   '<p class="cv-tl-title">' + escapeHtml(item.title) + '</p>'
+                        +   '<p class="cv-tl-desc">' + escapeHtml(item.desc) + '</p>'
+                        +   chipsHtml
+                        + '</div>'
+                        + '</div>';
+                }).join("")
                 + '</div>';
-        }).join("");
+        }
+
+        return [
+            renderSection("Formations", groupes.formation),
+            renderSection("Diplômes", groupes.diplome),
+            renderSection("Expériences", groupes.experience)
+        ].join("");
     }
 
     /* ─── Réalisations (projects.json) ────────────────────── */

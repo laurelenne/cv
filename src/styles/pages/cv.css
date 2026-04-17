@@ -1,3 +1,22 @@
+/* ─── Titres de sections timeline (Formations, Diplômes, Expériences) ─── */
+.cv-tl-section-title {
+    font-family: var(--cv-font-head);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cv-accent);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.cv-tl-section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--cv-divider);
+}
 /* ===================================================================
    cv.css — Page CV en ligne (écran + impression)
    Synchronisé avec les données JSON du portfolio
@@ -274,7 +293,7 @@ a:hover { text-decoration: underline; }
 .cv-timeline {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.5rem;
 }
 
 .cv-tl-item {
@@ -288,7 +307,7 @@ a:hover { text-decoration: underline; }
     position: absolute;
     left: 67px;
     top: 14px;
-    bottom: -1.1rem;
+    bottom: -1.5rem;
     width: 1px;
     background: var(--cv-divider);
 }
@@ -339,13 +358,14 @@ a:hover { text-decoration: underline; }
     font-size: 0.87rem;
     font-weight: 700;
     color: var(--cv-ink);
-    margin-bottom: 0.18rem;
+    margin-bottom: 0.45rem;
 }
 
 .cv-tl-desc {
     font-size: 0.79rem;
     color: var(--cv-ink-muted);
     line-height: 1.55;
+    margin-bottom: 0.45rem;
 }
 
 .cv-tl-chips {
@@ -353,6 +373,7 @@ a:hover { text-decoration: underline; }
     flex-wrap: wrap;
     gap: 0.28rem;
     margin-top: 0.4rem;
+    margin-bottom: 1.1rem;
 }
 .cv-tl-chip {
     font-size: 0.6rem;

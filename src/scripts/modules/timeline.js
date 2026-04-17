@@ -112,7 +112,11 @@
                 return res.json();
             })
             .then(function (items) {
-                var sortedItems = sortByDateAscending(items);
+                // Filtre : exclure les éléments réservés au CV (onlyInCV === true)
+                var filteredItems = items.filter(function(item) {
+                    return item.onlyInCV !== true;
+                });
+                var sortedItems = sortByDateAscending(filteredItems);
                 var fragment = document.createDocumentFragment();
                 sortedItems.forEach(function (item) {
                     fragment.appendChild(buildItem(item));
