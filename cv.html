@@ -29,11 +29,15 @@
         </a>
         <div class="cv-toolbar-right">
             <span class="cv-print-hint">
-                Astuce : choisir <strong>« Enregistrer en PDF »</strong> dans l'aperçu impression
+                Généré dynamiquement depuis le portfolio · Les données sont synchronisées avec le site
             </span>
-            <button type="button" class="cv-print-btn" onclick="window.print()">
+            <button type="button" class="cv-print-btn" onclick="window.open('cv-pdf.html', '_blank')">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Télécharger PDF
+            </button>
+            <button type="button" class="cv-print-btn" onclick="window.open('cv-pdf.html?print', '_blank')">
+                <i class="fa fa-print" aria-hidden="true"></i>
+                Imprimer le CV
             </button>
         </div>
     </div>
@@ -146,9 +150,6 @@
             </div><!-- /.cv-body-grid -->
 
             <!-- Pied de page du document (masqué à l'impression) -->
-            <footer class="cv-doc-footer no-print">
-                <p>Généré dynamiquement depuis <a href="index.html">le portfolio</a> · Les données sont synchronisées avec le site</p>
-            </footer>
 
         </article><!-- /.cv-document -->
 
