@@ -77,7 +77,6 @@ Ce projet répond a trois objectifs principaux :
 ```text
 .
 |- index.html
-|- cv.html
 |- projet.html
 |- src/
 |  |- data/

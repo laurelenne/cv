@@ -23,7 +23,26 @@
   <!-- Ajoutez ici d'autres liens CSS spécifiques à l'impression si besoin -->
 </head>
 <body>
-  <!-- Copie du contenu principal de cv.html, sans les éléments interactifs ou non pertinents à l'impression -->
+    <!-- ── Barre d'actions (masquée à l'impression) ─────────────── -->
+    <div class="cv-toolbar no-print" role="toolbar" aria-label="Actions de la page CV">
+        <a href="index.html" class="cv-back-link">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Retour au site
+        </a>
+        <div class="cv-toolbar-right">
+            <span class="cv-print-hint">
+              Généré dynamiquement depuis le portfolio · Les données sont synchronisées avec le site
+            </span>
+            <button type="button" class="cv-print-btn" onclick="window.downloadCVasPDF()">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              Télécharger PDF
+            </button>
+            <button type="button" class="cv-print-btn" onclick="window.print()">
+              <i class="fa fa-print" aria-hidden="true"></i>
+              Imprimer le CV
+            </button>
+        </div>
+    </div>
     <div class="cv-page-bg">
     <article class="cv-document" role="main" aria-label="Curriculum Vitæ — Laurélenne Poussin">
       <header class="cv-header">
@@ -45,7 +64,7 @@
               Je souhaite rejoindre une équipe où je pourrai mettre à profit mes compétences en front-end, UX/UI et développement web, tout en continuant à apprendre et à progresser sur de nouvelles technologies.
             </p>
           </section>
-          <p class="cv-tagline">Backend orienté Java &middot; Base frontend solide &middot; Livraison complète</p>
+
           <ul class="cv-contacts" aria-label="Coordonnées">
             <li>
               <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -82,8 +101,6 @@
             <ul class="cv-bullets">
               <li>Adaptation rapide en équipe</li>
               <li>Apprentissage continu</li>
-              <li>Orientée résultat concret</li>
-              <li>Communication claire</li>
               <li>Curiosité technique</li>
             </ul>
           </section>
@@ -104,18 +121,9 @@
       </div>
     </article>
   </div>
+    <!-- Génération PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="src/scripts/modules/download-pdf.js"></script>
     <script src="src/scripts/pages/cv.js"></script>
-    <script>
-      // Déclenche l'impression automatiquement si l'URL contient '?print'
-      if (window.location.search.includes('print')) {
-        window.onload = () => window.print();
-      }
-    </script>
-  <script>
-    // Déclenche l'impression automatiquement si l'URL contient '?print'
-    if (window.location.search.includes('print')) {
-      window.onload = () => window.print();
-    }
-  </script>
 </body>
 </html>

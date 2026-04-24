@@ -65,9 +65,9 @@
         var html = "";
 
         data.forEach(function (domain) {
-            // On n'affiche que mastery et intermediate (pas notions) 
+            // On n'affiche que mastery/intermediate ET showInCV true
             var shown = domain.skills.filter(function (s) {
-                return s.level === "mastery" || s.level === "intermediate";
+                return (s.level === "mastery" || s.level === "intermediate") && s.showInCV !== false;
             });
             if (!shown.length) return;
 
@@ -136,7 +136,8 @@
         function renderSection(titre, items) {
             if (!items.length) return "";
             return '<div class="cv-tl-section">'
-                + '<h4 class="cv-tl-section-title">' + titre + '</h4>'
+                + '<div class="cv-tl-section-header"><h2 class="cv-tl-section-title">' + titre + '</h2></div>'
+                + '<div class="cv-tl-section-list">'
                 + items.map(function (item) {
                     var tagType  = escapeHtml(item.tagType || "projet");
                     var chipsHtml = "";
@@ -147,15 +148,19 @@
                             }).join("")
                             + '</div>';
                     }
+                    var descCv = (typeof item["desc-cv"] === "string" && item["desc-cv"].length > 0) ? item["desc-cv"] : item.desc;
                     return '<div class="cv-tl-item">'
                         + '<div class="cv-tl-date">' + escapeHtml(item.date) + '</div>'
                         + '<div class="cv-tl-body">'
-                        +   '<p class="cv-tl-title">' + escapeHtml(item.title) + '</p>'
-                        +   '<p class="cv-tl-desc">' + escapeHtml(item.desc) + '</p>'
+                        +   '<p class="cv-tl-title">' + escapeHtml(item.title)
+                        +   (item.lieu ? ' <span class="cv-tl-lieu">- ' + escapeHtml(item.lieu) + '</span>' : '')
+                        +   '</p>'
+                        +   '<p class="cv-tl-desc">' + escapeHtml(descCv) + '</p>'
                         +   chipsHtml
                         + '</div>'
                         + '</div>';
                 }).join("")
+                + '</div>'
                 + '</div>';
         }
 
